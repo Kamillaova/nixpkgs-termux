@@ -46,7 +46,7 @@ jobs:
         run: |
           git clean -f
       - name: create PR
-        uses: peter-evans/create-pull-request@70a41aba780001da0a30141984ae2a0c95d8704e # v6.0.2
+        uses: peter-evans/create-pull-request@5e914681df9dc83aa4e4905692ca88beb2f9e91f # v7.0.5
         with:
           body: |
             Automatic update by [update-terraform-providers](https://github.com/NixOS/nixpkgs/blob/master/.github/workflows/update-terraform-providers.yml) action.
