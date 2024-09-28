@@ -500,7 +500,7 @@ rec {
 
     ```nix
     makeSearchPathOutput "dev" "bin" [ pkgs.openssl pkgs.zlib ]
-    => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev/bin:/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8/bin"
+    => "/data/data/com.termux/files/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev/bin:/data/data/com.termux/files/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8/bin"
     ```
 
     :::
@@ -534,7 +534,7 @@ rec {
     => "/usr/lib:/usr/local/lib"
     pkgs = import <nixpkgs> { }
     makeLibraryPath [ pkgs.openssl pkgs.zlib ]
-    => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r/lib:/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8/lib"
+    => "/data/data/com.termux/files/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r/lib:/data/data/com.termux/files/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8/lib"
     ```
 
     :::
@@ -565,7 +565,7 @@ rec {
     => "/usr/include:/usr/local/include"
     pkgs = import <nixpkgs> { }
     makeIncludePath [ pkgs.openssl pkgs.zlib ]
-    => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev/include:/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8-dev/include"
+    => "/data/data/com.termux/files/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev/include:/data/data/com.termux/files/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8-dev/include"
     ```
 
     :::
@@ -1432,7 +1432,7 @@ rec {
     ```nix
     nix-repl> builtins.getContext (lib.strings.addContextFrom pkgs.coreutils "bar")
     {
-      "/nix/store/m1s1d2dk2dqqlw3j90jl3cjy2cykbdxz-coreutils-9.5.drv" = { ... };
+      "/data/data/com.termux/files/nix/store/m1s1d2dk2dqqlw3j90jl3cjy2cykbdxz-coreutils-9.5.drv" = { ... };
     }
     ```
 
@@ -2345,9 +2345,9 @@ rec {
     ## `lib.strings.isStorePath` usage example
 
     ```nix
-    isStorePath "/nix/store/d945ibfx9x185xf04b890y4f9g3cbb63-python-2.7.11/bin/python"
+    isStorePath "/data/data/com.termux/files/nix/store/d945ibfx9x185xf04b890y4f9g3cbb63-python-2.7.11/bin/python"
     => false
-    isStorePath "/nix/store/d945ibfx9x185xf04b890y4f9g3cbb63-python-2.7.11"
+    isStorePath "/data/data/com.termux/files/nix/store/d945ibfx9x185xf04b890y4f9g3cbb63-python-2.7.11"
     => true
     isStorePath pkgs.python
     => true

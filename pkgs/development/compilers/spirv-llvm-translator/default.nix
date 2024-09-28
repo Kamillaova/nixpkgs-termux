@@ -94,7 +94,7 @@ stdenv.mkDerivation {
     "-DLLVM_DIR=${(if isROCm then llvm else llvm.dev)}"
     "-DBUILD_SHARED_LIBS=YES"
     "-DLLVM_SPIRV_BUILD_EXTERNAL=YES"
-    # RPATH of binary /nix/store/.../bin/llvm-spirv contains a forbidden reference to /build/
+    # RPATH of binary /data/data/com.termux/files/nix/store/.../bin/llvm-spirv contains a forbidden reference to /build/
     "-DCMAKE_SKIP_BUILD_RPATH=ON"
   ] ++ lib.optional (llvmMajor != "11") "-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=${spirv-headers.src}";
 

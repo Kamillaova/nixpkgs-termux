@@ -49,9 +49,9 @@ stdenv.mkDerivation rec {
   '';
 
   # This is necessary, because the resulting library has
-  # /tmp/nix-build-jbig2enc/src/.libs before /nix/store/jbig2enc/lib
+  # /tmp/nix-build-jbig2enc/src/.libs before /data/data/com.termux/files/nix/store/jbig2enc/lib
   # in its rpath, which means that patchelf --shrink-rpath removes
-  # the /nix/store one.  By cleaning up before fixup, we ensure that
+  # the /data/data/com.termux/files/nix/store one.  By cleaning up before fixup, we ensure that
   # the /tmp/nix-build-jbig2enc/src/.libs directory is gone.
   preFixup = ''
     make clean

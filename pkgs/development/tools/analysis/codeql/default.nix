@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     # codeql directory should not be top-level, otherwise,
-    # it'll include /nix/store to resolve extractors.
+    # it'll include /data/data/com.termux/files/nix/store to resolve extractors.
     mkdir -p $out/{codeql,bin}
     cp -R * $out/codeql/
 

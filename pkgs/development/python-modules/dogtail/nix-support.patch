@@ -28,7 +28,7 @@
      elif os.path.exists("/etc/release") and \
              re.match(".*Solaris", open("/etc/release").readline()):  # pragma: no cover
          distro = Solaris()  # pragma: no cover
-+    elif os.path.exists("/nix/store"):  # pragma: no cover
++    elif os.path.exists("/data/data/com.termux/files/nix/store"):  # pragma: no cover
 +        distro = Nix()  # pragma: no cover
      elif os.path.exists("/etc/os-release") and \
              re.match(".*GNOME-Continuous", open("/etc/os-release").readline()):  # pragma: no cover

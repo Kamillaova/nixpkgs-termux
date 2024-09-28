@@ -176,7 +176,7 @@ The first steps to all these are the same:
 1.  Build the NixOS closure and install it in the `system` profile:
 
     ```ShellSession
-    $ nix-env -p /nix/var/nix/profiles/system -f '<nixpkgs/nixos>' -I nixos-config=/etc/nixos/configuration.nix -iA system
+    $ nix-env -p /data/data/com.termux/files/nix/var/nix/profiles/system -f '<nixpkgs/nixos>' -I nixos-config=/etc/nixos/configuration.nix -iA system
     ```
 
 1.  Change ownership of the `/nix` tree to root (since your Nix install
@@ -247,7 +247,7 @@ The first steps to all these are the same:
 
     ```ShellSession
     $ sudo mv -v /boot /boot.bak &&
-    sudo /nix/var/nix/profiles/system/bin/switch-to-configuration boot
+    sudo /data/data/com.termux/files/nix/var/nix/profiles/system/bin/switch-to-configuration boot
     ```
 
     Cross your fingers, reboot, hopefully you should get a NixOS prompt!

@@ -97,7 +97,7 @@ reject() {
 
 
 # Checks whether a path is impure.  E.g., `/lib/foo.so' is impure, but
-# `/nix/store/.../lib/foo.so' isn't.
+# `/data/data/com.termux/files/nix/store/.../lib/foo.so' isn't.
 badPath() {
     local p=$1
 

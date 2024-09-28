@@ -7,8 +7,8 @@ index e93e6b45..bbedb165 100644
  keep_env: true
  
 +mount {
-+	src: "/nix/store"
-+	dst: "/nix/store"
++	src: "/data/data/com.termux/files/nix/store"
++	dst: "/data/data/com.termux/files/nix/store"
 +	is_bind: true
 +}
 +

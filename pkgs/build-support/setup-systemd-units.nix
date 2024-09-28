@@ -58,7 +58,7 @@
 
           unitDir=/etc/systemd/system
           if [ ! -w "$unitDir" ]; then
-            unitDir=/nix/var/nix/profiles/default/lib/systemd/system
+            unitDir=/data/data/com.termux/files/nix/var/nix/profiles/default/lib/systemd/system
             mkdir -p "$unitDir"
           fi
           declare -a unitsToStop unitsToStart

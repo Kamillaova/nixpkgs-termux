@@ -2,7 +2,7 @@ Add /etc/kbd to the list of directories to search for the console
 fonts, screen mappings, Unicode maps, keytable files, etc.
 
 Without this patch, kbd will only look inside
-/nix/store/<hash>-kbd-x.x.x/share.
+/data/data/com.termux/files/nix/store/<hash>-kbd-x.x.x/share.
 
 --- a/src/libkeymap/analyze.l
 +++ b/src/libkeymap/analyze.l

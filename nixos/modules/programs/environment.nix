@@ -26,7 +26,7 @@ in
     programs.less.enable = true;
 
     environment.profiles = lib.mkAfter
-      [ "/nix/var/nix/profiles/default"
+      [ "/data/data/com.termux/files/nix/var/nix/profiles/default"
         "/run/current-system/sw"
       ];
 
@@ -50,7 +50,7 @@ in
 
     environment.extraInit =
       ''
-         export NIX_USER_PROFILE_DIR="/nix/var/nix/profiles/per-user/$USER"
+         export NIX_USER_PROFILE_DIR="/data/data/com.termux/files/nix/var/nix/profiles/per-user/$USER"
          export NIX_PROFILES="${builtins.concatStringsSep " " (lib.reverseList cfg.profiles)}"
       '';
 

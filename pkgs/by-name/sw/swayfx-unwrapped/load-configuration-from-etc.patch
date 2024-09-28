@@ -1,10 +1,10 @@
 From 92283df3acbffa5c1bb21f23cdd686113d905114 Mon Sep 17 00:00:00 2001
 From: Patrick Hilhorst <git@hilhorst.be>
 Date: Wed, 31 Mar 2021 21:14:13 +0200
-Subject: [PATCH] Load configs from /etc but fallback to /nix/store
+Subject: [PATCH] Load configs from /etc but fallback to /data/data/com.termux/files/nix/store
 
 This change will load all configuration files from /etc, to make it easy
-to override them, but fallback to /nix/store/.../etc/sway/config to make
+to override them, but fallback to /data/data/com.termux/files/nix/store/.../etc/sway/config to make
 Sway work out-of-the-box with the default configuration on non NixOS
 systems.
 

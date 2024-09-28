@@ -40,7 +40,7 @@ in
         default = "";
         description = ''
           When set, enables the feature of serving <nar-hash>.<domain>
-          on top of <domain>/nix/store/<nar-hash>-<pname>.
+          on top of <domain>/data/data/com.termux/files/nix/store/<nar-hash>-<pname>.
 
           Useful to preview static websites where paths are absolute.
         '';

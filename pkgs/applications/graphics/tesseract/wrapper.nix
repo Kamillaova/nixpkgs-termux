@@ -36,7 +36,7 @@ let
         ln -s $tessdata/* $out/share/tessdata
       else
         for lang in $tessdata; do
-          ln -s $lang $out/share/tessdata/''${lang#/nix/store*-}
+          ln -s $lang $out/share/tessdata/''${lang#/data/data/com.termux/files/nix/store*-}
         done
       fi
 

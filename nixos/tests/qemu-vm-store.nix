@@ -64,7 +64,7 @@
 
     with subtest("Nix store is not mounted separately"):
       rootDevice = fullDisk.succeed("stat -c %d /")
-      nixStoreDevice = fullDisk.succeed("stat -c %d /nix/store")
+      nixStoreDevice = fullDisk.succeed("stat -c %d /data/data/com.termux/files/nix/store")
       assert rootDevice == nixStoreDevice, "Nix store is mounted separately from the root fs"
   '';
 

@@ -41,8 +41,8 @@ index 0000000..726065d
 +    // Here, `kwin` tries to detect the .desktop file for a given process.
 +    // `kwin` followed the process `/proc/.../exe` up to the actual binary running.
 +    // It normally would be fine, e.g. /usr/bin/foobar is what's in the desktop file.
-+    // But it's not the truth here! It's extremely likely the resolved path is /nix/store/.../bin/.foobar-wrapped
-+    // rather than what the desktop file points to, something like /nix/store/.../bin/foobar !!
++    // But it's not the truth here! It's extremely likely the resolved path is /data/data/com.termux/files/nix/store/.../bin/.foobar-wrapped
++    // rather than what the desktop file points to, something like /data/data/com.termux/files/nix/store/.../bin/foobar !!
 +    // Since the wrappers for Nixpkgs *always* prepend a dot and append -wrapped, we assume here that we can keep
 +    // `/^(.*)\/\.([^/]*)-wrapped/` until the (equivalent) regex does not match.
 +    // This should canonicalize the wrapper name to the expected name to look for in the desktop file.

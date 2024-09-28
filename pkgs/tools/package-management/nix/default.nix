@@ -13,8 +13,8 @@
 , buildPackages
 , Security
 
-, storeDir ? "/nix/store"
-, stateDir ? "/nix/var"
+, storeDir ? "/data/data/com.termux/files/nix/store"
+, stateDir ? "/data/data/com.termux/files/nix/var"
 , confDir ? "/etc"
 }:
 let

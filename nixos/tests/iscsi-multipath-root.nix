@@ -131,7 +131,7 @@ import ./make-test-python.nix (
           ]
         );
 
-        # defaults to true, puts some code in the initrd that tries to mount an overlayfs on /nix/store
+        # defaults to true, puts some code in the initrd that tries to mount an overlayfs on /data/data/com.termux/files/nix/store
         virtualisation.writableStore = false;
         virtualisation.vlans = [ 1 2 ];
 

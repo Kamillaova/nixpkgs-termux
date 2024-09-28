@@ -28,9 +28,9 @@ in
       default = null;
       example = "/etc/prometheus-pve-exporter/pve.env";
       description = ''
-        Path to the service's environment file. This path can either be a computed path in /nix/store or a path in the local filesystem.
+        Path to the service's environment file. This path can either be a computed path in /data/data/com.termux/files/nix/store or a path in the local filesystem.
 
-        The environment file should NOT be stored in /nix/store as it contains passwords and/or keys in plain text.
+        The environment file should NOT be stored in /data/data/com.termux/files/nix/store as it contains passwords and/or keys in plain text.
 
         Environment reference: https://github.com/prometheus-pve/prometheus-pve-exporter#authentication
       '';
@@ -41,9 +41,9 @@ in
       default = null;
       example = "/etc/prometheus-pve-exporter/pve.yml";
       description = ''
-        Path to the service's config file. This path can either be a computed path in /nix/store or a path in the local filesystem.
+        Path to the service's config file. This path can either be a computed path in /data/data/com.termux/files/nix/store or a path in the local filesystem.
 
-        The config file should NOT be stored in /nix/store as it will contain passwords and/or keys in plain text.
+        The config file should NOT be stored in /data/data/com.termux/files/nix/store as it will contain passwords and/or keys in plain text.
 
         If both configFile and environmentFile are provided, the configFile option will be ignored.
 

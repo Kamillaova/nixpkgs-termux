@@ -10,7 +10,7 @@ let
   #       `postFixup` below, and whose runtime deps need to go into
   #       `nativeBuildInputs`.
   #       The command
-  #         find /nix/store/...-glusterfs-.../ -name '*.py' -executable
+  #         find /data/data/com.termux/files/nix/store/...-glusterfs-.../ -name '*.py' -executable
   #       can help with finding new Python scripts.
 
   buildInputs = [

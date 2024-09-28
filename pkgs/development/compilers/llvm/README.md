@@ -17,24 +17,24 @@
      ```sh
      ...
      clang-unstable> patching sources
-     clang-unstable> applying patch /nix/store/nndv6gq6w608n197fndvv5my4a5zg2qi-purity.patch
+     clang-unstable> applying patch /data/data/com.termux/files/nix/store/nndv6gq6w608n197fndvv5my4a5zg2qi-purity.patch
      clang-unstable> patching file lib/Driver/ToolChains/Gnu.cpp
      clang-unstable> Hunk #1 FAILED at 487.
      clang-unstable> 1 out of 1 hunk FAILED -- saving rejects to file lib/Driver/ToolChains/Gnu.cpp.rej
      note: keeping build directory '/tmp/nix-build-clang-unstable-2022-25-07.drv-17'
-     error: builder for '/nix/store/zwi123kpkyz52fy7p6v23azixd807r8c-clang-unstable-2022-25-07.drv' failed with exit code 1;
+     error: builder for '/data/data/com.termux/files/nix/store/zwi123kpkyz52fy7p6v23azixd807r8c-clang-unstable-2022-25-07.drv' failed with exit code 1;
             last 8 log lines:
             > unpacking sources
-            > unpacking source archive /nix/store/mrxadx11wv1ckjr2208qgxp472pmmg6g-clang-src-unstable-2022-25-07
+            > unpacking source archive /data/data/com.termux/files/nix/store/mrxadx11wv1ckjr2208qgxp472pmmg6g-clang-src-unstable-2022-25-07
             > source root is clang-src-unstable-2022-25-07/clang
             > patching sources
-            > applying patch /nix/store/nndv6gq6w608n197fndvv5my4a5zg2qi-purity.patch
+            > applying patch /data/data/com.termux/files/nix/store/nndv6gq6w608n197fndvv5my4a5zg2qi-purity.patch
             > patching file lib/Driver/ToolChains/Gnu.cpp
             > Hunk #1 FAILED at 487.
             > 1 out of 1 hunk FAILED -- saving rejects to file lib/Driver/ToolChains/Gnu.cpp.rej
-            For full logs, run 'nix log /nix/store/zwi123kpkyz52fy7p6v23azixd807r8c-clang-unstable-2022-25-07.drv'.
+            For full logs, run 'nix log /data/data/com.termux/files/nix/store/zwi123kpkyz52fy7p6v23azixd807r8c-clang-unstable-2022-25-07.drv'.
      note: keeping build directory '/tmp/nix-build-compiler-rt-libc-unstable-2022-25-07.drv-20'
-     error: 1 dependencies of derivation '/nix/store/ndbbh3wrl0l39b22azf46f1n7zlqwmag-clang-wrapper-unstable-2022-25-07.drv' failed to build
+     error: 1 dependencies of derivation '/data/data/com.termux/files/nix/store/ndbbh3wrl0l39b22azf46f1n7zlqwmag-clang-wrapper-unstable-2022-25-07.drv' failed to build
      ```
 
      Notice the `Hunk #1 Failed at 487` line.

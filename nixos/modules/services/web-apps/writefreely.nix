@@ -272,7 +272,7 @@ in {
           If not provided, the default password will be set to `nixos`.
         '';
         default = pkgs.writeText "default-admin-pass" "nixos";
-        defaultText = "/nix/store/xxx-default-admin-pass";
+        defaultText = "/data/data/com.termux/files/nix/store/xxx-default-admin-pass";
       };
     };
 

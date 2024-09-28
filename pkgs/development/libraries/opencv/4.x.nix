@@ -501,13 +501,13 @@ effectiveStdenv.mkDerivation {
 
   # By default $out/lib/pkgconfig/opencv4.pc looks something like this:
   #
-  #   prefix=/nix/store/g0wnfyjjh4rikkvp22cpkh41naa43i4i-opencv-4.0.0
+  #   prefix=/data/data/com.termux/files/nix/store/g0wnfyjjh4rikkvp22cpkh41naa43i4i-opencv-4.0.0
   #   exec_prefix=${prefix}
-  #   libdir=${exec_prefix}//nix/store/g0wnfyjjh4rikkvp22cpkh41naa43i4i-opencv-4.0.0/lib
-  #   includedir_old=${prefix}//nix/store/g0wnfyjjh4rikkvp22cpkh41naa43i4i-opencv-4.0.0/include/opencv4/opencv
-  #   includedir_new=${prefix}//nix/store/g0wnfyjjh4rikkvp22cpkh41naa43i4i-opencv-4.0.0/include/opencv4
+  #   libdir=${exec_prefix}//data/data/com.termux/files/nix/store/g0wnfyjjh4rikkvp22cpkh41naa43i4i-opencv-4.0.0/lib
+  #   includedir_old=${prefix}//data/data/com.termux/files/nix/store/g0wnfyjjh4rikkvp22cpkh41naa43i4i-opencv-4.0.0/include/opencv4/opencv
+  #   includedir_new=${prefix}//data/data/com.termux/files/nix/store/g0wnfyjjh4rikkvp22cpkh41naa43i4i-opencv-4.0.0/include/opencv4
   #   ...
-  #   Libs: -L${exec_prefix}//nix/store/g0wnfyjjh4rikkvp22cpkh41naa43i4i-opencv-4.0.0/lib ...
+  #   Libs: -L${exec_prefix}//data/data/com.termux/files/nix/store/g0wnfyjjh4rikkvp22cpkh41naa43i4i-opencv-4.0.0/lib ...
   # Note that ${exec_prefix} is set to $out but that $out is also appended to
   # ${exec_prefix}. This causes linker errors in downstream packages so we strip
   # of $out after the ${exec_prefix} and ${prefix} prefixes:

@@ -11,8 +11,8 @@ If [iana-etc](https://hydra.nixos.org/job/nixos/trunk-combined/nixpkgs.iana-etc.
 > nix-shell -p iana-etc
 
 [nix-shell:~]$ env | grep NIX_ETC
-NIX_ETC_SERVICES=/nix/store/aj866hr8fad8flnggwdhrldm0g799ccz-iana-etc-20210225/etc/services
-NIX_ETC_PROTOCOLS=/nix/store/aj866hr8fad8flnggwdhrldm0g799ccz-iana-etc-20210225/etc/protocols
+NIX_ETC_SERVICES=/data/data/com.termux/files/nix/store/aj866hr8fad8flnggwdhrldm0g799ccz-iana-etc-20210225/etc/services
+NIX_ETC_PROTOCOLS=/data/data/com.termux/files/nix/store/aj866hr8fad8flnggwdhrldm0g799ccz-iana-etc-20210225/etc/protocols
 ```
 
 Nixpkg's version of [glibc](https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/libraries/glibc/default.nix) has been patched to check for the existence of these environment variables. If the environment variables are *not* set, then it will attempt to find the files at the default location within `/etc`.

@@ -563,7 +563,7 @@ Zip files are unpacked using `unzip`. However, `unzip` is not in the standard en
 
 #### Directories in the Nix store {#directories-in-the-nix-store}
 
-These are copied to the current directory. The hash part of the file name is stripped, e.g. `/nix/store/1wydxgby13cz...-my-sources` would be copied to `my-sources`.
+These are copied to the current directory. The hash part of the file name is stripped, e.g. `/data/data/com.termux/files/nix/store/1wydxgby13cz...-my-sources` would be copied to `my-sources`.
 
 Additional file types can be supported by setting the `unpackCmd` variable (see below).
 
@@ -850,7 +850,7 @@ The fixup phase performs (Nix-specific) post-processing actions on the files ins
 - It moves the `man/`, `doc/` and `info/` subdirectories of `$out` to `share/`.
 - It strips libraries and executables of debug information.
 - On Linux, it applies the `patchelf` command to ELF executables and libraries to remove unused directories from the `RPATH` in order to prevent unnecessary runtime dependencies.
-- It rewrites the interpreter paths of shell scripts to paths found in `PATH`. E.g., `/usr/bin/perl` will be rewritten to `/nix/store/some-perl/bin/perl` found in `PATH`. See [](#patch-shebangs.sh) for details.
+- It rewrites the interpreter paths of shell scripts to paths found in `PATH`. E.g., `/usr/bin/perl` will be rewritten to `/data/data/com.termux/files/nix/store/some-perl/bin/perl` found in `PATH`. See [](#patch-shebangs.sh) for details.
 
 #### Variables controlling the fixup phase {#variables-controlling-the-fixup-phase}
 
@@ -1192,11 +1192,11 @@ PATH=@coreutils@/bin
 echo @foo@
 ```
 
-and the environment contains `bash=/nix/store/bmwp0q28cf21...-bash-3.2-p39` and `coreutils=/nix/store/68afga4khv0w...-coreutils-6.12`, but does not contain the variable `foo`, then the output will be
+and the environment contains `bash=/data/data/com.termux/files/nix/store/bmwp0q28cf21...-bash-3.2-p39` and `coreutils=/data/data/com.termux/files/nix/store/68afga4khv0w...-coreutils-6.12`, but does not contain the variable `foo`, then the output will be
 
 ```bash
-#! /nix/store/bmwp0q28cf21...-bash-3.2-p39/bin/sh
-PATH=/nix/store/68afga4khv0w...-coreutils-6.12/bin
+#! /data/data/com.termux/files/nix/store/bmwp0q28cf21...-bash-3.2-p39/bin/sh
+PATH=/data/data/com.termux/files/nix/store/68afga4khv0w...-coreutils-6.12/bin
 echo @foo@
 ```
 
@@ -1214,13 +1214,13 @@ Strips the directory and hash part of a store path, outputting the name part to 
 
 ```bash
 # prints coreutils-8.24
-stripHash "/nix/store/9s9r019176g7cvn2nvcw41gsp862y6b4-coreutils-8.24"
+stripHash "/data/data/com.termux/files/nix/store/9s9r019176g7cvn2nvcw41gsp862y6b4-coreutils-8.24"
 ```
 
 If you wish to store the result in another variable, then the following idiom may be useful:
 
 ```bash
-name="/nix/store/9s9r019176g7cvn2nvcw41gsp862y6b4-coreutils-8.24"
+name="/data/data/com.termux/files/nix/store/9s9r019176g7cvn2nvcw41gsp862y6b4-coreutils-8.24"
 someVar=$(stripHash $name)
 ```
 
@@ -1317,16 +1317,16 @@ patchShebangs [--build | --host] PATH...
 ##### Examples {#patch-shebangs.sh-invocation-examples}
 
 ```sh
-patchShebangs --host /nix/store/<hash>-hello-1.0/bin
+patchShebangs --host /data/data/com.termux/files/nix/store/<hash>-hello-1.0/bin
 ```
 
 ```sh
 patchShebangs --build configure
 ```
 
-`#!/bin/sh` will be rewritten to `#!/nix/store/<hash>-some-bash/bin/sh`.
+`#!/bin/sh` will be rewritten to `#!/data/data/com.termux/files/nix/store/<hash>-some-bash/bin/sh`.
 
-`#!/usr/bin/env` gets special treatment: `#!/usr/bin/env python` is rewritten to `/nix/store/<hash>/bin/python`.
+`#!/usr/bin/env` gets special treatment: `#!/usr/bin/env python` is rewritten to `/data/data/com.termux/files/nix/store/<hash>/bin/python`.
 
 Interpreter paths that point to a valid Nix store location are not changed.
 

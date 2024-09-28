@@ -133,7 +133,7 @@ let
   # Whether path components have a store path as a prefix, according to
   # https://nixos.org/manual/nix/stable/store/store-path.html#store-path.
   componentsHaveStorePathPrefix = components:
-    # path starts with the store directory (typically /nix/store)
+    # path starts with the store directory (typically /data/data/com.termux/files/nix/store)
     listHasPrefix storeDirComponents components
     # is not the store directory itself, meaning there's at least one extra component
     && storeDirComponents != components
@@ -364,15 +364,15 @@ in /* No rec! Add dependencies on this file at the top. */ {
 
     Example:
       # Subpaths of derivation outputs have a store path as a prefix
-      hasStorePathPrefix /nix/store/nvl9ic0pj1fpyln3zaqrf4cclbqdfn1j-foo/bar/baz
+      hasStorePathPrefix /data/data/com.termux/files/nix/store/nvl9ic0pj1fpyln3zaqrf4cclbqdfn1j-foo/bar/baz
       => true
 
       # The store directory itself is not a store path
-      hasStorePathPrefix /nix/store
+      hasStorePathPrefix /data/data/com.termux/files/nix/store
       => false
 
       # Derivation outputs are store paths themselves
-      hasStorePathPrefix /nix/store/nvl9ic0pj1fpyln3zaqrf4cclbqdfn1j-foo
+      hasStorePathPrefix /data/data/com.termux/files/nix/store/nvl9ic0pj1fpyln3zaqrf4cclbqdfn1j-foo
       => true
 
       # Paths outside the Nix store don't have a store path prefix
@@ -380,11 +380,11 @@ in /* No rec! Add dependencies on this file at the top. */ {
       => false
 
       # Not all paths under the Nix store are store paths
-      hasStorePathPrefix /nix/store/.links/10gg8k3rmbw8p7gszarbk7qyd9jwxhcfq9i6s5i0qikx8alkk4hq
+      hasStorePathPrefix /data/data/com.termux/files/nix/store/.links/10gg8k3rmbw8p7gszarbk7qyd9jwxhcfq9i6s5i0qikx8alkk4hq
       => false
 
       # Store derivations are also store paths themselves
-      hasStorePathPrefix /nix/store/nvl9ic0pj1fpyln3zaqrf4cclbqdfn1j-foo.drv
+      hasStorePathPrefix /data/data/com.termux/files/nix/store/nvl9ic0pj1fpyln3zaqrf4cclbqdfn1j-foo.drv
       => true
   */
   hasStorePathPrefix = path:

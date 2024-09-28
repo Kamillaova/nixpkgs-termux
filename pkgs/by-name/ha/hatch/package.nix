@@ -105,7 +105,7 @@ python3Packages.buildPythonApplication rec {
       "test_scripts_no_environment"
 
       # This test assumes it is running on macOS with a system shell on the PATH.
-      # It is not possible to run it in a nix build using a /nix/store shell.
+      # It is not possible to run it in a nix build using a /data/data/com.termux/files/nix/store shell.
       # See https://github.com/pypa/hatch/pull/709 for the relevant code.
       "test_populate_default_popen_kwargs_executable"
 
@@ -119,7 +119,7 @@ python3Packages.buildPythonApplication rec {
   disabledTestPaths = lib.optionals stdenv.hostPlatform.isDarwin [
     # AssertionError: assert [call('test h...2p32/bin/sh')] == [call('test h..., shell=True)]
     # At index 0 diff:
-    #    call('test hatch-test.py3.10', shell=True, executable='/nix/store/b34ianga4diikh0kymkpqwmvba0mmzf7-bash-5.2p32/bin/sh')
+    #    call('test hatch-test.py3.10', shell=True, executable='/data/data/com.termux/files/nix/store/b34ianga4diikh0kymkpqwmvba0mmzf7-bash-5.2p32/bin/sh')
     # != call('test hatch-test.py3.10', shell=True)
     "tests/cli/fmt/test_fmt.py"
     "tests/cli/test/test_test.py"

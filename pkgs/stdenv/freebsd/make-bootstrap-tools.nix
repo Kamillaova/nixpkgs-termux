@@ -85,9 +85,9 @@
     # - reboot your FreeBSD system. Otherwise the atimes will simply be wrong because of kernel caching
     # - run a full build of stdenv on FreeBSD. with -j3, this takes 1h40 on my 20 cpu VM (AMD host)
     # - use the following to generate a list with access times and filenames
-    #   find /nix/store/###-bootstrap-archive -type f | xargs stat | grep -E 'Access: 2|File:' | paste -d ' ' - - | awk '{ print $4 " " $5 " " $6 " " $2 }' | sort -n > atimes
+    #   find /data/data/com.termux/files/nix/store/###-bootstrap-archive -type f | xargs stat | grep -E 'Access: 2|File:' | paste -d ' ' - - | awk '{ print $4 " " $5 " " $6 " " $2 }' | sort -n > atimes
     # - manually identify the point where files have no longer been accessed after the patching phase
-    # - use your favorite text editor to snip out the time column, the /nix/store/###-bootstrap-archive/ prefix, and the files that have not been used during bootstrap
+    # - use your favorite text editor to snip out the time column, the /data/data/com.termux/files/nix/store/###-bootstrap-archive/ prefix, and the files that have not been used during bootstrap
     # - turn off atime if it was off before since it will degrade performance
     # - manually remove bin/strings from the list, since it will be used only during bootstrap
     # - manually remove all files under include and lib/clang/*/include from the list in order to improve forward compatibility (and since they are very small)

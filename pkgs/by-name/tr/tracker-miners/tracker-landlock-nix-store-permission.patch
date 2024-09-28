@@ -6,7 +6,7 @@ index 6d4510be1..1de5d5a90 100644
  tracker_landlock_init (const gchar * const *indexed_folders)
  {
  	TrackerLandlockRule stock_rules[] = {
-+		{ "/nix/store",
++		{ "/data/data/com.termux/files/nix/store",
 +		 (LANDLOCK_ACCESS_FS_EXECUTE |
 +		  LANDLOCK_ACCESS_FS_READ_FILE |
 +		  LANDLOCK_ACCESS_FS_READ_DIR) },

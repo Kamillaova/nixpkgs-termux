@@ -45,7 +45,7 @@
     };
   }
   =>
-  «derivation /nix/store/...-spdx-license-list-data-3.24.0-compressed.drv»
+  «derivation /data/data/com.termux/files/nix/store/...-spdx-license-list-data-3.24.0-compressed.drv»
   ```
 
   See also pkgs.compressDrvWeb, which is a wrapper on top of compressDrv, for broader usage

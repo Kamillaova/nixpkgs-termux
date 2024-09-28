@@ -20,8 +20,8 @@ int main(int argc, char * * argv)
 }
 EOF
 
-#gcc -I/nix/store/foo -I /nix/store/foo -I/usr/lib -I /usr/lib hello.c -o $out/bin/hello
-gcc -I`pwd` -L /nix/store/abcd/lib -isystem /usr/lib hello.c -o $out/bin/hello
+#gcc -I/data/data/com.termux/files/nix/store/foo -I /data/data/com.termux/files/nix/store/foo -I/usr/lib -I /usr/lib hello.c -o $out/bin/hello
+gcc -I`pwd` -L /data/data/com.termux/files/nix/store/abcd/lib -isystem /usr/lib hello.c -o $out/bin/hello
 
 $out/bin/hello
 

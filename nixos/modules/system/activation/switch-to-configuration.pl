@@ -111,7 +111,7 @@ EOFBOOTLOADER
 
 # Just in case the new configuration hangs the system, do a sync now.
 if (($ENV{"NIXOS_NO_SYNC"} // "") ne "1") {
-    system("@coreutils@/bin/sync", "-f", "/nix/store");
+    system("@coreutils@/bin/sync", "-f", "/data/data/com.termux/files/nix/store");
 }
 
 if ($action eq "boot") {

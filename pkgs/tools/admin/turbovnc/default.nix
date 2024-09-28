@@ -93,7 +93,7 @@ stdenv.mkDerivation (finalAttrs: {
     # For the 3D software rendering built into TurboVNC, pass the path
     # to the swrast dri driver in Mesa.
     # Can also be given at runtime to its `Xvnc` as:
-    #   -dridir /nix/store/...-mesa-20.1.10-drivers/lib/dri/
+    #   -dridir /data/data/com.termux/files/nix/store/...-mesa-20.1.10-drivers/lib/dri/
     "-DXORG_DRI_DRIVER_PATH=${mesa.driverLink}/lib/dri"
     # The build system doesn't find these files automatically.
     "-DTJPEG_JAR=${libjpeg_turbo.out}/share/java/turbojpeg.jar"

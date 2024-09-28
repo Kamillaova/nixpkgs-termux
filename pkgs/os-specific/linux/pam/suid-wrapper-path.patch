@@ -1,4 +1,4 @@
-It needs the SUID version during runtime, and that can't be in /nix/store/**
+It needs the SUID version during runtime, and that can't be in /data/data/com.termux/files/nix/store/**
 --- a/modules/pam_unix/Makefile.am
 +++ b/modules/pam_unix/Makefile.am
 @@ -21 +21 @@

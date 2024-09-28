@@ -82,7 +82,7 @@ stdenv.mkDerivation (finalAttrs: {
     qtxmlpatterns
   ] ++ lib.optionals textToSpeechSupport [ qtspeech ];
 
-  # RPATH of binary /nix/store/.../bin/... contains a forbidden reference to /build/
+  # RPATH of binary /data/data/com.termux/files/nix/store/.../bin/... contains a forbidden reference to /build/
   cmakeFlags = [ (lib.cmakeBool "CMAKE_SKIP_BUILD_RPATH" true) ];
 
   # udev is used by the system-actionpack

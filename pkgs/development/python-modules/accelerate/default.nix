@@ -107,7 +107,7 @@ buildPythonPackage rec {
       "test_dynamo_extract_model"
     ]
     ++ lib.optionals (stdenv.hostPlatform.isDarwin) [
-      # RuntimeError: 'accelerate-launch /nix/store/a7vhm7b74a7bmxc35j26s9iy1zfaqjs...
+      # RuntimeError: 'accelerate-launch /data/data/com.termux/files/nix/store/a7vhm7b74a7bmxc35j26s9iy1zfaqjs...
       "test_accelerate_test"
       "test_init_trackers"
       "test_init_trackers"

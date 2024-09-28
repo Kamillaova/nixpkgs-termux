@@ -44,7 +44,7 @@
 
   For example, building `pkgs.gamja` produces the following output:
 
-    /nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/
+    /data/data/com.termux/files/nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/
     ├── index.2fd01148.js
     ├── index.2fd01148.js.map
     ├── index.37aa9a8a.css
@@ -57,27 +57,27 @@
   ```nix
   pkgs.compressDrvWeb pkgs.gamja {}
   =>
-  «derivation /nix/store/...-gamja-compressed.drv»
+  «derivation /data/data/com.termux/files/nix/store/...-gamja-compressed.drv»
   ```
 
   ```bash
-  /nix/store/f5ryid7zrw2hid7h9kil5g5j29q5r2f7-gamja-1.0.0-beta.9-compressed
-  ├── index.2fd01148.js -> /nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/index.2fd01148.js
+  /data/data/com.termux/files/nix/store/f5ryid7zrw2hid7h9kil5g5j29q5r2f7-gamja-1.0.0-beta.9-compressed
+  ├── index.2fd01148.js -> /data/data/com.termux/files/nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/index.2fd01148.js
   ├── index.2fd01148.js.br
   ├── index.2fd01148.js.gz
-  ├── index.2fd01148.js.map -> /nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/index.2fd01148.js.map
+  ├── index.2fd01148.js.map -> /data/data/com.termux/files/nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/index.2fd01148.js.map
   ├── index.2fd01148.js.map.br
   ├── index.2fd01148.js.map.gz
-  ├── index.37aa9a8a.css -> /nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/index.37aa9a8a.css
+  ├── index.37aa9a8a.css -> /data/data/com.termux/files/nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/index.37aa9a8a.css
   ├── index.37aa9a8a.css.br
   ├── index.37aa9a8a.css.gz
-  ├── index.37aa9a8a.css.map -> /nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/index.37aa9a8a.css.map
+  ├── index.37aa9a8a.css.map -> /data/data/com.termux/files/nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/index.37aa9a8a.css.map
   ├── index.37aa9a8a.css.map.br
   ├── index.37aa9a8a.css.map.gz
-  ├── index.html -> /nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/index.html
+  ├── index.html -> /data/data/com.termux/files/nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/index.html
   ├── index.html.br
   ├── index.html.gz
-  ├── manifest.webmanifest -> /nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/manifest.webmanifest
+  ├── manifest.webmanifest -> /data/data/com.termux/files/nix/store/2wn1qbk8gp4y2m8xvafxv1b2dcdqj8fz-gamja-1.0.0-beta.9/manifest.webmanifest
   ├── manifest.webmanifest.br
   └── manifest.webmanifest.gz
   ```

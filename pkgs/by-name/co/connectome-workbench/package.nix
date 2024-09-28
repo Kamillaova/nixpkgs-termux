@@ -38,7 +38,7 @@ stdenv.mkDerivation (finalAttrs: {
   '';
   # tests are minimal and test_driver fails to link (also -DBUILD_TESTING=... is ignored):
   # ld: ../Brain/libBrain.a(BrainOpenGLVolumeObliqueSliceDrawing.cxx.o): undefined reference to symbol 'glGetFloatv'
-  # ld: /nix/store/a5vcvrkh1c2ng5kr584g3zw3991vnhks-libGL-1.7.0/lib/libGL.so.1: error adding symbols: DSO missing from command line
+  # ld: /data/data/com.termux/files/nix/store/a5vcvrkh1c2ng5kr584g3zw3991vnhks-libGL-1.7.0/lib/libGL.so.1: error adding symbols: DSO missing from command line
 
   nativeBuildInputs = [
     cmake

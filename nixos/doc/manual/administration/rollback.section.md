@@ -25,14 +25,14 @@ system:
 This is equivalent to running:
 
 ```ShellSession
-# /nix/var/nix/profiles/system-N-link/bin/switch-to-configuration switch
+# /data/data/com.termux/files/nix/var/nix/profiles/system-N-link/bin/switch-to-configuration switch
 ```
 
 where `N` is the number of the NixOS system configuration. To get a
 list of the available configurations, do:
 
 ```ShellSession
-$ ls -l /nix/var/nix/profiles/system-*-link
+$ ls -l /data/data/com.termux/files/nix/var/nix/profiles/system-*-link
 ...
-lrwxrwxrwx 1 root root 78 Aug 12 13:54 /nix/var/nix/profiles/system-268-link -> /nix/store/202b...-nixos-13.07pre4932_5a676e4-4be1055
+lrwxrwxrwx 1 root root 78 Aug 12 13:54 /data/data/com.termux/files/nix/var/nix/profiles/system-268-link -> /data/data/com.termux/files/nix/store/202b...-nixos-13.07pre4932_5a676e4-4be1055
 ```

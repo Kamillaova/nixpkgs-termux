@@ -174,7 +174,7 @@ in
       })
       (mkIf (!isNixAtLeast "2.8") {
         rules = [
-          "d /nix/var/nix/daemon-socket 0755 root root - -"
+          "d /data/data/com.termux/files/nix/var/nix/daemon-socket 0755 root root - -"
         ];
       })
     ];
@@ -190,7 +190,7 @@ in
           // { CURL_CA_BUNDLE = "/etc/ssl/certs/ca-certificates.crt"; }
           // config.networking.proxy.envVars;
 
-        unitConfig.RequiresMountsFor = "/nix/store";
+        unitConfig.RequiresMountsFor = "/data/data/com.termux/files/nix/store";
 
         serviceConfig =
           {

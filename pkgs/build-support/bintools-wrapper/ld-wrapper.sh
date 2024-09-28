@@ -58,7 +58,7 @@ if [[ "${NIX_ENFORCE_PURITY:-}" = 1 && -n "${NIX_STORE:-}"
         elif [ "${p:0:10}" = /LIBPATH:/ ] && badPath "${p:9}"; then
             reject "${p:9}"
         # We need to not match LINK.EXE-style flags like
-        # /NOLOGO or /LIBPATH:/nix/store/foo
+        # /NOLOGO or /LIBPATH:/data/data/com.termux/files/nix/store/foo
         elif [[ $p =~ ^/[^:]*/ ]] && badPath "$p"; then
             reject "$p"
         elif [ "${p:0:9}" = --sysroot ]; then

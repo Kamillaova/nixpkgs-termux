@@ -37,7 +37,7 @@ stdenv.mkDerivation rec {
   '';
 
   # To fix this error when running:
-  # The file "/nix/store/path/whatever.exe" is an not a valid CIL image
+  # The file "/data/data/com.termux/files/nix/store/path/whatever.exe" is an not a valid CIL image
   dontStrip = true;
 
   meta = {

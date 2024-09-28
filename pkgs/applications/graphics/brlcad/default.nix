@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
 
   patches = [
     # This commit was bringing an impurity in the rpath resulting in:
-    # RPATH of binary /nix/store/rq2hjvfgq2nvh5zxch51ij34rqqdpark-brlcad-7.38.0/bin/tclsh contains a forbidden reference to /build/
+    # RPATH of binary /data/data/com.termux/files/nix/store/rq2hjvfgq2nvh5zxch51ij34rqqdpark-brlcad-7.38.0/bin/tclsh contains a forbidden reference to /build/
     (fetchpatch {
       url = "https://github.com/BRL-CAD/brlcad/commit/fbdbf042b2db4c7d46839a17bbf4985cdb81f0ae.patch";
       revert = true;

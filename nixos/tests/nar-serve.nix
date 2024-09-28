@@ -43,7 +43,7 @@ import ./make-test-python.nix (
       drvHash = drvName.split("-")[0]
       server.wait_for_unit("nar-serve.service")
       server.succeed(
-          "curl -o hello -f http://localhost:8383/nix/store/{}/bin/hello".format(drvHash)
+          "curl -o hello -f http://localhost:8383/data/data/com.termux/files/nix/store/{}/bin/hello".format(drvHash)
       )
     '';
   }

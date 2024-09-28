@@ -16,7 +16,7 @@ add the following lines to bindirCmds property of  printing/cupsd.nix:
 Then rebuild your system and add your printer using the the localhost:603 cups web interface
 select the extracted .ppd file which can be found in the model directory of
 sed -n 's/^ServerBin //p' $(sed -n 's/respawn.*-c \(.*''\) -F.*''/\1/p' /etc/event.d/cupsd)
-(sorry, cups still doesn't see it. You could copy it into /nix/store/
+(sorry, cups still doesn't see it. You could copy it into /data/data/com.termux/files/nix/store/
 *-cups/lib/cups/model/ and you would be able to select canon -> PIXMA 4000
 then. I've tried that.
 

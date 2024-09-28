@@ -417,15 +417,15 @@ in {
         default = {};
         example = literalExpression ''
           { echelon = {                   # SSID with no spaces or special characters
-              psk = "abcdefgh";           # (password will be written to /nix/store!)
+              psk = "abcdefgh";           # (password will be written to /data/data/com.termux/files/nix/store!)
             };
 
             echelon = {                   # safe version of the above: read PSK from the
               pskRaw = "ext:psk_echelon"; # variable psk_echelon, defined in secretsFile,
-            };                            # this won't leak into /nix/store
+            };                            # this won't leak into /data/data/com.termux/files/nix/store
 
             "echelon's AP" = {            # SSID with spaces and/or special characters
-               psk = "ijklmnop";          # (password will be written to /nix/store!)
+               psk = "ijklmnop";          # (password will be written to /data/data/com.termux/files/nix/store!)
             };
 
             "free.wifi" = {};             # Public wireless network

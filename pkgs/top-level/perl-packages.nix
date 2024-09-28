@@ -75,7 +75,7 @@ with self; {
      Example:
        pkgs = import <nixpkgs> { }
        makePerlPath [ pkgs.perlPackages.libnet ]
-       => "/nix/store/n0m1fk9c960d8wlrs62sncnadygqqc6y-perl-Net-SMTP-1.25/lib/perl5/site_perl"
+       => "/data/data/com.termux/files/nix/store/n0m1fk9c960d8wlrs62sncnadygqqc6y-perl-Net-SMTP-1.25/lib/perl5/site_perl"
   */
   makePerlPath = lib.makeSearchPathOutput "lib" perl.libPrefix;
 
@@ -84,7 +84,7 @@ with self; {
      Example:
        pkgs = import <nixpkgs> { }
        makeFullPerlPath [ pkgs.perlPackages.CGI ]
-       => "/nix/store/fddivfrdc1xql02h9q500fpnqy12c74n-perl-CGI-4.38/lib/perl5/site_perl:/nix/store/8hsvdalmsxqkjg0c5ifigpf31vc4vsy2-perl-HTML-Parser-3.72/lib/perl5/site_perl:/nix/store/zhc7wh0xl8hz3y3f71nhlw1559iyvzld-perl-HTML-Tagset-3.20/lib/perl5/site_perl"
+       => "/data/data/com.termux/files/nix/store/fddivfrdc1xql02h9q500fpnqy12c74n-perl-CGI-4.38/lib/perl5/site_perl:/data/data/com.termux/files/nix/store/8hsvdalmsxqkjg0c5ifigpf31vc4vsy2-perl-HTML-Parser-3.72/lib/perl5/site_perl:/data/data/com.termux/files/nix/store/zhc7wh0xl8hz3y3f71nhlw1559iyvzld-perl-HTML-Tagset-3.20/lib/perl5/site_perl"
   */
   makeFullPerlPath = deps: makePerlPath (lib.misc.closePropagation deps);
 
@@ -11235,7 +11235,7 @@ with self; {
     };
     propagatedBuildInputs = [ pkgs.libappindicator-gtk2 pkgs.libdbusmenu-gtk2 pkgs.gtk2 pkgs.pkg-config Gtk2 ];
     # Tests fail due to no display:
-    #   Gtk-WARNING **: cannot open display:  at /nix/store/HASH-perl-Gtk2-1.2498/lib/perl5/site_perl/5.22.2/x86_64-linux-thread-multi/Gtk2.pm line 126.
+    #   Gtk-WARNING **: cannot open display:  at /data/data/com.termux/files/nix/store/HASH-perl-Gtk2-1.2498/lib/perl5/site_perl/5.22.2/x86_64-linux-thread-multi/Gtk2.pm line 126.
     doCheck = false;
     meta = {
       description = "Perl extension for libappindicator";
@@ -11253,7 +11253,7 @@ with self; {
     buildInputs = [ pkgs.gtkimageview pkgs.gtk2 ];
     propagatedBuildInputs = [ Gtk2 ];
     # Tests fail due to no display server:
-    #   Gtk-WARNING **: cannot open display:  at /nix/store/HASH-perl-Gtk2-1.2498/lib/perl5/site_perl/5.22.2/x86_64-linux-thread-multi/Gtk2.pm line 126.
+    #   Gtk-WARNING **: cannot open display:  at /data/data/com.termux/files/nix/store/HASH-perl-Gtk2-1.2498/lib/perl5/site_perl/5.22.2/x86_64-linux-thread-multi/Gtk2.pm line 126.
     #   t/animview.t ...........
     doCheck = false;
     meta = {

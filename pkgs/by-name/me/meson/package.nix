@@ -37,7 +37,7 @@ python3.pkgs.buildPythonApplication rec {
     # In typical distributions, RPATH is only needed for internal libraries so
     # meson removes everything else. With Nix, the locations of libraries
     # are not as predictable, therefore we need to keep them in the RPATH.
-    # At the moment we are keeping the paths starting with /nix/store.
+    # At the moment we are keeping the paths starting with /data/data/com.termux/files/nix/store.
     # https://github.com/NixOS/nixpkgs/issues/31222#issuecomment-365811634
     (substituteAll {
       src = ./001-fix-rpath.patch;

@@ -201,22 +201,22 @@ Arguments:
 
 ### String paths
 
-File sets do not support Nix store paths in strings such as `"/nix/store/...-source"`.
+File sets do not support Nix store paths in strings such as `"/data/data/com.termux/files/nix/store/...-source"`.
 
 Arguments:
 - (+) Such paths are usually produced by derivations, which means `toSource` would either:
   - Require [Import From Derivation](https://nixos.org/manual/nix/unstable/language/import-from-derivation) (IFD) if `builtins.path` is used as the underlying primitive
   - Require importing the entire `root` into the store such that derivations can be used to do the filtering
 - (+) The convenient path coercion like `union ./foo ./bar` wouldn't work for absolute paths, requiring more verbose alternate interfaces:
-  - `let root = "/nix/store/...-source"; in union "${root}/foo" "${root}/bar"`
+  - `let root = "/data/data/com.termux/files/nix/store/...-source"; in union "${root}/foo" "${root}/bar"`
 
     Verbose and dangerous because if `root` was a path, the entire path would get imported into the store.
 
-  - `toSource { root = "/nix/store/...-source"; fileset = union "./foo" "./bar"; }`
+  - `toSource { root = "/data/data/com.termux/files/nix/store/...-source"; fileset = union "./foo" "./bar"; }`
 
     Does not allow debug printing intermediate file set contents, since we don't know the paths contents before having a `root`.
 
-  - `let fs = lib.fileset.withRoot "/nix/store/...-source"; in fs.union "./foo" "./bar"`
+  - `let fs = lib.fileset.withRoot "/data/data/com.termux/files/nix/store/...-source"; in fs.union "./foo" "./bar"`
 
     Makes library functions impure since they depend on the contextual root path, questionable composability.
 

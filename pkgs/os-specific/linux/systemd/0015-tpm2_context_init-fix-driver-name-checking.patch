@@ -16,8 +16,8 @@ filename is then passed to dlopen for loading the driver.
 Our current approach for systemd to correctly locate these dynamically
 loaded libraries is to patch the filenames to include their absolute
 path. Thus the line mentioned above is patched into
-  fn = strjoina("/nix/store/xxxxxxx-tpm2-tss-3.2.0/lib/libtss2-tcti-", driver, ".so.0")
-yielding "/nix/store/xxxxxxx-tpm2-tss-3.2.0/lib/libtss2-tcti-device.so.0",
+  fn = strjoina("/data/data/com.termux/files/nix/store/xxxxxxx-tpm2-tss-3.2.0/lib/libtss2-tcti-", driver, ".so.0")
+yielding "/data/data/com.termux/files/nix/store/xxxxxxx-tpm2-tss-3.2.0/lib/libtss2-tcti-device.so.0",
 tripping the check.
 
 This patch relaxes the check to also accept absolute paths, by replacing

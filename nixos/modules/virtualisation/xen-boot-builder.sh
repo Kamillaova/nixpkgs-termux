@@ -62,9 +62,9 @@ for gen in "${gens[@]}"; do
         # `xen-$profile-generation-$number-specialisation-$specialisation.{cfg,conf}`
         xenGen=$(echo "$gen" | sed 's_/loader/entries/nixos_/loader/entries/xen_g;s_^.*/xen_xen_g;s_.conf$__g')
         bootParams=$(jq -re '."org.xenproject.bootspec.v1".xenParams | join(" ")' "$bootspecFile")
-        kernel=$(jq -re '."org.nixos.bootspec.v1".kernel | sub("^/nix/store/"; "") | sub("/bzImage"; "-bzImage.efi")' "$bootspecFile")
+        kernel=$(jq -re '."org.nixos.bootspec.v1".kernel | sub("^/data/data/com.termux/files/nix/store/"; "") | sub("/bzImage"; "-bzImage.efi")' "$bootspecFile")
         kernelParams=$(jq -re '."org.nixos.bootspec.v1".kernelParams | join(" ")' "$bootspecFile")
-        initrd=$(jq -re '."org.nixos.bootspec.v1".initrd | sub("^/nix/store/"; "") | sub("/initrd"; "-initrd.efi")' "$bootspecFile")
+        initrd=$(jq -re '."org.nixos.bootspec.v1".initrd | sub("^/data/data/com.termux/files/nix/store/"; "") | sub("/initrd"; "-initrd.efi")' "$bootspecFile")
         init=$(jq -re '."org.nixos.bootspec.v1".init' "$bootspecFile")
         title=$(sed -nr 's/^title (.*)$/\1/p' "$gen")
         version=$(sed -nr 's/^version (.*)$/\1/p' "$gen")

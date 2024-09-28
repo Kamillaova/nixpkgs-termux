@@ -275,8 +275,8 @@ This provides us with some useful documentation for using our packages.  However
 {
   packageOverrides = pkgs: with pkgs; rec {
     myProfile = writeText "my-profile" ''
-      export PATH=$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/sbin:/bin:/usr/sbin:/usr/bin
-      export MANPATH=$HOME/.nix-profile/share/man:/nix/var/nix/profiles/default/share/man:/usr/share/man
+      export PATH=$HOME/.nix-profile/bin:/data/data/com.termux/files/nix/var/nix/profiles/default/bin:/sbin:/bin:/usr/sbin:/usr/bin
+      export MANPATH=$HOME/.nix-profile/share/man:/data/data/com.termux/files/nix/var/nix/profiles/default/share/man:/usr/share/man
     '';
     myPackages = pkgs.buildEnv {
       name = "my-packages";
@@ -326,9 +326,9 @@ Configuring GNU info is a little bit trickier than man pages. To work correctly,
 {
   packageOverrides = pkgs: with pkgs; rec {
     myProfile = writeText "my-profile" ''
-      export PATH=$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/sbin:/bin:/usr/sbin:/usr/bin
-      export MANPATH=$HOME/.nix-profile/share/man:/nix/var/nix/profiles/default/share/man:/usr/share/man
-      export INFOPATH=$HOME/.nix-profile/share/info:/nix/var/nix/profiles/default/share/info:/usr/share/info
+      export PATH=$HOME/.nix-profile/bin:/data/data/com.termux/files/nix/var/nix/profiles/default/bin:/sbin:/bin:/usr/sbin:/usr/bin
+      export MANPATH=$HOME/.nix-profile/share/man:/data/data/com.termux/files/nix/var/nix/profiles/default/share/man:/usr/share/man
+      export INFOPATH=$HOME/.nix-profile/share/info:/data/data/com.termux/files/nix/var/nix/profiles/default/share/info:/usr/share/info
     '';
     myPackages = pkgs.buildEnv {
       name = "my-packages";

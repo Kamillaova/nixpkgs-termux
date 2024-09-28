@@ -6,11 +6,11 @@
 # …which used nixpkgs revision dd5621df6dcb90122b50da5ec31c411a0de3e538
 # to instantiate:
 #
-#   /nix/store/g480ass2vjmakaq03z7k2j95xnxh206a-stdenv-bootstrap-tools.drv
+#   /data/data/com.termux/files/nix/store/g480ass2vjmakaq03z7k2j95xnxh206a-stdenv-bootstrap-tools.drv
 #
 # …and then built:
 #
-#   /nix/store/95lm0y33dayag4542s8bi83s31bw68dr-stdenv-bootstrap-tools
+#   /data/data/com.termux/files/nix/store/95lm0y33dayag4542s8bi83s31bw68dr-stdenv-bootstrap-tools
 #
 {
   busybox = import <nix/fetchurl.nix> {

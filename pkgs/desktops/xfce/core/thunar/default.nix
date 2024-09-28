@@ -52,7 +52,7 @@ let unwrapped = mkXfceDerivation {
 
   # the desktop file … is in an insecure location»
   # which pops up when invoking desktop files that are
-  # symlinks to the /nix/store
+  # symlinks to the /data/data/com.termux/files/nix/store
   #
   # this error was added by this commit:
   # https://github.com/xfce-mirror/thunar/commit/1ec8ff89ec5a3314fcd6a57f1475654ddecc9875

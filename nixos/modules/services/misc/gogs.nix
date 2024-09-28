@@ -221,10 +221,10 @@ in
         HOOKS=$(find ${cfg.repositoryRoot} -mindepth 4 -maxdepth 4 -type f -wholename "*git/hooks/*")
         if [ "$HOOKS" ]
         then
-          sed -ri 's,/nix/store/[a-z0-9.-]+/bin/gogs,${pkgs.gogs}/bin/gogs,g' $HOOKS
-          sed -ri 's,/nix/store/[a-z0-9.-]+/bin/env,${pkgs.coreutils}/bin/env,g' $HOOKS
-          sed -ri 's,/nix/store/[a-z0-9.-]+/bin/bash,${pkgs.bash}/bin/bash,g' $HOOKS
-          sed -ri 's,/nix/store/[a-z0-9.-]+/bin/perl,${pkgs.perl}/bin/perl,g' $HOOKS
+          sed -ri 's,/data/data/com.termux/files/nix/store/[a-z0-9.-]+/bin/gogs,${pkgs.gogs}/bin/gogs,g' $HOOKS
+          sed -ri 's,/data/data/com.termux/files/nix/store/[a-z0-9.-]+/bin/env,${pkgs.coreutils}/bin/env,g' $HOOKS
+          sed -ri 's,/data/data/com.termux/files/nix/store/[a-z0-9.-]+/bin/bash,${pkgs.bash}/bin/bash,g' $HOOKS
+          sed -ri 's,/data/data/com.termux/files/nix/store/[a-z0-9.-]+/bin/perl,${pkgs.perl}/bin/perl,g' $HOOKS
         fi
       '';
 

@@ -1,7 +1,7 @@
 # On macOS, binaries refer to dynamic library dependencies using
 # either relative paths (e.g. "libicudata.dylib", searched relative to
 # $DYLD_LIBRARY_PATH) or absolute paths
-# (e.g. "/nix/store/.../lib/libicudata.dylib").  In Nix, the latter is
+# (e.g. "/data/data/com.termux/files/nix/store/.../lib/libicudata.dylib").  In Nix, the latter is
 # preferred since it allows programs to just work.  When linking
 # against a library (e.g. "-licudata"), the linker uses the install
 # name embedded in the dylib (which can be shown using "otool -D").

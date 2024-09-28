@@ -436,7 +436,7 @@ python3.buildEnv.override {
 and running `nix-build` will create
 
 ```
-/nix/store/cf1xhjwzmdki7fasgr4kz6di72ykicl5-python-2.7.8-env
+/data/data/com.termux/files/nix/store/cf1xhjwzmdki7fasgr4kz6di72ykicl5-python-2.7.8-env
 ```
 
 with wrapped binaries in `bin/`.
@@ -645,8 +645,8 @@ directly like so:
 ```sh
 $ nix-shell -p "python311.withPackages (ps: with ps; [ numpy toolz requests ])" --run python3
 this derivation will be built:
-  /nix/store/r19yf5qgfiakqlhkgjahbg3zg79549n4-python3-3.11.2-env.drv
-building '/nix/store/r19yf5qgfiakqlhkgjahbg3zg79549n4-python3-3.11.2-env.drv'...
+  /data/data/com.termux/files/nix/store/r19yf5qgfiakqlhkgjahbg3zg79549n4-python3-3.11.2-env.drv
+building '/data/data/com.termux/files/nix/store/r19yf5qgfiakqlhkgjahbg3zg79549n4-python3-3.11.2-env.drv'...
 created 273 symlinks in user environment
 Python 3.11.2 (main, Feb  7 2023, 13:52:42) [GCC 12.2.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
@@ -1685,7 +1685,7 @@ nix-shell --run "unset SOURCE_DATE_EPOCH; python3 setup.py bdist_wheel"
 If you get the following error:
 
 ```
-could not create '/nix/store/6l1bvljpy8gazlsw2aw9skwwp4pmvyxw-python-2.7.8/etc':
+could not create '/data/data/com.termux/files/nix/store/6l1bvljpy8gazlsw2aw9skwwp4pmvyxw-python-2.7.8/etc':
 Permission denied
 ```
 

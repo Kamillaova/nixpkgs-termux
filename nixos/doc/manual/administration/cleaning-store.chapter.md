@@ -2,7 +2,7 @@
 
 Nix has a purely functional model, meaning that packages are never
 upgraded in place. Instead new versions of packages end up in a
-different location in the Nix store (`/nix/store`). You should
+different location in the Nix store (`/data/data/com.termux/files/nix/store`). You should
 periodically run Nix's *garbage collector* to remove old, unreferenced
 packages. This is easy:
 
@@ -39,11 +39,11 @@ $ nix-collect-garbage -d
 You can also do this for specific profiles, e.g.
 
 ```ShellSession
-$ nix-env -p /nix/var/nix/profiles/per-user/eelco/profile --delete-generations old
+$ nix-env -p /data/data/com.termux/files/nix/var/nix/profiles/per-user/eelco/profile --delete-generations old
 ```
 
 Note that NixOS system configurations are stored in the profile
-`/nix/var/nix/profiles/system`.
+`/data/data/com.termux/files/nix/var/nix/profiles/system`.
 
 Another way to reclaim disk space (often as much as 40% of the size of
 the Nix store) is to run Nix's store optimiser, which seeks out

@@ -51,7 +51,7 @@ let
   ];
 
   # Merge bind mount paths and remove paths where a prefix is already mounted.
-  # This makes sure that if e.g. the tls_chain is in the nix store and /nix/store is already in the mount
+  # This makes sure that if e.g. the tls_chain is in the nix store and /data/data/com.termux/files/nix/store is already in the mount
   # paths, no new bind mount is added. Adding subpaths caused problems on ofborg.
   hasPrefixInList =
     list: newPath: any (path: hasPrefix (builtins.toString path) (builtins.toString newPath)) list;
@@ -71,7 +71,7 @@ let
     # after and requiring kanidm-* wait for it to complete startup
     Type = "notify";
     BindReadOnlyPaths = [
-      "/nix/store"
+      "/data/data/com.termux/files/nix/store"
       # For healthcheck notifications
       "/run/systemd/notify"
       "-/etc/resolv.conf"
@@ -908,7 +908,7 @@ in
         ExecStart = "${cfg.package}/bin/kanidm_unixd_tasks";
 
         BindReadOnlyPaths = [
-          "/nix/store"
+          "/data/data/com.termux/files/nix/store"
           "-/etc/resolv.conf"
           "-/etc/nsswitch.conf"
           "-/etc/hosts"

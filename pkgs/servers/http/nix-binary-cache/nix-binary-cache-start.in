@@ -76,7 +76,7 @@ workingdir="$(@coreutils@/mktemp -d)"
 cd "$workingdir"
 
 PORT=8080
-(echo "STORE_DIR=${NIX_STORE_DIR:-/nix/store}"; parse_opts "$@" 
+(echo "STORE_DIR=${NIX_STORE_DIR:-/data/data/com.termux/files/nix/store}"; parse_opts "$@" 
   ) > nix-binary-cache.conf || exit
 . "$workingdir/nix-binary-cache.conf"
 

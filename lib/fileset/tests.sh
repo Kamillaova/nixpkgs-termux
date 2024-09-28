@@ -36,7 +36,7 @@ mkdir "$work"
 cd "$work"
 
 # Crudely unquotes a JSON string by just taking everything between the first and the second quote.
-# We're only using this for resulting /nix/store paths, which can't contain " anyways,
+# We're only using this for resulting /data/data/com.termux/files/nix/store paths, which can't contain " anyways,
 # nor can they contain any other characters that would need to be escaped specially in JSON
 # This way we don't need to add a dependency on e.g. jq
 crudeUnquoteJSON() {
@@ -350,7 +350,7 @@ checkFileset() {
 # And indeed, Darwin's bash only supports the former
 
 # Absolute paths in strings cannot be passed as `root`
-expectFailure 'toSource { root = "/nix/store/foobar"; fileset = ./.; }' 'lib.fileset.toSource: `root` \(/nix/store/foobar\) is a string-like value, but it should be a path instead.
+expectFailure 'toSource { root = "/data/data/com.termux/files/nix/store/foobar"; fileset = ./.; }' 'lib.fileset.toSource: `root` \(/data/data/com.termux/files/nix/store/foobar\) is a string-like value, but it should be a path instead.
 [[:blank:]]*Paths in strings are not supported by `lib.fileset`, use `lib.sources` or derivations instead.'
 
 expectFailure 'toSource { root = cleanSourceWith { src = ./.; }; fileset = ./.; }' 'lib.fileset.toSource: `root` is a `lib.sources`-based value, but it should be a path instead.

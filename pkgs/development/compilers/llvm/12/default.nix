@@ -335,7 +335,7 @@ let
         ../common/compiler-rt/7-12-codesign.patch # Revert compiler-rt commit that makes codesign mandatory
         ./compiler-rt/X86-support-extension.patch # Add support for i486 i586 i686 by reusing i386 config
         ./compiler-rt/gnu-install-dirs.patch
-        # ld-wrapper dislikes `-rpath-link //nix/store`, so we normalize away the
+        # ld-wrapper dislikes `-rpath-link //data/data/com.termux/files/nix/store`, so we normalize away the
         # extra `/`.
         ./compiler-rt/normalize-var.patch
         ../common/compiler-rt/darwin-plistbuddy-workaround.patch
@@ -358,7 +358,7 @@ let
         ../common/compiler-rt/7-12-codesign.patch # Revert compiler-rt commit that makes codesign mandatory
         ./compiler-rt/X86-support-extension.patch # Add support for i486 i586 i686 by reusing i386 config
         ./compiler-rt/gnu-install-dirs.patch
-        # ld-wrapper dislikes `-rpath-link //nix/store`, so we normalize away the
+        # ld-wrapper dislikes `-rpath-link //data/data/com.termux/files/nix/store`, so we normalize away the
         # extra `/`.
         ./compiler-rt/normalize-var.patch
         ../common/compiler-rt/darwin-plistbuddy-workaround.patch

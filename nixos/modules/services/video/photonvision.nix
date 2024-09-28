@@ -40,7 +40,7 @@ in
 
         BindReadOnlyPaths = [
           # mount the nix store read-only
-          "/nix/store"
+          "/data/data/com.termux/files/nix/store"
 
           # the JRE reads the user.home property from /etc/passwd
           "/etc/passwd"

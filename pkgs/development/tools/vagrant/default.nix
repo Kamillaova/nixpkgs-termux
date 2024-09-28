@@ -30,7 +30,7 @@ let
 
     # This replaces the gem symlinks with directories, resolving this
     # error when running vagrant (I have no idea why):
-    # /nix/store/p4hrycs0zaa9x0gsqylbk577ppnryixr-vagrant-2.2.6/lib/ruby/gems/2.6.0/gems/i18n-1.1.1/lib/i18n/config.rb:6:in `<module:I18n>': uninitialized constant I18n::Config (NameError)
+    # /data/data/com.termux/files/nix/store/p4hrycs0zaa9x0gsqylbk577ppnryixr-vagrant-2.2.6/lib/ruby/gems/2.6.0/gems/i18n-1.1.1/lib/i18n/config.rb:6:in `<module:I18n>': uninitialized constant I18n::Config (NameError)
     postBuild = ''
       for gem in "$out"/lib/ruby/gems/*/gems/*; do
         cp -a "$gem/" "$gem.new"

@@ -242,7 +242,7 @@ in
           Local configuration files, written into {file}`/etc/rspamd/local.d/{name}`.
         '';
         example = literalExpression ''
-          { "redis.conf".source = "/nix/store/.../etc/dir/redis.conf";
+          { "redis.conf".source = "/data/data/com.termux/files/nix/store/.../etc/dir/redis.conf";
             "arc.conf".text = "allow_envfrom_empty = true;";
           }
         '';
@@ -255,7 +255,7 @@ in
           Overridden configuration files, written into {file}`/etc/rspamd/override.d/{name}`.
         '';
         example = literalExpression ''
-          { "redis.conf".source = "/nix/store/.../etc/dir/redis.conf";
+          { "redis.conf".source = "/data/data/com.termux/files/nix/store/.../etc/dir/redis.conf";
             "arc.conf".text = "allow_envfrom_empty = true;";
           }
         '';

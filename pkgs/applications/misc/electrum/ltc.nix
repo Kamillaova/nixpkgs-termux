@@ -115,7 +115,7 @@ python3.pkgs.buildPythonApplication {
   postInstall = lib.optionalString stdenv.hostPlatform.isLinux ''
     # Despite setting usr_share above, these files are installed under
     # $out/nix ...
-    mv $out/${python3.sitePackages}/nix/store"/"*/share $out
+    mv $out/${python3.sitePackages}/data/data/com.termux/files/nix/store"/"*/share $out
     rm -rf $out/${python3.sitePackages}/nix
 
     substituteInPlace $out/share/applications/electrum-ltc.desktop \

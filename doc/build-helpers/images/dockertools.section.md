@@ -263,15 +263,15 @@ The result of building this package is a `.tar.gz` file that can be loaded into 
 ```shell
 $ nix-build
 (some output removed for clarity)
-building '/nix/store/yw0adm4wpsw1w6j4fb5hy25b3arr9s1v-docker-image-redis.tar.gz.drv'...
+building '/data/data/com.termux/files/nix/store/yw0adm4wpsw1w6j4fb5hy25b3arr9s1v-docker-image-redis.tar.gz.drv'...
 Adding layer...
 tar: Removing leading `/' from member names
 Adding meta...
 Cooking the image...
 Finished.
-/nix/store/p4dsg62inh9d2ksy3c7bv58xa851dasr-docker-image-redis.tar.gz
+/data/data/com.termux/files/nix/store/p4dsg62inh9d2ksy3c7bv58xa851dasr-docker-image-redis.tar.gz
 
-$ docker image load -i /nix/store/p4dsg62inh9d2ksy3c7bv58xa851dasr-docker-image-redis.tar.gz
+$ docker image load -i /data/data/com.termux/files/nix/store/p4dsg62inh9d2ksy3c7bv58xa851dasr-docker-image-redis.tar.gz
 (some output removed for clarity)
 Loaded image: redis:latest
 ```
@@ -416,19 +416,19 @@ The result of building this package is a `.tar.gz` file that can be loaded into 
 ```shell
 $ nix-build
 (some output removed for clarity)
-building '/nix/store/bk8bnrbw10nq7p8pvcmdr0qf57y6scha-hello.tar.gz.drv'...
+building '/data/data/com.termux/files/nix/store/bk8bnrbw10nq7p8pvcmdr0qf57y6scha-hello.tar.gz.drv'...
 No 'fromImage' provided
-Creating layer 1 from paths: ['/nix/store/i93s7xxblavsacpy82zdbn4kplsyq48l-libunistring-1.1']
-Creating layer 2 from paths: ['/nix/store/ji01n9vinnj22nbrb86nx8a1ssgpilx8-libidn2-2.3.4']
-Creating layer 3 from paths: ['/nix/store/ldrslljw4rg026nw06gyrdwl78k77vyq-xgcc-12.3.0-libgcc']
-Creating layer 4 from paths: ['/nix/store/9y8pmvk8gdwwznmkzxa6pwyah52xy3nk-glibc-2.38-27']
-Creating layer 5 from paths: ['/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1']
+Creating layer 1 from paths: ['/data/data/com.termux/files/nix/store/i93s7xxblavsacpy82zdbn4kplsyq48l-libunistring-1.1']
+Creating layer 2 from paths: ['/data/data/com.termux/files/nix/store/ji01n9vinnj22nbrb86nx8a1ssgpilx8-libidn2-2.3.4']
+Creating layer 3 from paths: ['/data/data/com.termux/files/nix/store/ldrslljw4rg026nw06gyrdwl78k77vyq-xgcc-12.3.0-libgcc']
+Creating layer 4 from paths: ['/data/data/com.termux/files/nix/store/9y8pmvk8gdwwznmkzxa6pwyah52xy3nk-glibc-2.38-27']
+Creating layer 5 from paths: ['/data/data/com.termux/files/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1']
 Creating layer 6 with customisation...
 Adding manifests...
 Done.
-/nix/store/hxcz7snvw7f8rzhbh6mv8jq39d992905-hello.tar.gz
+/data/data/com.termux/files/nix/store/hxcz7snvw7f8rzhbh6mv8jq39d992905-hello.tar.gz
 
-$ docker image load -i /nix/store/hxcz7snvw7f8rzhbh6mv8jq39d992905-hello.tar.gz
+$ docker image load -i /data/data/com.termux/files/nix/store/hxcz7snvw7f8rzhbh6mv8jq39d992905-hello.tar.gz
 (some output removed for clarity)
 Loaded image: hello:latest
 ```
@@ -660,15 +660,15 @@ Note that in this case, the image is never added to the Nix store, but instead s
 ```shell
 $ nix-build
 (output removed for clarity)
-/nix/store/wsz2xl8ckxnlb769irvq6jv1280dfvxd-stream-hello
+/data/data/com.termux/files/nix/store/wsz2xl8ckxnlb769irvq6jv1280dfvxd-stream-hello
 
-$ /nix/store/wsz2xl8ckxnlb769irvq6jv1280dfvxd-stream-hello | docker image load
+$ /data/data/com.termux/files/nix/store/wsz2xl8ckxnlb769irvq6jv1280dfvxd-stream-hello | docker image load
 No 'fromImage' provided
-Creating layer 1 from paths: ['/nix/store/i93s7xxblavsacpy82zdbn4kplsyq48l-libunistring-1.1']
-Creating layer 2 from paths: ['/nix/store/ji01n9vinnj22nbrb86nx8a1ssgpilx8-libidn2-2.3.4']
-Creating layer 3 from paths: ['/nix/store/ldrslljw4rg026nw06gyrdwl78k77vyq-xgcc-12.3.0-libgcc']
-Creating layer 4 from paths: ['/nix/store/9y8pmvk8gdwwznmkzxa6pwyah52xy3nk-glibc-2.38-27']
-Creating layer 5 from paths: ['/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1']
+Creating layer 1 from paths: ['/data/data/com.termux/files/nix/store/i93s7xxblavsacpy82zdbn4kplsyq48l-libunistring-1.1']
+Creating layer 2 from paths: ['/data/data/com.termux/files/nix/store/ji01n9vinnj22nbrb86nx8a1ssgpilx8-libidn2-2.3.4']
+Creating layer 3 from paths: ['/data/data/com.termux/files/nix/store/ldrslljw4rg026nw06gyrdwl78k77vyq-xgcc-12.3.0-libgcc']
+Creating layer 4 from paths: ['/data/data/com.termux/files/nix/store/9y8pmvk8gdwwznmkzxa6pwyah52xy3nk-glibc-2.38-27']
+Creating layer 5 from paths: ['/data/data/com.termux/files/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1']
 Creating layer 6 with customisation...
 Adding manifests...
 Done.
@@ -694,11 +694,11 @@ The `hello` package depends on 4 other packages:
 
 ```shell
 $ nix-store --query -R $(nix-build -A hello)
-/nix/store/i93s7xxblavsacpy82zdbn4kplsyq48l-libunistring-1.1
-/nix/store/ji01n9vinnj22nbrb86nx8a1ssgpilx8-libidn2-2.3.4
-/nix/store/ldrslljw4rg026nw06gyrdwl78k77vyq-xgcc-12.3.0-libgcc
-/nix/store/9y8pmvk8gdwwznmkzxa6pwyah52xy3nk-glibc-2.38-27
-/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1
+/data/data/com.termux/files/nix/store/i93s7xxblavsacpy82zdbn4kplsyq48l-libunistring-1.1
+/data/data/com.termux/files/nix/store/ji01n9vinnj22nbrb86nx8a1ssgpilx8-libidn2-2.3.4
+/data/data/com.termux/files/nix/store/ldrslljw4rg026nw06gyrdwl78k77vyq-xgcc-12.3.0-libgcc
+/data/data/com.termux/files/nix/store/9y8pmvk8gdwwznmkzxa6pwyah52xy3nk-glibc-2.38-27
+/data/data/com.termux/files/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1
 ```
 
 This means that all these packages will be included in the image generated by `streamLayeredImage`.
@@ -709,7 +709,7 @@ The image generated will have the following directory structure (some directorie
 
 ```
 ├── bin
-│   └── hello → /nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/bin/hello
+│   └── hello → /data/data/com.termux/files/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/bin/hello
 ├── nix
 │   └── store
 │       ├─⊕ 9y8pmvk8gdwwznmkzxa6pwyah52xy3nk-glibc-2.38-27
@@ -719,15 +719,15 @@ The image generated will have the following directory structure (some directorie
 │       └─⊕ zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1
 └── share
     ├── info
-    │   └── hello.info → /nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/share/info/hello.info
+    │   └── hello.info → /data/data/com.termux/files/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/share/info/hello.info
     ├─⊕ locale
     └── man
         └── man1
-            └── hello.1.gz → /nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/share/man/man1/hello.1.gz
+            └── hello.1.gz → /data/data/com.termux/files/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/share/man/man1/hello.1.gz
 ```
 
-Each of the packages in `/nix/store` comes from a layer in the image.
-The final layer adds the `/bin` and `/share` directories, but they only contain links to the actual files in `/nix/store`.
+Each of the packages in `/data/data/com.termux/files/nix/store` comes from a layer in the image.
+The final layer adds the `/bin` and `/share` directories, but they only contain links to the actual files in `/data/data/com.termux/files/nix/store`.
 
 If our package sets `includeStorePaths` to `false`, we'll end up with only the final layer with the links, but the actual files won't exist in the image:
 
@@ -744,17 +744,17 @@ After building this package, the image will have the following directory structu
 
 ```
 ├── bin
-│   └── hello → /nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/bin/hello
+│   └── hello → /data/data/com.termux/files/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/bin/hello
 └── share
     ├── info
-    │   └── hello.info → /nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/share/info/hello.info
+    │   └── hello.info → /data/data/com.termux/files/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/share/info/hello.info
     ├─⊕ locale
     └── man
         └── man1
-            └── hello.1.gz → /nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/share/man/man1/hello.1.gz
+            └── hello.1.gz → /data/data/com.termux/files/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1/share/man/man1/hello.1.gz
 ```
 
-Note how the links point to paths in `/nix/store`, but they're not included in the image itself.
+Note how the links point to paths in `/data/data/com.termux/files/nix/store`, but they're not included in the image itself.
 This is why you need extra tooling when using `includeStorePaths`:
 a container created from such image won't find any of the files it needs to run otherwise.
 :::
@@ -917,7 +917,7 @@ Writing manifest to image destination
 -> ImageDigest: sha256:498fa2d7f2b5cb3891a4edf20f3a8f8496e70865099ba72540494cd3e2942634
 -> FinalImageName: nixos/nix
 -> FinalImageTag: latest
--> ImagePath: /nix/store/4mxy9mn6978zkvlc670g5703nijsqc95-docker-image-nixos-nix-latest.tar
+-> ImagePath: /data/data/com.termux/files/nix/store/4mxy9mn6978zkvlc670g5703nijsqc95-docker-image-nixos-nix-latest.tar
 -> ImageHash: 1q6cf2pdrasa34zz0jw7pbs6lvv52rq2aibgxccbwcagwkg2qj1q
 {
   imageName = "nixos/nix";
@@ -1039,23 +1039,23 @@ Unpacking layer b7da2076b60ebc0ea6824ef641978332b8ac908d47b2d07ff31b9cc362245605
 Executing post-mount steps...
 Packing raw image...
 [    1.660036] reboot: Power down
-/nix/store/x6a5m7c6zdpqz1d8j7cnzpx9glzzvd2h-hello
+/data/data/com.termux/files/nix/store/x6a5m7c6zdpqz1d8j7cnzpx9glzzvd2h-hello
 ```
 
 The following command lists some of the contents of the output to verify that the structure of the archive is as expected:
 
 ```shell
-$ tar --exclude '*/share/*' --exclude 'nix/store/*/*' -tvf /nix/store/x6a5m7c6zdpqz1d8j7cnzpx9glzzvd2h-hello
+$ tar --exclude '*/share/*' --exclude 'nix/store/*/*' -tvf /data/data/com.termux/files/nix/store/x6a5m7c6zdpqz1d8j7cnzpx9glzzvd2h-hello
 drwxr-xr-x root/0            0 1979-12-31 16:00 ./
 drwxr-xr-x root/0            0 1979-12-31 16:00 ./bin/
-lrwxrwxrwx root/0            0 1979-12-31 16:00 ./bin/hello -> /nix/store/h92a9jd0lhhniv2q417hpwszd4jhys7q-hello-2.12.1/bin/hello
+lrwxrwxrwx root/0            0 1979-12-31 16:00 ./bin/hello -> /data/data/com.termux/files/nix/store/h92a9jd0lhhniv2q417hpwszd4jhys7q-hello-2.12.1/bin/hello
 dr-xr-xr-x root/0            0 1979-12-31 16:00 ./nix/
-dr-xr-xr-x root/0            0 1979-12-31 16:00 ./nix/store/
-dr-xr-xr-x root/0            0 1979-12-31 16:00 ./nix/store/05zbwhz8a7i2v79r9j21pl6m6cj0xi8k-libunistring-1.1/
-dr-xr-xr-x root/0            0 1979-12-31 16:00 ./nix/store/ayg5rhjhi9ic73hqw33mjqjxwv59ndym-xgcc-13.2.0-libgcc/
-dr-xr-xr-x root/0            0 1979-12-31 16:00 ./nix/store/h92a9jd0lhhniv2q417hpwszd4jhys7q-hello-2.12.1/
-dr-xr-xr-x root/0            0 1979-12-31 16:00 ./nix/store/m59xdgkgnjbk8kk6k6vbxmqnf82mk9s0-libidn2-2.3.4/
-dr-xr-xr-x root/0            0 1979-12-31 16:00 ./nix/store/p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27/
+dr-xr-xr-x root/0            0 1979-12-31 16:00 ./data/data/com.termux/files/nix/store/
+dr-xr-xr-x root/0            0 1979-12-31 16:00 ./data/data/com.termux/files/nix/store/05zbwhz8a7i2v79r9j21pl6m6cj0xi8k-libunistring-1.1/
+dr-xr-xr-x root/0            0 1979-12-31 16:00 ./data/data/com.termux/files/nix/store/ayg5rhjhi9ic73hqw33mjqjxwv59ndym-xgcc-13.2.0-libgcc/
+dr-xr-xr-x root/0            0 1979-12-31 16:00 ./data/data/com.termux/files/nix/store/h92a9jd0lhhniv2q417hpwszd4jhys7q-hello-2.12.1/
+dr-xr-xr-x root/0            0 1979-12-31 16:00 ./data/data/com.termux/files/nix/store/m59xdgkgnjbk8kk6k6vbxmqnf82mk9s0-libidn2-2.3.4/
+dr-xr-xr-x root/0            0 1979-12-31 16:00 ./data/data/com.termux/files/nix/store/p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27/
 drwxr-xr-x root/0            0 1979-12-31 16:00 ./share/
 ```
 :::
@@ -1081,8 +1081,8 @@ Building and importing it into Docker:
 ```shell
 $ nix-build
 (output removed for clarity)
-/nix/store/x6a5m7c6zdpqz1d8j7cnzpx9glzzvd2h-hello
-$ docker image import /nix/store/x6a5m7c6zdpqz1d8j7cnzpx9glzzvd2h-hello
+/data/data/com.termux/files/nix/store/x6a5m7c6zdpqz1d8j7cnzpx9glzzvd2h-hello
+$ docker image import /data/data/com.termux/files/nix/store/x6a5m7c6zdpqz1d8j7cnzpx9glzzvd2h-hello
 sha256:1d42dba415e9b298ea0decf6497fbce954de9b4fcb2984f91e307c8fedc1f52f
 $ docker image ls
 REPOSITORY                              TAG                IMAGE ID       CREATED         SIZE
@@ -1110,9 +1110,9 @@ However, since [`dockerTools.buildLayeredImage`](#ssec-pkgs-dockerTools-buildLay
 ```shell
 $ nix-build
 (output removed for clarity)
-/nix/store/by3f40xvc4l6bkis74l0fj4zsy0djgkn-hello.tar.gz
-$ file /nix/store/by3f40xvc4l6bkis74l0fj4zsy0djgkn-hello.tar.gz
-/nix/store/by3f40xvc4l6bkis74l0fj4zsy0djgkn-hello.tar.gz: POSIX tar archive (GNU)
+/data/data/com.termux/files/nix/store/by3f40xvc4l6bkis74l0fj4zsy0djgkn-hello.tar.gz
+$ file /data/data/com.termux/files/nix/store/by3f40xvc4l6bkis74l0fj4zsy0djgkn-hello.tar.gz
+/data/data/com.termux/files/nix/store/by3f40xvc4l6bkis74l0fj4zsy0djgkn-hello.tar.gz: POSIX tar archive (GNU)
 ```
 
 If the archive was actually compressed, the output of file would've mentioned that fact.
@@ -1140,7 +1140,7 @@ Building this will give us the expected output:
 ```shell
 $ nix-build
 (output removed for clarity)
-/nix/store/w13l8h3nlkg0zv56k7rj0ai0l2zlf7ss-filesystem.tar
+/data/data/com.termux/files/nix/store/w13l8h3nlkg0zv56k7rj0ai0l2zlf7ss-filesystem.tar
 ```
 
 If you don't specify a `name` attribute, you'll encounter an evaluation error and the package won't build.
@@ -1229,8 +1229,8 @@ This is made possible by `binSh`.
 ```shell
 $ nix-build
 (some output removed for clarity)
-/nix/store/2p0i3i04cgjlk71hsn7ll4kxaxxiv4qg-docker-image-env-helpers.tar.gz
-$ docker image load -i /nix/store/2p0i3i04cgjlk71hsn7ll4kxaxxiv4qg-docker-image-env-helpers.tar.gz
+/data/data/com.termux/files/nix/store/2p0i3i04cgjlk71hsn7ll4kxaxxiv4qg-docker-image-env-helpers.tar.gz
+$ docker image load -i /data/data/com.termux/files/nix/store/2p0i3i04cgjlk71hsn7ll4kxaxxiv4qg-docker-image-env-helpers.tar.gz
 (output removed for clarity)
 $ docker container run --rm -it env-helpers:latest /bin/sh
 sh-5.2# help
@@ -1269,8 +1269,8 @@ This is made possible by `binSh`.
 ```shell
 $ nix-build
 (some output removed for clarity)
-/nix/store/rpf47f4z5b9qr4db4ach9yr4b85hjhxq-env-helpers.tar.gz
-$ docker image load -i /nix/store/rpf47f4z5b9qr4db4ach9yr4b85hjhxq-env-helpers.tar.gz
+/data/data/com.termux/files/nix/store/rpf47f4z5b9qr4db4ach9yr4b85hjhxq-env-helpers.tar.gz
+$ docker image load -i /data/data/com.termux/files/nix/store/rpf47f4z5b9qr4db4ach9yr4b85hjhxq-env-helpers.tar.gz
 (output removed for clarity)
 $ docker container run --rm -it env-helpers:latest /bin/sh
 sh-5.2# help
@@ -1374,9 +1374,9 @@ The result of building this package is a `.tar.gz` file that can be loaded into 
 ```shell
 $ nix-build
 (some output removed for clarity)
-/nix/store/pkj1sgzaz31wl0pbvbg3yp5b3kxndqms-hello-2.12.1-env.tar.gz
+/data/data/com.termux/files/nix/store/pkj1sgzaz31wl0pbvbg3yp5b3kxndqms-hello-2.12.1-env.tar.gz
 
-$ docker image load -i /nix/store/pkj1sgzaz31wl0pbvbg3yp5b3kxndqms-hello-2.12.1-env.tar.gz
+$ docker image load -i /data/data/com.termux/files/nix/store/pkj1sgzaz31wl0pbvbg3yp5b3kxndqms-hello-2.12.1-env.tar.gz
 (some output removed for clarity)
 Loaded image: hello-2.12.1-env:latest
 ```
@@ -1387,16 +1387,16 @@ After starting an interactive container, the derivation can be built by running 
 $ docker container run -it hello-2.12.1-env:latest
 [nix-shell:~]$ buildDerivation
 Running phase: unpackPhase
-unpacking source archive /nix/store/pa10z4ngm0g83kx9mssrqzz30s84vq7k-hello-2.12.1.tar.gz
+unpacking source archive /data/data/com.termux/files/nix/store/pa10z4ngm0g83kx9mssrqzz30s84vq7k-hello-2.12.1.tar.gz
 source root is hello-2.12.1
 (some output removed for clarity)
 Running phase: fixupPhase
-shrinking RPATHs of ELF executables and libraries in /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1
-shrinking /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/bin/hello
-checking for references to /build/ in /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1...
-gzipping man pages under /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/share/man/
-patching script interpreter paths in /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1
-stripping (with command strip and flags -S -p) in  /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/bin
+shrinking RPATHs of ELF executables and libraries in /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1
+shrinking /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/bin/hello
+checking for references to /build/ in /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1...
+gzipping man pages under /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/share/man/
+patching script interpreter paths in /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1
+stripping (with command strip and flags -S -p) in  /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/bin
 
 [nix-shell:~]$ $out/bin/hello
 Hello, world!
@@ -1411,7 +1411,7 @@ See [](#ex-dockerTools-streamNixShellImage-hello) to understand how to load in D
 
 The environment set up by `streamNixShellImage` somewhat resembles the Nix sandbox typically used by `nix-build`, with a major difference being that access to the internet is allowed.
 It also behaves like an interactive `nix-shell`, running things like `shellHook` (see [](#ex-dockerTools-streamNixShellImage-addingShellHook)) and setting an interactive prompt.
-If the derivation is buildable (i.e. `nix-build` can be used on it), running `buildDerivation` in the container will build the derivation, with all its outputs being available in the correct `/nix/store` paths, pointed to by the respective environment variables (e.g. `$out`).
+If the derivation is buildable (i.e. `nix-build` can be used on it), running `buildDerivation` in the container will build the derivation, with all its outputs being available in the correct `/data/data/com.termux/files/nix/store` paths, pointed to by the respective environment variables (e.g. `$out`).
 
 ::: {.caution}
 The environment in the image doesn't match `nix-shell` or `nix-build` exactly, and this function is known not to work correctly for fixed-output derivations, content-addressed derivations, impure derivations and other special types of derivations.
@@ -1509,9 +1509,9 @@ Running this script and piping it into `docker image load` gives you the same im
 ```shell
 $ nix-build
 (some output removed for clarity)
-/nix/store/8vhznpz2frqazxnd8pgdvf38jscdypax-stream-hello-2.12.1-env
+/data/data/com.termux/files/nix/store/8vhznpz2frqazxnd8pgdvf38jscdypax-stream-hello-2.12.1-env
 
-$ /nix/store/8vhznpz2frqazxnd8pgdvf38jscdypax-stream-hello-2.12.1-env | docker image load
+$ /data/data/com.termux/files/nix/store/8vhznpz2frqazxnd8pgdvf38jscdypax-stream-hello-2.12.1-env | docker image load
 (some output removed for clarity)
 Loaded image: hello-2.12.1-env:latest
 ```
@@ -1522,16 +1522,16 @@ After starting an interactive container, the derivation can be built by running 
 $ docker container run -it hello-2.12.1-env:latest
 [nix-shell:~]$ buildDerivation
 Running phase: unpackPhase
-unpacking source archive /nix/store/pa10z4ngm0g83kx9mssrqzz30s84vq7k-hello-2.12.1.tar.gz
+unpacking source archive /data/data/com.termux/files/nix/store/pa10z4ngm0g83kx9mssrqzz30s84vq7k-hello-2.12.1.tar.gz
 source root is hello-2.12.1
 (some output removed for clarity)
 Running phase: fixupPhase
-shrinking RPATHs of ELF executables and libraries in /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1
-shrinking /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/bin/hello
-checking for references to /build/ in /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1...
-gzipping man pages under /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/share/man/
-patching script interpreter paths in /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1
-stripping (with command strip and flags -S -p) in  /nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/bin
+shrinking RPATHs of ELF executables and libraries in /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1
+shrinking /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/bin/hello
+checking for references to /build/ in /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1...
+gzipping man pages under /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/share/man/
+patching script interpreter paths in /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1
+stripping (with command strip and flags -S -p) in  /data/data/com.termux/files/nix/store/f2vs29jibd7lwxyj35r9h87h6brgdysz-hello-2.12.1/bin
 
 [nix-shell:~]$ $out/bin/hello
 Hello, world!
@@ -1563,9 +1563,9 @@ The result of building this package is a script which can be run and piped into 
 ```shell
 $ nix-build
 (some output removed for clarity)
-/nix/store/h5abh0vljgzg381lna922gqknx6yc0v7-stream-hello-2.12.1-env
+/data/data/com.termux/files/nix/store/h5abh0vljgzg381lna922gqknx6yc0v7-stream-hello-2.12.1-env
 
-$ /nix/store/h5abh0vljgzg381lna922gqknx6yc0v7-stream-hello-2.12.1-env | docker image load
+$ /data/data/com.termux/files/nix/store/h5abh0vljgzg381lna922gqknx6yc0v7-stream-hello-2.12.1-env | docker image load
 (some output removed for clarity)
 Loaded image: hello-2.12.1-env:latest
 ```
@@ -1612,9 +1612,9 @@ The result of building this package is a script which can be run and piped into 
 ```shell
 $ nix-build
 (some output removed for clarity)
-/nix/store/iz4dhdvgzazl5vrgyz719iwjzjy6xlx1-stream-hello-2.12.1-env
+/data/data/com.termux/files/nix/store/iz4dhdvgzazl5vrgyz719iwjzjy6xlx1-stream-hello-2.12.1-env
 
-$ /nix/store/iz4dhdvgzazl5vrgyz719iwjzjy6xlx1-stream-hello-2.12.1-env | docker image load
+$ /data/data/com.termux/files/nix/store/iz4dhdvgzazl5vrgyz719iwjzjy6xlx1-stream-hello-2.12.1-env | docker image load
 (some output removed for clarity)
 Loaded image: hello-2.12.1-env:latest
 ```

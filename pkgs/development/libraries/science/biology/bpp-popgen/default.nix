@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
       --replace 'set(_IMPORT_PREFIX' '#set(_IMPORT_PREFIX'
   '';
   # prevents cmake from exporting incorrect INTERFACE_INCLUDE_DIRECTORIES
-  # of form /nix/store/.../nix/store/.../include,
+  # of form /data/data/com.termux/files/nix/store/.../data/data/com.termux/files/nix/store/.../include,
   # probably due to relative vs absolute path issue
 
   doCheck = !stdenv.hostPlatform.isDarwin;

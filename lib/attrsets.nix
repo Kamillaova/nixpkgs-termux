@@ -1789,7 +1789,7 @@ rec {
 
     ```nix
     "${getOutput "dev" pkgs.openssl}"
-    => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev"
+    => "/data/data/com.termux/files/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev"
     ```
 
     :::
@@ -1826,7 +1826,7 @@ rec {
 
     ```nix
     "${getFirstOutput [ "include" "dev" ] pkgs.openssl}"
-    => "/nix/store/00000000000000000000000000000000-openssl-1.0.1r-dev"
+    => "/data/data/com.termux/files/nix/store/00000000000000000000000000000000-openssl-1.0.1r-dev"
     ```
 
     :::
@@ -1864,7 +1864,7 @@ rec {
 
     ```nix
     "${getBin pkgs.openssl}"
-    => "/nix/store/00000000000000000000000000000000-openssl-1.0.1r"
+    => "/data/data/com.termux/files/nix/store/00000000000000000000000000000000-openssl-1.0.1r"
     ```
 
     :::
@@ -1894,7 +1894,7 @@ rec {
 
     ```nix
     "${getLib pkgs.openssl}"
-    => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-lib"
+    => "/data/data/com.termux/files/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-lib"
     ```
 
     :::
@@ -1923,7 +1923,7 @@ rec {
 
     ```nix
     "${lib.getStatic pkgs.glibc}"
-    => "/nix/store/00000000000000000000000000000000-glibc-2.39-52-static"
+    => "/data/data/com.termux/files/nix/store/00000000000000000000000000000000-glibc-2.39-52-static"
     ```
 
     :::
@@ -1953,7 +1953,7 @@ rec {
 
     ```nix
     "${getDev pkgs.openssl}"
-    => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev"
+    => "/data/data/com.termux/files/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev"
     ```
 
     :::
@@ -1982,7 +1982,7 @@ rec {
 
     ```nix
     "${getInclude pkgs.openssl}"
-    => "/nix/store/00000000000000000000000000000000-openssl-1.0.1r-dev"
+    => "/data/data/com.termux/files/nix/store/00000000000000000000000000000000-openssl-1.0.1r-dev"
     ```
 
     :::
@@ -2012,7 +2012,7 @@ rec {
 
     ```nix
     "${getMan pkgs.openssl}"
-    => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-man"
+    => "/data/data/com.termux/files/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-man"
     ```
 
     :::

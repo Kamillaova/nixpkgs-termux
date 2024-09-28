@@ -36,7 +36,7 @@ Note that the command still builds the exact nix package above, but adds some bo
 
 ```shellSession
 $ nix-build -E 'let pkgs = import <nixpkgs> {}; in pkgs.callPackage ({ mkBinaryCache, hello }: mkBinaryCache { rootPaths = [hello]; }) {}'
-/nix/store/azf7xay5xxdnia4h9fyjiv59wsjdxl0g-binary-cache
+/data/data/com.termux/files/nix/store/azf7xay5xxdnia4h9fyjiv59wsjdxl0g-binary-cache
 ```
 
 Copy the resulting directory to another machine, which we'll call `host2`:
@@ -52,7 +52,7 @@ $ nix-build -A hello '<nixpkgs>' \
   --option require-sigs false \
   --option trusted-substituters file:///tmp/hello-cache \
   --option substituters file:///tmp/hello-cache
-/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1
+/data/data/com.termux/files/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1
 ```
 
 :::

@@ -3,8 +3,8 @@
 ## `/nix` {#sec-state-nix}
 
 NixOS needs the entirety of `/nix` to be persistent, as it includes:
-- `/nix/store`, which contains all the system's executables, libraries, and supporting data;
-- `/nix/var/nix`, which contains:
+- `/data/data/com.termux/files/nix/store`, which contains all the system's executables, libraries, and supporting data;
+- `/data/data/com.termux/files/nix/var/nix`, which contains:
   - the Nix daemon's database;
   - roots whose transitive closure is preserved when garbage-collecting the Nix store;
   - system-wide and per-user profiles.

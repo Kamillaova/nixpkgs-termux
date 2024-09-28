@@ -17,7 +17,7 @@ services.openiscsi = {
 Longhorn container has trouble with NixOS path. Solution is to override PATH environment variable, such as:
 
 ```
-PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/run/wrappers/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
+PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/run/wrappers/bin:/data/data/com.termux/files/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
 ```
 
 **Kyverno Policy for Fixing Longhorn Container for NixOS**
@@ -30,7 +30,7 @@ metadata:
   name: longhorn-nixos-path
   namespace: longhorn-system
 data:
-  PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/run/wrappers/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
+  PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/run/wrappers/bin:/data/data/com.termux/files/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
 ---
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy

@@ -75,7 +75,7 @@ options. Thus, every time you modify the configuration or any other NixOS
 module, you must run
 .Nm
 to make the changes take effect. It builds the new system in
-.Pa /nix/store Ns
+.Pa /data/data/com.termux/files/nix/store Ns
 , runs its activation script, and stop and (re)starts any system services if
 needed. Please note that user services need to be started manually as they
 aren't detected by the activation script at the moment.
@@ -277,7 +277,7 @@ Instead of building a new configuration as specified by
 .Pa /etc/nixos/configuration.nix Ns
 , roll back to the previous configuration. (The previous configuration is
 defined as the one before the “current” generation of the Nix profile
-.Pa /nix/var/nix/profiles/system Ns
+.Pa /data/data/com.termux/files/nix/var/nix/profiles/system Ns
 \&.)
 .
 .It Fl -builders Ar builder-spec
@@ -299,9 +299,9 @@ for example when they are not reachable due to network connectivity.
 .
 .It Fl -profile-name Ar name , Fl p Ar name
 Instead of using the Nix profile
-.Pa /nix/var/nix/profiles/system
+.Pa /data/data/com.termux/files/nix/var/nix/profiles/system
 to keep track of the current and previous system configurations, use
-.Pa /nix/var/nix/profiles/system-profiles/ Ns Va name Ns
+.Pa /data/data/com.termux/files/nix/var/nix/profiles/system-profiles/ Ns Va name Ns
 \&. When you use GRUB 2, for every system profile created with this flag, NixOS
 will create a submenu named
 .Dq NixOS - Profile Va name
@@ -539,7 +539,7 @@ need not be a flake.
 .It Pa /run/current-system
 A symlink to the currently active system configuration in the Nix store.
 .
-.It Pa /nix/var/nix/profiles/system
+.It Pa /data/data/com.termux/files/nix/var/nix/profiles/system
 The Nix profile that contains the current and previous system
 configurations. Used to generate the GRUB boot menu.
 .El

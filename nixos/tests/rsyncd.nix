@@ -15,7 +15,7 @@ import ./make-test-python.nix ({ pkgs, ... }: {
               "forward lookup" = false;
             };
             tmp = {
-              path = "/nix/store";
+              path = "/data/data/com.termux/files/nix/store";
               comment = "test module";
             };
           };

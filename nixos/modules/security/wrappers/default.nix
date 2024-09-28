@@ -288,7 +288,7 @@ in
       conflicts = [ "shutdown.target" ];
       after = [ "systemd-sysusers.service" ];
       unitConfig.DefaultDependencies = false;
-      unitConfig.RequiresMountsFor = [ "/nix/store" "/run/wrappers" ];
+      unitConfig.RequiresMountsFor = [ "/data/data/com.termux/files/nix/store" "/run/wrappers" ];
       serviceConfig.Type = "oneshot";
       script = ''
         chmod 755 "${parentWrapperDir}"
@@ -331,7 +331,7 @@ in
 
         for name in "''${!wrappers[@]}"; do
           path="''${wrappers[$name]}"
-          if [[ "$path" =~ /nix/store ]] && [ ! -e "$path" ]; then
+          if [[ "$path" =~ /data/data/com.termux/files/nix/store ]] && [ ! -e "$path" ]; then
             test -t 1 && echo -ne '\033[1;31m'
             echo "FAIL"
             echo "The path $path does not exist!"

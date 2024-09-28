@@ -423,9 +423,9 @@ rec {
 
     ```nix
     getExe pkgs.hello
-    => "/nix/store/g124820p9hlv4lj8qplzxw1c44dxaw1k-hello-2.12/bin/hello"
+    => "/data/data/com.termux/files/nix/store/g124820p9hlv4lj8qplzxw1c44dxaw1k-hello-2.12/bin/hello"
     getExe pkgs.mustache-go
-    => "/nix/store/am9ml4f4ywvivxnkiaqwr0hyxka1xjsf-mustache-go-1.3.0/bin/mustache"
+    => "/data/data/com.termux/files/nix/store/am9ml4f4ywvivxnkiaqwr0hyxka1xjsf-mustache-go-1.3.0/bin/mustache"
     ```
 
     :::
@@ -463,9 +463,9 @@ rec {
 
     ```nix
     getExe' pkgs.hello "hello"
-    => "/nix/store/g124820p9hlv4lj8qplzxw1c44dxaw1k-hello-2.12/bin/hello"
+    => "/data/data/com.termux/files/nix/store/g124820p9hlv4lj8qplzxw1c44dxaw1k-hello-2.12/bin/hello"
     getExe' pkgs.imagemagick "convert"
-    => "/nix/store/5rs48jamq7k6sal98ymj9l4k2bnwq515-imagemagick-7.1.1-15/bin/convert"
+    => "/data/data/com.termux/files/nix/store/5rs48jamq7k6sal98ymj9l4k2bnwq515-imagemagick-7.1.1-15/bin/convert"
     ```
 
     :::

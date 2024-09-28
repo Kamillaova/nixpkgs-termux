@@ -31,7 +31,7 @@ $ nix run nixpkgs#darwin.linux-builder
 That will prompt you to enter your `sudo` password:
 
 ```
-+ sudo --reset-timestamp /nix/store/…-install-credentials.sh ./keys
++ sudo --reset-timestamp /data/data/com.termux/files/nix/store/…-install-credentials.sh ./keys
 Password:
 ```
 
@@ -182,7 +182,7 @@ The `linux-builder` package exposes the attributes `nixosConfig` and `nixosOptio
 $ nix repl --file ~/src/nixpkgs --argstr system aarch64-darwin
 
 nix-repl> darwin.linux-builder.nixosConfig.nix.package
-«derivation /nix/store/...-nix-2.17.0.drv»
+«derivation /data/data/com.termux/files/nix/store/...-nix-2.17.0.drv»
 
 nix-repl> :p darwin.linux-builder.nixosOptions.virtualisation.memorySize.definitionsWithLocations
 [ { file = "/home/user/src/nixpkgs/nixos/modules/profiles/macos-builder.nix"; value = 3072; } ]

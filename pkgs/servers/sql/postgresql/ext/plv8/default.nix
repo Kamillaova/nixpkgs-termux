@@ -64,8 +64,8 @@ in stdenv.mkDerivation (finalAttrs: {
     # Move the redirected to proper directory.
     # There appear to be no references to the install directories
     # so changing them does not cause issues.
-    mv "$out/nix/store"/*/* "$out"
-    rmdir "$out/nix/store"/* "$out/nix/store" "$out/nix"
+    mv "$out/data/data/com.termux/files/nix/store"/*/* "$out"
+    rmdir "$out/data/data/com.termux/files/nix/store"/* "$out/data/data/com.termux/files/nix/store" "$out/nix"
   '';
 
   passthru = {

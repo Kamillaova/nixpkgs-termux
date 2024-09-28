@@ -1,4 +1,4 @@
-#!/nix/var/nix/profiles/default/bin/expect -f
+#!/data/data/com.termux/files/nix/var/nix/profiles/default/bin/expect -f
 
 # Set variables
 set username [lindex $argv 0]

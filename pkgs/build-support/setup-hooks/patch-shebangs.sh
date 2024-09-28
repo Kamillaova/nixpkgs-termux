@@ -1,8 +1,8 @@
 # This setup hook causes the fixup phase to rewrite all script
 # interpreter file names (`#!  /path') to paths found in $PATH.  E.g.,
-# /bin/sh will be rewritten to /nix/store/<hash>-some-bash/bin/sh.
+# /bin/sh will be rewritten to /data/data/com.termux/files/nix/store/<hash>-some-bash/bin/sh.
 # /usr/bin/env gets special treatment so that ".../bin/env python" is
-# rewritten to /nix/store/<hash>/bin/python.  Interpreters that are
+# rewritten to /data/data/com.termux/files/nix/store/<hash>/bin/python.  Interpreters that are
 # already in the store are left untouched.
 # A script file must be marked as executable, otherwise it will not be
 # considered.
@@ -19,7 +19,7 @@ fixupOutputHooks+=(patchShebangsAuto)
 # --update : Update shebang paths that are in Nix store
 
 # Example use cases,
-# $ patchShebangs --host /nix/store/...-hello-1.0/bin
+# $ patchShebangs --host /data/data/com.termux/files/nix/store/...-hello-1.0/bin
 # $ patchShebangs --build configure
 
 patchShebangs() {
@@ -105,7 +105,7 @@ patchShebangs() {
         else
             if [[ -z $oldPath ]]; then
                 # If no interpreter is specified linux will use /bin/sh. Set
-                # oldpath="/bin/sh" so that we get /nix/store/.../sh.
+                # oldpath="/bin/sh" so that we get /data/data/com.termux/files/nix/store/.../sh.
                 oldPath="/bin/sh"
             fi
 

@@ -20,8 +20,8 @@ let
 
   # Compare the stringified version of the tools_build_host Nix store
   # path to the evaluator's stringified Nix store path. Otherwise,
-  # Nix will read the sources in to the /nix/store, and, well,
-  # you can only copy the /nix/store in to the /nix/store so many
+  # Nix will read the sources in to the /data/data/com.termux/files/nix/store, and, well,
+  # you can only copy the /data/data/com.termux/files/nix/store in to the /data/data/com.termux/files/nix/store so many
   # times before you run out of disk space.
   dep = if ("${toString (dirOf tools_build_host)}" == "${toString builtins.storeDir}")
     then (builtins.trace "using storePath"  builtins.storePath)

@@ -101,7 +101,7 @@ stdenv.mkDerivation (finalAttrs: {
       # Issues since pbr 6.0.0 bump (ModuleNotFoundError: No module named 'notmuch2')
       rm test/T055-path-config.sh
       # Flaky, seems to get its paths wrong sometimes (?)
-      # *ERROR*: Opening output file: Permission denied, /nix/store/bzy21v2cd5sq1djzwa9b19q08wpp9mm0-emacs-29.1/bin/OUTPUT
+      # *ERROR*: Opening output file: Permission denied, /data/data/com.termux/files/nix/store/bzy21v2cd5sq1djzwa9b19q08wpp9mm0-emacs-29.1/bin/OUTPUT
       rm test/T460-emacs-tree.sh
     '';
 

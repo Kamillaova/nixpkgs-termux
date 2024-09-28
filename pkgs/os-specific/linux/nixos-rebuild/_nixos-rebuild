@@ -113,7 +113,7 @@ _nixos-rebuild() {
 
     --profile-name|-p)
       if [[ "$curr" == "" ]]; then
-        COMPREPLY=( /nix/var/nix/profiles/* )
+        COMPREPLY=( /data/data/com.termux/files/nix/var/nix/profiles/* )
       else
         COMPREPLY=( "$curr"* )
       fi

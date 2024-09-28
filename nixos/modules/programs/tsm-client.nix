@@ -85,7 +85,7 @@ let
         (nullOr path);
       default = null;
       example = ''
-        exclude.dir     /nix/store
+        exclude.dir     /data/data/com.termux/files/nix/store
         include.encrypt /home/.../*
       '';
       description = ''

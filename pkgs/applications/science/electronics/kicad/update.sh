@@ -24,7 +24,7 @@ export TMPDIR=/tmp
 # no getting around manually checking if the build product works...
 # if there is, default to commiting?
 #   won't work when running in parallel?
-# remove items left in /nix/store?
+# remove items left in /data/data/com.termux/files/nix/store?
 # reuse hashes of already checked revs (to avoid redownloading testing's packages3d)
 
 # nixpkgs' update.nix passes in UPDATE_NIX_PNAME to indicate which package is being updated

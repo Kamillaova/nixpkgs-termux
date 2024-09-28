@@ -235,8 +235,8 @@ in
 
     systemd.tmpfiles.rules = [
       # Prevent the current configuration from being garbage-collected.
-      "d /nix/var/nix/gcroots -"
-      "L+ /nix/var/nix/gcroots/current-system - - - - /run/current-system"
+      "d /data/data/com.termux/files/nix/var/nix/gcroots -"
+      "L+ /data/data/com.termux/files/nix/var/nix/gcroots/current-system - - - - /run/current-system"
       "D /var/empty 0555 root root -"
       "h /var/empty - - - - +i"
     ];

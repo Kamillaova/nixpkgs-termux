@@ -9,7 +9,7 @@ x86_64-apple-darwin:
 	/tmp/nix-build-canokey-qemu-0-unstable-2023-06-06.drv-0/source/canokey-core/applets/oath/oath.c:44:50: error: too many arguments provided to function-like macro invocation
 	  memcpy(RDATA, (uint8_t[]){OATH_TAG_VERSION, 3, 0x05, 0x05, 0x05, OATH_TAG_NAME, HANDLE_LEN}, 7);
 	                                                 ^
-	/nix/store/vw8y07yai2pjv02s1piw3r5cyhmjbddf-Libsystem-1238.60.2/include/secure/_string.h:64:9: note: macro 'memcpy' defined here
+	/data/data/com.termux/files/nix/store/vw8y07yai2pjv02s1piw3r5cyhmjbddf-Libsystem-1238.60.2/include/secure/_string.h:64:9: note: macro 'memcpy' defined here
 	#define memcpy(dest, src, len)                                  \
 	        ^
 	/tmp/nix-build-canokey-qemu-0-unstable-2023-06-06.drv-0/source/canokey-core/applets/oath/oath.c:44:3: note: parentheses are required around macro argument containing braced initializer list

@@ -10,7 +10,7 @@ fixupCFlagsForDarwin() {
     # libiconv and libintl aren’t needed by Wine, and having them causes linking to fail.
     # The `CoreFoundation` reference is added by `linkSystemCoreFoundationFramework` in the
     # Apple SDK’s setup hook. Remove that because MingW will fail due to file not found.
-    ldFlagsFilter='s|-lintl||g;s|-liconv||g;s|/nix/store/[^-]*-apple-framework-CoreFoundation[^ ]*||g'
+    ldFlagsFilter='s|-lintl||g;s|-liconv||g;s|/data/data/com.termux/files/nix/store/[^-]*-apple-framework-CoreFoundation[^ ]*||g'
 
     # `cc-wrapper.sh`` supports getting flags from a system-specific salt. While it is currently a
     # tuple, that’s not considered a stable interface, so the Wine derivation will provide them:

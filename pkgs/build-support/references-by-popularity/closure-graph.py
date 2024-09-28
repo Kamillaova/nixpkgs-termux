@@ -145,26 +145,26 @@ class TestFindRoots(unittest.TestCase):
         self.assertCountEqual(
             find_roots([
                 {
-                    "path": "/nix/store/foo",
+                    "path": "/data/data/com.termux/files/nix/store/foo",
                     "references": [
-                        "/nix/store/foo",
-                        "/nix/store/bar"
+                        "/data/data/com.termux/files/nix/store/foo",
+                        "/data/data/com.termux/files/nix/store/bar"
                     ]
                 },
                 {
-                    "path": "/nix/store/bar",
+                    "path": "/data/data/com.termux/files/nix/store/bar",
                     "references": [
-                        "/nix/store/bar",
-                        "/nix/store/tux"
+                        "/data/data/com.termux/files/nix/store/bar",
+                        "/data/data/com.termux/files/nix/store/tux"
                     ]
                 },
                 {
-                    "path": "/nix/store/hello",
+                    "path": "/data/data/com.termux/files/nix/store/hello",
                     "references": [
                     ]
                 }
             ]),
-            ["/nix/store/foo", "/nix/store/hello"]
+            ["/data/data/com.termux/files/nix/store/foo", "/data/data/com.termux/files/nix/store/hello"]
         )
 
 
@@ -179,12 +179,12 @@ class TestAnyReferTo(unittest.TestCase):
     def test_has_references(self):
         self.assertTrue(
             any_refer_to(
-                "/nix/store/bar",
+                "/data/data/com.termux/files/nix/store/bar",
                 [
                     {
-                        "path": "/nix/store/foo",
+                        "path": "/data/data/com.termux/files/nix/store/foo",
                         "references": [
-                            "/nix/store/bar"
+                            "/data/data/com.termux/files/nix/store/bar"
                         ]
                     },
                 ]
@@ -193,13 +193,13 @@ class TestAnyReferTo(unittest.TestCase):
     def test_no_references(self):
         self.assertFalse(
             any_refer_to(
-                "/nix/store/foo",
+                "/data/data/com.termux/files/nix/store/foo",
                 [
                     {
-                        "path": "/nix/store/foo",
+                        "path": "/data/data/com.termux/files/nix/store/foo",
                         "references": [
-                            "/nix/store/foo",
-                            "/nix/store/bar"
+                            "/data/data/com.termux/files/nix/store/foo",
+                            "/data/data/com.termux/files/nix/store/bar"
                         ]
                     },
                 ]
@@ -220,37 +220,37 @@ class TestAllPaths(unittest.TestCase):
         self.assertCountEqual(
             all_paths([
                 {
-                    "path": "/nix/store/foo",
+                    "path": "/data/data/com.termux/files/nix/store/foo",
                     "references": [
-                        "/nix/store/foo",
-                        "/nix/store/bar"
+                        "/data/data/com.termux/files/nix/store/foo",
+                        "/data/data/com.termux/files/nix/store/bar"
                     ]
                 },
                 {
-                    "path": "/nix/store/bar",
+                    "path": "/data/data/com.termux/files/nix/store/bar",
                     "references": [
-                        "/nix/store/bar",
-                        "/nix/store/tux"
+                        "/data/data/com.termux/files/nix/store/bar",
+                        "/data/data/com.termux/files/nix/store/tux"
                     ]
                 },
                 {
-                    "path": "/nix/store/hello",
+                    "path": "/data/data/com.termux/files/nix/store/hello",
                     "references": [
                     ]
                 }
             ]),
-            ["/nix/store/foo", "/nix/store/bar", "/nix/store/hello", "/nix/store/tux",]
+            ["/data/data/com.termux/files/nix/store/foo", "/data/data/com.termux/files/nix/store/bar", "/data/data/com.termux/files/nix/store/hello", "/data/data/com.termux/files/nix/store/tux",]
         )
     def test_no_references(self):
         self.assertFalse(
             any_refer_to(
-                "/nix/store/foo",
+                "/data/data/com.termux/files/nix/store/foo",
                 [
                     {
-                        "path": "/nix/store/foo",
+                        "path": "/data/data/com.termux/files/nix/store/foo",
                         "references": [
-                            "/nix/store/foo",
-                            "/nix/store/bar"
+                            "/data/data/com.termux/files/nix/store/foo",
+                            "/data/data/com.termux/files/nix/store/bar"
                         ]
                     },
                 ]
@@ -260,18 +260,18 @@ class TestAllPaths(unittest.TestCase):
 # Convert:
 #
 # [
-#    { path: /nix/store/foo, references: [ /nix/store/foo, /nix/store/bar, /nix/store/baz ] },
-#    { path: /nix/store/bar, references: [ /nix/store/bar, /nix/store/baz ] },
-#    { path: /nix/store/baz, references: [ /nix/store/baz, /nix/store/tux ] },
-#    { path: /nix/store/tux, references: [ /nix/store/tux ] }
+#    { path: /data/data/com.termux/files/nix/store/foo, references: [ /data/data/com.termux/files/nix/store/foo, /data/data/com.termux/files/nix/store/bar, /data/data/com.termux/files/nix/store/baz ] },
+#    { path: /data/data/com.termux/files/nix/store/bar, references: [ /data/data/com.termux/files/nix/store/bar, /data/data/com.termux/files/nix/store/baz ] },
+#    { path: /data/data/com.termux/files/nix/store/baz, references: [ /data/data/com.termux/files/nix/store/baz, /data/data/com.termux/files/nix/store/tux ] },
+#    { path: /data/data/com.termux/files/nix/store/tux, references: [ /data/data/com.termux/files/nix/store/tux ] }
 #  ]
 #
 # To:
 #    {
-#      /nix/store/foo: [ /nix/store/bar, /nix/store/baz ],
-#      /nix/store/bar: [ /nix/store/baz ],
-#      /nix/store/baz: [ /nix/store/tux ] },
-#      /nix/store/tux: [ ]
+#      /data/data/com.termux/files/nix/store/foo: [ /data/data/com.termux/files/nix/store/bar, /data/data/com.termux/files/nix/store/baz ],
+#      /data/data/com.termux/files/nix/store/bar: [ /data/data/com.termux/files/nix/store/baz ],
+#      /data/data/com.termux/files/nix/store/baz: [ /data/data/com.termux/files/nix/store/tux ] },
+#      /data/data/com.termux/files/nix/store/tux: [ ]
 #    }
 #
 # Note that it drops self-references to avoid loops.
@@ -290,52 +290,52 @@ class TestMakeLookup(unittest.TestCase):
         self.assertDictEqual(
             make_lookup([
                 {
-                    "path": "/nix/store/foo",
+                    "path": "/data/data/com.termux/files/nix/store/foo",
                     "references": [
-                        "/nix/store/foo",
-                        "/nix/store/bar"
+                        "/data/data/com.termux/files/nix/store/foo",
+                        "/data/data/com.termux/files/nix/store/bar"
                     ]
                 },
                 {
-                    "path": "/nix/store/bar",
+                    "path": "/data/data/com.termux/files/nix/store/bar",
                     "references": [
-                        "/nix/store/bar",
-                        "/nix/store/tux"
+                        "/data/data/com.termux/files/nix/store/bar",
+                        "/data/data/com.termux/files/nix/store/tux"
                     ]
                 },
                 {
-                    "path": "/nix/store/hello",
+                    "path": "/data/data/com.termux/files/nix/store/hello",
                     "references": [
                     ]
                 }
             ]),
             {
-                "/nix/store/foo": [ "/nix/store/bar" ],
-                "/nix/store/bar": [ "/nix/store/tux" ],
-                "/nix/store/hello": [ ],
+                "/data/data/com.termux/files/nix/store/foo": [ "/data/data/com.termux/files/nix/store/bar" ],
+                "/data/data/com.termux/files/nix/store/bar": [ "/data/data/com.termux/files/nix/store/tux" ],
+                "/data/data/com.termux/files/nix/store/hello": [ ],
             }
         )
 
 # Convert:
 #
-# /nix/store/foo with
+# /data/data/com.termux/files/nix/store/foo with
 #  {
-#    /nix/store/foo: [ /nix/store/bar, /nix/store/baz ],
-#    /nix/store/bar: [ /nix/store/baz ],
-#    /nix/store/baz: [ /nix/store/tux ] },
-#    /nix/store/tux: [ ]
+#    /data/data/com.termux/files/nix/store/foo: [ /data/data/com.termux/files/nix/store/bar, /data/data/com.termux/files/nix/store/baz ],
+#    /data/data/com.termux/files/nix/store/bar: [ /data/data/com.termux/files/nix/store/baz ],
+#    /data/data/com.termux/files/nix/store/baz: [ /data/data/com.termux/files/nix/store/tux ] },
+#    /data/data/com.termux/files/nix/store/tux: [ ]
 #  }
 #
 # To:
 #
 # {
-#   /nix/store/bar: {
-#                    /nix/store/baz: {
-#                                     /nix/store/tux: {}
+#   /data/data/com.termux/files/nix/store/bar: {
+#                    /data/data/com.termux/files/nix/store/baz: {
+#                                     /data/data/com.termux/files/nix/store/tux: {}
 #                    }
 #   },
-#   /nix/store/baz: {
-#                   /nix/store/tux: {}
+#   /data/data/com.termux/files/nix/store/baz: {
+#                   /data/data/com.termux/files/nix/store/tux: {}
 #   }
 # }
 subgraphs_cache = {}
@@ -360,24 +360,24 @@ def make_graph_segment_from_root(root, lookup):
 class TestMakeGraphSegmentFromRoot(unittest.TestCase):
     def test_returns_graph(self):
         self.assertDictEqual(
-            make_graph_segment_from_root("/nix/store/foo", {
-                "/nix/store/foo": [ "/nix/store/bar" ],
-                "/nix/store/bar": [ "/nix/store/tux" ],
-                "/nix/store/tux": [ ],
-                "/nix/store/hello": [ ],
+            make_graph_segment_from_root("/data/data/com.termux/files/nix/store/foo", {
+                "/data/data/com.termux/files/nix/store/foo": [ "/data/data/com.termux/files/nix/store/bar" ],
+                "/data/data/com.termux/files/nix/store/bar": [ "/data/data/com.termux/files/nix/store/tux" ],
+                "/data/data/com.termux/files/nix/store/tux": [ ],
+                "/data/data/com.termux/files/nix/store/hello": [ ],
             }),
             {
-                "/nix/store/bar": {
-                    "/nix/store/tux": {}
+                "/data/data/com.termux/files/nix/store/bar": {
+                    "/data/data/com.termux/files/nix/store/tux": {}
                 }
             }
         )
     def test_returns_graph_tiny(self):
         self.assertDictEqual(
-            make_graph_segment_from_root("/nix/store/tux", {
-                "/nix/store/foo": [ "/nix/store/bar" ],
-                "/nix/store/bar": [ "/nix/store/tux" ],
-                "/nix/store/tux": [ ],
+            make_graph_segment_from_root("/data/data/com.termux/files/nix/store/tux", {
+                "/data/data/com.termux/files/nix/store/foo": [ "/data/data/com.termux/files/nix/store/bar" ],
+                "/data/data/com.termux/files/nix/store/bar": [ "/data/data/com.termux/files/nix/store/tux" ],
+                "/data/data/com.termux/files/nix/store/tux": [ ],
             }),
             {}
         )
@@ -386,24 +386,24 @@ class TestMakeGraphSegmentFromRoot(unittest.TestCase):
 #
 # From:
 # {
-#    /nix/store/foo: {
-#                      /nix/store/bar: {
-#                                        /nix/store/baz: {
-#                                                           /nix/store/tux: {}
+#    /data/data/com.termux/files/nix/store/foo: {
+#                      /data/data/com.termux/files/nix/store/bar: {
+#                                        /data/data/com.termux/files/nix/store/baz: {
+#                                                           /data/data/com.termux/files/nix/store/tux: {}
 #                                        }
 #                      }
-#                      /nix/store/baz: {
-#                                         /nix/store/tux: {}
+#                      /data/data/com.termux/files/nix/store/baz: {
+#                                         /data/data/com.termux/files/nix/store/tux: {}
 #                      }
 #    }
 # }
 #
 # to:
 # [
-#   /nix/store/foo: 1
-#   /nix/store/bar: 2
-#   /nix/store/baz: 4
-#   /nix/store/tux: 6
+#   /data/data/com.termux/files/nix/store/foo: 1
+#   /data/data/com.termux/files/nix/store/bar: 2
+#   /data/data/com.termux/files/nix/store/baz: 4
+#   /data/data/com.termux/files/nix/store/tux: 6
 # ]
 popularity_cache = {}
 def graph_popularity_contest(full_graph):
@@ -434,22 +434,22 @@ class TestGraphPopularityContest(unittest.TestCase):
     def test_counts_popularity(self):
         self.assertDictEqual(
             graph_popularity_contest({
-                "/nix/store/foo": {
-                    "/nix/store/bar": {
-                        "/nix/store/baz": {
-                            "/nix/store/tux": {}
+                "/data/data/com.termux/files/nix/store/foo": {
+                    "/data/data/com.termux/files/nix/store/bar": {
+                        "/data/data/com.termux/files/nix/store/baz": {
+                            "/data/data/com.termux/files/nix/store/tux": {}
                         }
                     },
-                    "/nix/store/baz": {
-                        "/nix/store/tux": {}
+                    "/data/data/com.termux/files/nix/store/baz": {
+                        "/data/data/com.termux/files/nix/store/tux": {}
                     }
                 }
             }),
             {
-                   "/nix/store/foo": 1,
-                   "/nix/store/bar": 2,
-                   "/nix/store/baz": 4,
-                   "/nix/store/tux": 6,
+                   "/data/data/com.termux/files/nix/store/foo": 1,
+                   "/data/data/com.termux/files/nix/store/bar": 2,
+                   "/data/data/com.termux/files/nix/store/baz": 4,
+                   "/data/data/com.termux/files/nix/store/tux": 6,
             }
         )
 
@@ -457,14 +457,14 @@ class TestGraphPopularityContest(unittest.TestCase):
 #
 # From:
 # [
-#   /nix/store/foo: 1
-#   /nix/store/bar: 1
-#   /nix/store/baz: 2
-#   /nix/store/tux: 2
+#   /data/data/com.termux/files/nix/store/foo: 1
+#   /data/data/com.termux/files/nix/store/bar: 1
+#   /data/data/com.termux/files/nix/store/baz: 2
+#   /data/data/com.termux/files/nix/store/tux: 2
 # ]
 #
 # To:
-# [ /nix/store/baz /nix/store/tux /nix/store/bar /nix/store/foo ]
+# [ /data/data/com.termux/files/nix/store/baz /data/data/com.termux/files/nix/store/tux /data/data/com.termux/files/nix/store/bar /data/data/com.termux/files/nix/store/foo ]
 def order_by_popularity(paths):
     paths_by_popularity = defaultdict(list)
     popularities = []
@@ -488,16 +488,16 @@ class TestOrderByPopularity(unittest.TestCase):
     def test_returns_in_order(self):
         self.assertEqual(
             order_by_popularity({
-                   "/nix/store/foo": 1,
-                   "/nix/store/bar": 1,
-                   "/nix/store/baz": 2,
-                   "/nix/store/tux": 2,
+                   "/data/data/com.termux/files/nix/store/foo": 1,
+                   "/data/data/com.termux/files/nix/store/bar": 1,
+                   "/data/data/com.termux/files/nix/store/baz": 2,
+                   "/data/data/com.termux/files/nix/store/tux": 2,
             }),
             [
-                "/nix/store/baz",
-                "/nix/store/tux",
-                "/nix/store/bar",
-                "/nix/store/foo"
+                "/data/data/com.termux/files/nix/store/baz",
+                "/data/data/com.termux/files/nix/store/tux",
+                "/data/data/com.termux/files/nix/store/bar",
+                "/data/data/com.termux/files/nix/store/foo"
             ]
         )
 
@@ -519,10 +519,10 @@ def main():
 
     # Data comes in as:
     # [
-    #    { path: /nix/store/foo, references: [ /nix/store/foo, /nix/store/bar, /nix/store/baz ] },
-    #    { path: /nix/store/bar, references: [ /nix/store/bar, /nix/store/baz ] },
-    #    { path: /nix/store/baz, references: [ /nix/store/baz, /nix/store/tux ] },
-    #    { path: /nix/store/tux, references: [ /nix/store/tux ] }
+    #    { path: /data/data/com.termux/files/nix/store/foo, references: [ /data/data/com.termux/files/nix/store/foo, /data/data/com.termux/files/nix/store/bar, /data/data/com.termux/files/nix/store/baz ] },
+    #    { path: /data/data/com.termux/files/nix/store/bar, references: [ /data/data/com.termux/files/nix/store/bar, /data/data/com.termux/files/nix/store/baz ] },
+    #    { path: /data/data/com.termux/files/nix/store/baz, references: [ /data/data/com.termux/files/nix/store/baz, /data/data/com.termux/files/nix/store/tux ] },
+    #    { path: /data/data/com.termux/files/nix/store/tux, references: [ /data/data/com.termux/files/nix/store/tux ] }
     #  ]
     #
     # and we want to get out a list of paths ordered by how universally,
@@ -530,10 +530,10 @@ def main():
     # so it should be #1
     #
     # [
-    #   /nix/store/tux,
-    #   /nix/store/baz,
-    #   /nix/store/bar,
-    #   /nix/store/foo,
+    #   /data/data/com.termux/files/nix/store/tux,
+    #   /data/data/com.termux/files/nix/store/baz,
+    #   /data/data/com.termux/files/nix/store/bar,
+    #   /data/data/com.termux/files/nix/store/foo,
     # ]
     graph = data[key]
 

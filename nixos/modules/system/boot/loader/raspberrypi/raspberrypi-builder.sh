@@ -29,10 +29,10 @@ echo "updating the boot generations directory..."
 mkdir -p $target/old
 
 # Convert a path to a file in the Nix store such as
-# /nix/store/<hash>-<name>/file to <hash>-<name>-<file>.
+# /data/data/com.termux/files/nix/store/<hash>-<name>/file to <hash>-<name>-<file>.
 cleanName() {
     local path="$1"
-    echo "$path" | sed 's|^/nix/store/||' | sed 's|/|-|g'
+    echo "$path" | sed 's|^/data/data/com.termux/files/nix/store/||' | sed 's|/|-|g'
 }
 
 # Copy a file from the Nix store to $target/kernels.
@@ -105,10 +105,10 @@ addEntry $default default
 # Add all generations of the system profile to the menu, in reverse
 # (most recent to least recent) order.
 for generation in $(
-    (cd /nix/var/nix/profiles && ls -d system-*-link) \
+    (cd /data/data/com.termux/files/nix/var/nix/profiles && ls -d system-*-link) \
     | sed 's/system-\([0-9]\+\)-link/\1/' \
     | sort -n -r); do
-    link=/nix/var/nix/profiles/system-$generation-link
+    link=/data/data/com.termux/files/nix/var/nix/profiles/system-$generation-link
     addEntry $link $generation
 done
 

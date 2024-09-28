@@ -65,7 +65,7 @@ stdenv.mkDerivation rec {
     # verilator --gdbbt uses /bin/echo to test if gdb works.
     sed -i 's|/bin/echo|${coreutils}\/bin\/echo|' bin/verilator
   '';
-  # grep '^#!/' -R . | grep -v /nix/store | less
+  # grep '^#!/' -R . | grep -v /data/data/com.termux/files/nix/store | less
   # (in nix-shell after patchPhase)
 
   env = {

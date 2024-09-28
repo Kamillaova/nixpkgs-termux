@@ -85,8 +85,8 @@ stdenv.mkDerivation (finalAttrs: {
     # when the user installs or removes any
     # (see <https://issues.guix.gnu.org/35594>).
 
-    # It does so by monitoring /nix/var/nix/profiles (for changes to the system
-    # profile) and /nix/var/nix/profiles/per-user/USER (for changes to the user
+    # It does so by monitoring /data/data/com.termux/files/nix/var/nix/profiles (for changes to the system
+    # profile) and /data/data/com.termux/files/nix/var/nix/profiles/per-user/USER (for changes to the user
     # profile) as well as /etc/profiles/per-user (for chanes to the user
     # environment profile) and crawling their share/applications sub-directory when
     # changes happen.

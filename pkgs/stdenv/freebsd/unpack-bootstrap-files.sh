@@ -34,7 +34,7 @@ $out/bin/true || exit 1
 # to work with binaries, make sure the path remains the same length by prefixing pathsep chars
 for f in $(find $out -type f); do
     while true; do
-        BADMAN="$(strings $f | grep -o '/nix/store/.*' | grep -v "$out" | head -n1)"
+        BADMAN="$(strings $f | grep -o '/data/data/com.termux/files/nix/store/.*' | grep -v "$out" | head -n1)"
         if [ -z "$BADMAN" ]; then
             break
         fi

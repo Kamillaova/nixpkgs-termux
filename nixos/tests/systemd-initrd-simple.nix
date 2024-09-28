@@ -19,7 +19,7 @@ import ./make-test-python.nix ({ lib, pkgs, ... }: {
         machine.wait_for_unit("multi-user.target")
         machine.succeed("systemd-analyze | grep -q '(initrd)'")  # direct handover
         machine.succeed("touch /testfile")  # / is writable
-        machine.fail("touch /nix/store/testfile")  # /nix/store is not writable
+        machine.fail("touch /data/data/com.termux/files/nix/store/testfile")  # /data/data/com.termux/files/nix/store is not writable
         # Special filesystems are mounted by systemd
         machine.succeed("[ -e /run/booted-system ]") # /run
         machine.succeed("[ -e /sys/class ]") # /sys

@@ -1,6 +1,6 @@
 cmakePcfileCheckPhase() {
     while IFS= read -rd $'\0' file; do
-        grepout=$(grep --line-number '}//nix/store' "$file" || true)
+        grepout=$(grep --line-number '}//data/data/com.termux/files/nix/store' "$file" || true)
         if [ -n "$grepout" ]; then
             {
             echo "Broken paths found in a .pc file! $file"

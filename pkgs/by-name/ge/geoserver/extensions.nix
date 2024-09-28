@@ -108,7 +108,7 @@ in
     hash = "sha256-n6B/FHpul29MTYuBsg0XNfTTANBXw/cSEolzIabhHA8="; # gdal
   };
 
-  # Throws "java.io.FileNotFoundException: URL [jar:file:/nix/store/.../WEB-INF/lib/gs-geofence-server-2.24.1.jar!/geofence-default-override.properties] cannot be resolved to absolute file path because it does not reside in the file system: jar:file:/nix/store/.../WEB-INF/lib/gs-geofence-server-2.24.1.jar!/geofence-default-override.properties" but seems to work out of the box.
+  # Throws "java.io.FileNotFoundException: URL [jar:file:/data/data/com.termux/files/nix/store/.../WEB-INF/lib/gs-geofence-server-2.24.1.jar!/geofence-default-override.properties] cannot be resolved to absolute file path because it does not reside in the file system: jar:file:/data/data/com.termux/files/nix/store/.../WEB-INF/lib/gs-geofence-server-2.24.1.jar!/geofence-default-override.properties" but seems to work out of the box.
   #geofence = mkGeoserverExtension {
   #  name = "geofence";
   #  version = "2.25.3"; # geofence

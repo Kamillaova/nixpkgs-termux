@@ -213,7 +213,7 @@ You, as the writer of documentation, are still in charge of its content.
     --option require-sigs false \
     --option trusted-substituters file:///tmp/hello-cache \
     --option substituters file:///tmp/hello-cache
-  /nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1
+  /data/data/com.termux/files/nix/store/zhl06z4lrfrkw5rp0hnjjfrgsclzvxpm-hello-2.12.1
   ```
   Note how the input is preceded by `$` on the first line and indented on subsequent lines, and how the output is provided as you'd see on the shell.
 

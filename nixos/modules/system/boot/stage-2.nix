@@ -47,7 +47,7 @@ in
         default = true;
         description = ''
           If set, NixOS will enforce the immutability of the Nix store
-          by making {file}`/nix/store` a read-only bind
+          by making {file}`/data/data/com.termux/files/nix/store` a read-only bind
           mount.  Nix will automatically make the store writable when
           needed.
         '';

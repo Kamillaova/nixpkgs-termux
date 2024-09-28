@@ -69,7 +69,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   /* Without this flag, we get this include error:
 
-  /nix/store/...-gst-rtsp-server-1.22.8-dev/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory.h:21:10: fatal error: gst/rtsp/gstrtspurl.h: No such file or directory
+  /data/data/com.termux/files/nix/store/...-gst-rtsp-server-1.22.8-dev/include/gstreamer-1.0/gst/rtsp-server/rtsp-media-factory.h:21:10: fatal error: gst/rtsp/gstrtspurl.h: No such file or directory
   21 | #include <gst/rtsp/gstrtspurl.h>
 
   Hence, this is not necessarily an upstream issue, but could be something

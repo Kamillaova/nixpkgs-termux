@@ -723,13 +723,13 @@ rec {
         ls_tar temp/layer.tar >> baseFiles
 
         # Append nix/store directory to the layer so that when the layer is loaded in the
-        # image /nix/store has read permissions for non-root users.
-        # nix/store is added only if the layer has /nix/store paths in it.
-        if [ $(wc -l < $layerClosure) -gt 1 ] && [ $(grep -c -e "^/nix/store$" baseFiles) -eq 0 ]; then
+        # image /data/data/com.termux/files/nix/store has read permissions for non-root users.
+        # nix/store is added only if the layer has /data/data/com.termux/files/nix/store paths in it.
+        if [ $(wc -l < $layerClosure) -gt 1 ] && [ $(grep -c -e "^/data/data/com.termux/files/nix/store$" baseFiles) -eq 0 ]; then
           mkdir -p nix/store
           chmod -R 555 nix
           echo "./nix" >> layerFiles
-          echo "./nix/store" >> layerFiles
+          echo "./data/data/com.termux/files/nix/store" >> layerFiles
         fi
 
         # Get the files in the new layer which were *not* present in

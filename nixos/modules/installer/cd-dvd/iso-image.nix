@@ -717,7 +717,7 @@ in
         noCheck = true;
       };
 
-    # In stage 1, mount a tmpfs on top of /nix/store (the squashfs
+    # In stage 1, mount a tmpfs on top of /data/data/com.termux/files/nix/store (the squashfs
     # image) to make this a live CD.
     "/nix/.ro-store" = lib.mkImageMediaOverride
       { fsType = "squashfs";
@@ -732,7 +732,7 @@ in
         neededForBoot = true;
       };
 
-    "/nix/store" = lib.mkImageMediaOverride
+    "/data/data/com.termux/files/nix/store" = lib.mkImageMediaOverride
       { fsType = "overlay";
         device = "overlay";
         options = [
@@ -875,12 +875,12 @@ in
       ''
         # After booting, register the contents of the Nix store on the
         # CD in the Nix database in the tmpfs.
-        ${config.nix.package.out}/bin/nix-store --load-db < /nix/store/nix-path-registration
+        ${config.nix.package.out}/bin/nix-store --load-db < /data/data/com.termux/files/nix/store/nix-path-registration
 
         # nixos-rebuild also requires a "system" profile and an
         # /etc/NIXOS tag.
         touch /etc/NIXOS
-        ${config.nix.package.out}/bin/nix-env -p /nix/var/nix/profiles/system --set /run/current-system
+        ${config.nix.package.out}/bin/nix-env -p /data/data/com.termux/files/nix/var/nix/profiles/system --set /run/current-system
       '';
 
     # Add vfat support to the initrd to enable people to copy the

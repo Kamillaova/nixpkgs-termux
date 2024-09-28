@@ -105,7 +105,7 @@ in
   singlelinesconfig = runTest (wrapNeovim2 "-single-lines" nvimConfSingleLines) ''
       assertFileContains \
         "$luarcGeneric" \
-        "vim.cmd.source \"/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-init.vim"
+        "vim.cmd.source \"/data/data/com.termux/files/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-init.vim"
       assertFileContent \
         "$vimrcGeneric" \
         "${./init-single-lines.vim}"

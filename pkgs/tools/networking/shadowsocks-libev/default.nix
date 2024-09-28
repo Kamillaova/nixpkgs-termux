@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
                         docbook_xsl libxslt ];
 
   cmakeFlags = [ "-DWITH_STATIC=OFF"  "-DCMAKE_BUILD_WITH_INSTALL_NAME_DIR=ON"
-    # RPATH of binary /nix/store/.../bin/... contains a forbidden reference to /build/
+    # RPATH of binary /data/data/com.termux/files/nix/store/.../bin/... contains a forbidden reference to /build/
     "-DCMAKE_SKIP_BUILD_RPATH=ON"
   ];
 

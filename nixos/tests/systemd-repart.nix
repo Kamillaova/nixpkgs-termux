@@ -133,7 +133,7 @@ in
           device = "/dev/disk/by-partlabel/created-root";
           fsType = "ext4";
         };
-        "/nix/store" = {
+        "/data/data/com.termux/files/nix/store" = {
           device = "/dev/vda2";
           fsType = "ext4";
         };

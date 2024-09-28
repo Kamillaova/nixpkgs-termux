@@ -46,7 +46,7 @@
           # to be overriden, but you *can* specify a prefix, i.e. it will use
           # <prefix>/<path-to-glibc>/lib/locale/locale-archive.  So we use
           # $TMPDIR as a prefix, meaning that the locale-archive is placed in
-          # $TMPDIR/nix/store/...-glibc-.../lib/locale/locale-archive.
+          # $TMPDIR/data/data/com.termux/files/nix/store/...-glibc-.../lib/locale/locale-archive.
           LOCALEDEF_FLAGS+=" --prefix=$TMPDIR"
 
           mkdir -p $TMPDIR/"${buildPackages.glibc.out}/lib/locale"

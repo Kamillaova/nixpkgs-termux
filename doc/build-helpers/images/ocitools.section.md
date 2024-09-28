@@ -92,11 +92,11 @@ Any other tool that supports OCI containers could be used instead.
 ```shell
 $ nix-build
 (some output removed for clarity)
-/nix/store/7f9hgx0arvhzp2a3qphp28rxbn748l25-join
+/data/data/com.termux/files/nix/store/7f9hgx0arvhzp2a3qphp28rxbn748l25-join
 
-$ cd /nix/store/7f9hgx0arvhzp2a3qphp28rxbn748l25-join
+$ cd /data/data/com.termux/files/nix/store/7f9hgx0arvhzp2a3qphp28rxbn748l25-join
 $ nix-shell -p runc
-[nix-shell:/nix/store/7f9hgx0arvhzp2a3qphp28rxbn748l25-join]$ sudo runc run ocitools-example
+[nix-shell:/data/data/com.termux/files/nix/store/7f9hgx0arvhzp2a3qphp28rxbn748l25-join]$ sudo runc run ocitools-example
 help
 GNU bash, version 5.2.26(1)-release (x86_64-pc-linux-gnu)
 (some output removed for clarity)

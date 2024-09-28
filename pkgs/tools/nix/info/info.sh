@@ -107,7 +107,7 @@ desc_nixpkgs_path() {
 }
 
 channel_facts() {
-    find /nix/var/nix/profiles/per-user \
+    find /data/data/com.termux/files/nix/var/nix/profiles/per-user \
          -mindepth 2 \
          -maxdepth 2 \
          -name channels \

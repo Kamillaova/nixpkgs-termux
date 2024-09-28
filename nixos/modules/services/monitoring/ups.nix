@@ -89,7 +89,7 @@ let
   {
     options = {
       # This can be inferred from the UPS model by looking at
-      # /nix/store/nut/share/driver.list
+      # /data/data/com.termux/files/nix/store/nut/share/driver.list
       driver = lib.mkOption {
         type = lib.types.str;
         description = ''

@@ -48,7 +48,7 @@ let
       # Nix cannot see the runtime references to the paths we just patched in
       # once they've been compressed into the .jar. Scan for and remember them
       # as plain text so they don't get overlooked.
-      find . -name '*.so' | xargs strings | { grep '/nix/store' || :; } >> ./.jar-paths
+      find . -name '*.so' | xargs strings | { grep '/data/data/com.termux/files/nix/store' || :; } >> ./.jar-paths
     '';
 
     nativeBuildInputs = [ makeWrapper autoPatchelfHook stripJavaArchivesHook ];

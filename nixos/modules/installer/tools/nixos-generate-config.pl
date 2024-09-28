@@ -391,8 +391,8 @@ foreach my $fs (read_file("/proc/self/mountinfo")) {
     $device =~ s/\\040/ /g; # account for devices with spaces in the name (\040 is the escape character)
     $device =~ s/\\011/\t/g; # account for mount points with tabs in the name (\011 is the escape character)
 
-    # Skip the read-only bind-mount on /nix/store.
-    next if $mountPoint eq "/nix/store" && (grep { $_ eq "rw" } @superOptions) && (grep { $_ eq "ro" } @mountOptions);
+    # Skip the read-only bind-mount on /data/data/com.termux/files/nix/store.
+    next if $mountPoint eq "/data/data/com.termux/files/nix/store" && (grep { $_ eq "rw" } @superOptions) && (grep { $_ eq "ro" } @mountOptions);
 
     # Maybe this is a bind-mount of a filesystem we saw earlier?
     if (defined $fsByDev{$fields[2]}) {

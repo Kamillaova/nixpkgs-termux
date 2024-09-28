@@ -28,7 +28,7 @@ let
 
   manpageUrls = pkgs.path + "/doc/manpage-urls.json";
 
-  # We need to strip references to /nix/store/* from options,
+  # We need to strip references to /data/data/com.termux/files/nix/store/* from options,
   # including any `extraSources` if some modules came from elsewhere,
   # or else the build will fail.
   #

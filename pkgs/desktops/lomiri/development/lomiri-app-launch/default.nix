@@ -67,7 +67,7 @@ stdenv.mkDerivation (finalAttrs: {
       --replace-fail 'pkg_get_variable(SYSTEMD_USER_UNIT_DIR systemd systemduserunitdir)' 'pkg_get_variable(SYSTEMD_USER_UNIT_DIR systemd systemduserunitdir DEFINE_VARIABLES prefix=''${CMAKE_INSTALL_PREFIX})'
 
     substituteInPlace tests/jobs-systemd.cpp \
-      --replace-fail '^(/usr)?' '^(/nix/store/\\w+-bash-.+)?'
+      --replace-fail '^(/usr)?' '^(/data/data/com.termux/files/nix/store/\\w+-bash-.+)?'
   '';
 
   strictDeps = true;

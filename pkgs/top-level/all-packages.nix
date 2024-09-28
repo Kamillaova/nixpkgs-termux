@@ -37738,8 +37738,8 @@ with pkgs;
   networkd-dispatcher = callPackage ../tools/networking/networkd-dispatcher { };
 
   nixVersions = recurseIntoAttrs (callPackage ../tools/package-management/nix {
-    storeDir = config.nix.storeDir or "/nix/store";
-    stateDir = config.nix.stateDir or "/nix/var";
+    storeDir = config.nix.storeDir or "/data/data/com.termux/files/nix/store";
+    stateDir = config.nix.stateDir or "/data/data/com.termux/files/nix/var";
     inherit (darwin.apple_sdk.frameworks) Security;
   });
 
@@ -37748,8 +37748,8 @@ with pkgs;
   nixStatic = pkgsStatic.nix;
 
   lixVersions = recurseIntoAttrs (callPackage ../tools/package-management/lix {
-    storeDir = config.nix.storeDir or "/nix/store";
-    stateDir = config.nix.stateDir or "/nix/var";
+    storeDir = config.nix.storeDir or "/data/data/com.termux/files/nix/store";
+    stateDir = config.nix.stateDir or "/data/data/com.termux/files/nix/var";
     inherit (darwin.apple_sdk.frameworks) Security;
   });
 

@@ -28,7 +28,7 @@ let
       #
       # Symlinking works for most plugins and themes, but Avada, for instance, fails to
       # understand the symlink, causing its file path stripping to fail. This results in
-      # requests that look like: https://example.com/wp-content//nix/store/...plugin/path/some-file.js
+      # requests that look like: https://example.com/wp-content//data/data/com.termux/files/nix/store/...plugin/path/some-file.js
       # Since hard linking directories is not allowed, copying is the next best thing.
 
       # copy additional plugin(s), theme(s) and language(s)

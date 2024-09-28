@@ -43,7 +43,7 @@ in
     dysnomia.enable = true;
 
     environment.systemPackages = [ pkgs.disnix ] ++ lib.optional cfg.useWebServiceInterface pkgs.DisnixWebService;
-    environment.variables.PATH = lib.optionals cfg.enableProfilePath (map (profileName: "/nix/var/nix/profiles/disnix/${profileName}/bin" ) cfg.profiles);
+    environment.variables.PATH = lib.optionals cfg.enableProfilePath (map (profileName: "/data/data/com.termux/files/nix/var/nix/profiles/disnix/${profileName}/bin" ) cfg.profiles);
     environment.variables.DISNIX_REMOTE_CLIENT = lib.optionalString (cfg.enableMultiUser) "disnix-client";
 
     services.dbus.enable = true;

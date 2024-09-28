@@ -269,7 +269,7 @@ if ($action eq "create") {
     # The per-container directory is restricted to prevent users on
     # the host from messing with guest users who happen to have the
     # same uid.
-    my $profileDir = "/nix/var/nix/profiles/per-container";
+    my $profileDir = "/data/data/com.termux/files/nix/var/nix/profiles/per-container";
     mkpath($profileDir, 0, 0700);
     $profileDir = "$profileDir/$containerName";
     mkpath($profileDir, 0, 0755);
@@ -306,8 +306,8 @@ if ($action eq "create") {
 }
 
 my $root = "$stateDirectory/$containerName";
-my $profileDir = "/nix/var/nix/profiles/per-container/$containerName";
-my $gcRootsDir = "/nix/var/nix/gcroots/per-container/$containerName";
+my $profileDir = "/data/data/com.termux/files/nix/var/nix/profiles/per-container/$containerName";
+my $gcRootsDir = "/data/data/com.termux/files/nix/var/nix/gcroots/per-container/$containerName";
 my $confFile = "$configurationDirectory/$containerName.conf";
 if (!-e $confFile) {
     if ($action eq "destroy") {

@@ -123,7 +123,7 @@ in
         ];
 
         NoExecPaths = [ "/" ];
-        ExecPaths = [ "/nix/store" ];
+        ExecPaths = [ "/data/data/com.termux/files/nix/store" ];
 
         # This program actively detects if it is running in root user account
         # when it starts and uses root privilege to switch process uid to

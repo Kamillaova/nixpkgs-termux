@@ -15,7 +15,7 @@
  PATH="$PATH:/usr/sbin:/sbin"
  
  # Add bash and dependencies
-+mkdir -p ${DIR}/nix/store
++mkdir -p ${DIR}/data/data/com.termux/files/nix/store
  mkdir -p ${DIR}/usr/bin
  mkdir -p ${DIR}/usr/lib
  ln -s ../lib ${DIR}/usr/lib64
@@ -97,10 +97,10 @@
 -# We copy the C.UTF8 locale and call it en_US. Its a bit of a lie, but
 -# the real en_US locale is often not available, because its in the
 -# local archive.
-+mv ${DIR}/nix/store ${DIR}/usr/store # files outside /usr are not permitted, we will have to replace /nix/store with /usr/store
++mv ${DIR}/data/data/com.termux/files/nix/store ${DIR}/usr/store # files outside /usr are not permitted, we will have to replace /data/data/com.termux/files/nix/store with /usr/store
 +chmod -R u+w ${DIR} # nix store has read-only directories which would cause problems during clean-up, files need to be writable for sed
-+find ${DIR} -type f -print0 | xargs -0 sed -i 's~/nix/store/~/usr/store/~g' # replace hardcoded paths
-+find ${DIR} -type l | xargs -I '{}' sh -c 'tg="$(readlink "$1")"; newtg="${tg#/nix/store/}"; if [ "$tg" != "$newtg" ]; then ln -fs "/usr/store/$newtg" "$1"; fi' -- '{}' # replace symlink targets
++find ${DIR} -type f -print0 | xargs -0 sed -i 's~/data/data/com.termux/files/nix/store/~/usr/store/~g' # replace hardcoded paths
++find ${DIR} -type l | xargs -I '{}' sh -c 'tg="$(readlink "$1")"; newtg="${tg#/data/data/com.termux/files/nix/store/}"; if [ "$tg" != "$newtg" ]; then ln -fs "/usr/store/$newtg" "$1"; fi' -- '{}' # replace symlink targets
 +
 +# We copy the whole locale archive because we do not have C.UTF8 locale
  mkdir -p ${DIR}/usr/lib/locale/

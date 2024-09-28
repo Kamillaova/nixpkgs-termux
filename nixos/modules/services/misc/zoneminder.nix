@@ -332,7 +332,7 @@ in {
           # contain ZM's Nix store path.
           ${config.services.mysql.package}/bin/mysql -u zoneminder zm << EOF
             UPDATE Config
-              SET Value = REGEXP_REPLACE(Value, "^/nix/store/[^-/]+-zoneminder-[^/]+", "${pkgs.zoneminder}")
+              SET Value = REGEXP_REPLACE(Value, "^/data/data/com.termux/files/nix/store/[^-/]+-zoneminder-[^/]+", "${pkgs.zoneminder}")
               WHERE Name = "ZM_FONT_FILE_LOCATION";
           EOF
         '';

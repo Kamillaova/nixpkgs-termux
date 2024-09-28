@@ -199,7 +199,7 @@ let
             List of volumes to attach to this container.
 
             Note that this is a list of `"src:dst"` strings to
-            allow for `src` to refer to `/nix/store` paths, which
+            allow for `src` to refer to `/data/data/com.termux/files/nix/store` paths, which
             would be difficult with an attribute set.  There are
             also a variety of mount options available as a third
             field; please refer to the

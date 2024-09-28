@@ -491,13 +491,13 @@ rec {
       emptyValue = { value = {}; };
     };
 
-    # A package is a top-level store path (/nix/store/hash-name). This includes:
+    # A package is a top-level store path (/data/data/com.termux/files/nix/store/hash-name). This includes:
     # - derivations
     # - more generally, attribute sets with an `outPath` or `__toString` attribute
     #   pointing to a store path, e.g. flake inputs
     # - strings with context, e.g. "${pkgs.foo}" or (toString pkgs.foo)
-    # - hardcoded store path literals (/nix/store/hash-foo) or strings without context
-    #   ("/nix/store/hash-foo"). These get a context added to them using builtins.storePath.
+    # - hardcoded store path literals (/data/data/com.termux/files/nix/store/hash-foo) or strings without context
+    #   ("/data/data/com.termux/files/nix/store/hash-foo"). These get a context added to them using builtins.storePath.
     # If you don't need a *top-level* store path, consider using pathInStore instead.
     package = mkOptionType {
       name = "package";

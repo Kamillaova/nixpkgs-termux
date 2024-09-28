@@ -63,7 +63,7 @@ in
         '';
         description = ''
           WARNING: THIS IS INSECURE, as your password will end up in
-          {file}`/nix/store`, thus publicly readable. Use
+          {file}`/data/data/com.termux/files/nix/store`, thus publicly readable. Use
           `services.matterbridge.configPath` instead.
 
           The matterbridge configuration file in the TOML file format.

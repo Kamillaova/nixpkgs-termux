@@ -9,7 +9,7 @@ import ../make-test-python.nix (
       Image=localhost/scratchimg:latest
       Exec=bash -c 'trap exit SIGTERM SIGINT; while true; do sleep 1; done'
       ContainerName=quadlet
-      Volume=/nix/store:/nix/store
+      Volume=/data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store
       Volume=/run/current-system/sw/bin:/bin
 
       [Install]
@@ -80,7 +80,7 @@ import ../make-test-python.nix (
       with subtest("Run container as root with runc"):
           rootful.succeed("tar cv --files-from /dev/null | podman import - scratchimg")
           rootful.succeed(
-              "podman run --runtime=runc -d --name=sleeping -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
+              "podman run --runtime=runc -d --name=sleeping -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
           )
           rootful.succeed("podman ps | grep sleeping")
           rootful.succeed("podman stop sleeping")
@@ -89,7 +89,7 @@ import ../make-test-python.nix (
       with subtest("Run container as root with crun"):
           rootful.succeed("tar cv --files-from /dev/null | podman import - scratchimg")
           rootful.succeed(
-              "podman run --runtime=crun -d --name=sleeping -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
+              "podman run --runtime=crun -d --name=sleeping -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
           )
           rootful.succeed("podman ps | grep sleeping")
           rootful.succeed("podman stop sleeping")
@@ -98,7 +98,7 @@ import ../make-test-python.nix (
       with subtest("Run container as root with the default backend"):
           rootful.succeed("tar cv --files-from /dev/null | podman import - scratchimg")
           rootful.succeed(
-              "podman run -d --name=sleeping -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
+              "podman run -d --name=sleeping -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
           )
           rootful.succeed("podman ps | grep sleeping")
           rootful.succeed("podman stop sleeping")
@@ -113,7 +113,7 @@ import ../make-test-python.nix (
           rootless.succeed(su_cmd("tar cv --files-from /dev/null | podman import - scratchimg"))
           rootless.succeed(
               su_cmd(
-                  "podman run --runtime=runc -d --name=sleeping -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
+                  "podman run --runtime=runc -d --name=sleeping -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
               )
           )
           rootless.succeed(su_cmd("podman ps | grep sleeping"))
@@ -124,7 +124,7 @@ import ../make-test-python.nix (
           rootless.succeed(su_cmd("tar cv --files-from /dev/null | podman import - scratchimg"))
           rootless.succeed(
               su_cmd(
-                  "podman run --runtime=crun -d --name=sleeping -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
+                  "podman run --runtime=crun -d --name=sleeping -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
               )
           )
           rootless.succeed(su_cmd("podman ps | grep sleeping"))
@@ -135,7 +135,7 @@ import ../make-test-python.nix (
           rootless.succeed(su_cmd("tar cv --files-from /dev/null | podman import - scratchimg"))
           rootless.succeed(
               su_cmd(
-                  "podman run -d --name=sleeping -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
+                  "podman run -d --name=sleeping -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
               )
           )
           rootless.succeed(su_cmd("podman ps | grep sleeping"))
@@ -146,7 +146,7 @@ import ../make-test-python.nix (
           rootless.succeed(su_cmd("tar cv --files-from /dev/null | podman import - scratchimg"))
           rootless.succeed(
               su_cmd(
-                  "podman run -d -p 9000:8888 --name=rootlessport -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin -w ${pkgs.writeTextDir "index.html" "<h1>Testing</h1>"} scratchimg ${pkgs.python3}/bin/python -m http.server 8888"
+                  "podman run -d -p 9000:8888 --name=rootlessport -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin -w ${pkgs.writeTextDir "index.html" "<h1>Testing</h1>"} scratchimg ${pkgs.python3}/bin/python -m http.server 8888"
               )
           )
           rootless.succeed(su_cmd("podman ps | grep rootlessport"))
@@ -166,11 +166,11 @@ import ../make-test-python.nix (
       with subtest("aardvark-dns"):
           dns.succeed("tar cv --files-from /dev/null | podman import - scratchimg")
           dns.succeed(
-              "podman run -d --name=webserver -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin -w ${pkgs.writeTextDir "index.html" "<h1>Testing</h1>"} scratchimg ${pkgs.python3}/bin/python -m http.server 8000"
+              "podman run -d --name=webserver -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin -w ${pkgs.writeTextDir "index.html" "<h1>Testing</h1>"} scratchimg ${pkgs.python3}/bin/python -m http.server 8000"
           )
           dns.succeed("podman ps | grep webserver")
           dns.wait_until_succeeds(
-              "podman run --rm --name=client -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin scratchimg ${pkgs.curl}/bin/curl http://webserver:8000 | grep Testing"
+              "podman run --rm --name=client -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin scratchimg ${pkgs.curl}/bin/curl http://webserver:8000 | grep Testing"
           )
           dns.succeed("podman stop webserver")
           dns.succeed("podman rm webserver")
@@ -181,7 +181,7 @@ import ../make-test-python.nix (
       with subtest("Run container via docker cli"):
           docker.succeed("tar cv --files-from /dev/null | podman import - scratchimg")
           docker.succeed(
-            "docker run -d --name=sleeping -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin localhost/scratchimg /bin/sleep 10"
+            "docker run -d --name=sleeping -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin localhost/scratchimg /bin/sleep 10"
           )
           docker.succeed("docker ps | grep sleeping")
           docker.succeed("podman ps | grep sleeping")

@@ -205,7 +205,7 @@ in
 
       gcRootsDir = lib.mkOption {
         type = lib.types.path;
-        default = "/nix/var/nix/gcroots/hydra";
+        default = "/data/data/com.termux/files/nix/var/nix/gcroots/hydra";
         description = "Directory that holds Hydra garbage collector roots.";
       };
 
@@ -353,18 +353,18 @@ in
           if [ ! -e ${cfg.gcRootsDir} ]; then
 
             # Move legacy roots directory.
-            if [ -e /nix/var/nix/gcroots/per-user/hydra/hydra-roots ]; then
-              mv /nix/var/nix/gcroots/per-user/hydra/hydra-roots ${cfg.gcRootsDir}
+            if [ -e /data/data/com.termux/files/nix/var/nix/gcroots/per-user/hydra/hydra-roots ]; then
+              mv /data/data/com.termux/files/nix/var/nix/gcroots/per-user/hydra/hydra-roots ${cfg.gcRootsDir}
             fi
 
             mkdir -p ${cfg.gcRootsDir}
           fi
 
           # Move legacy hydra-www roots.
-          if [ -e /nix/var/nix/gcroots/per-user/hydra-www/hydra-roots ]; then
-            find /nix/var/nix/gcroots/per-user/hydra-www/hydra-roots/ -type f \
+          if [ -e /data/data/com.termux/files/nix/var/nix/gcroots/per-user/hydra-www/hydra-roots ]; then
+            find /data/data/com.termux/files/nix/var/nix/gcroots/per-user/hydra-www/hydra-roots/ -type f \
               | xargs -r mv -f -t ${cfg.gcRootsDir}/
-            rmdir /nix/var/nix/gcroots/per-user/hydra-www/hydra-roots
+            rmdir /data/data/com.termux/files/nix/var/nix/gcroots/per-user/hydra-www/hydra-roots
           fi
 
           chown hydra:hydra ${cfg.gcRootsDir}
@@ -493,11 +493,11 @@ in
     systemd.services.hydra-check-space =
       { script =
           ''
-            if [ $(($(stat -f -c '%a' /nix/store) * $(stat -f -c '%S' /nix/store))) -lt $((${toString cfg.minimumDiskFree} * 1024**3)) ]; then
+            if [ $(($(stat -f -c '%a' /data/data/com.termux/files/nix/store) * $(stat -f -c '%S' /data/data/com.termux/files/nix/store))) -lt $((${toString cfg.minimumDiskFree} * 1024**3)) ]; then
                 echo "stopping Hydra queue runner due to lack of free space..."
                 systemctl stop hydra-queue-runner
             fi
-            if [ $(($(stat -f -c '%a' /nix/store) * $(stat -f -c '%S' /nix/store))) -lt $((${toString cfg.minimumDiskFreeEvaluator} * 1024**3)) ]; then
+            if [ $(($(stat -f -c '%a' /data/data/com.termux/files/nix/store) * $(stat -f -c '%S' /data/data/com.termux/files/nix/store))) -lt $((${toString cfg.minimumDiskFreeEvaluator} * 1024**3)) ]; then
                 echo "stopping Hydra evaluator due to lack of free space..."
                 systemctl stop hydra-evaluator
             fi

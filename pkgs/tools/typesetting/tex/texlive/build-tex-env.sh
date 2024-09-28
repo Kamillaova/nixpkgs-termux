@@ -116,7 +116,7 @@ installtl_do_path_adjustments () {
     tlutils_info "generating format symlinks"
     texlinks --quiet "$out/bin"
 
-    # remove *-sys scripts since /nix/store is readonly
+    # remove *-sys scripts since /data/data/com.termux/files/nix/store is readonly
     rm "$out"/bin/*-sys
 
     # link TEXMFDIST in $out/share for backward compatibility

@@ -103,7 +103,7 @@ rec {
     '';
 
     disabledTests = lib.optionals stdenv.hostPlatform.isLinux [
-      "test_get_tor_paths_linux"  # expects /usr instead of /nix/store
+      "test_get_tor_paths_linux"  # expects /usr instead of /data/data/com.termux/files/nix/store
     ] ++ lib.optionals stdenv.hostPlatform.isDarwin [
       # requires meek-client which is not packaged
       "test_get_tor_paths_darwin"

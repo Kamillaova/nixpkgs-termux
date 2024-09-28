@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
 
   patches = [
     # Ignore the freetype sources bundled as a submodule:
-    # /nix/store/…-harfbuzz-7.0.0/lib/libharfbuzz.so.0: undefined reference to `FT_Get_Transform'
+    # /data/data/com.termux/files/nix/store/…-harfbuzz-7.0.0/lib/libharfbuzz.so.0: undefined reference to `FT_Get_Transform'
     ./0001-Avoid-using-vendored-dependencies-we-have-in-nixpkgs.patch
   ];
 

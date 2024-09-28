@@ -50,9 +50,9 @@ in {
       environment = {
         HOME = "/root";
         NIX_PATH = concatStringsSep ":" [
-          "/nix/var/nix/profiles/per-user/root/channels/nixos"
+          "/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels/nixos"
           "nixos-config=/etc/nixos/configuration.nix"
-          "/nix/var/nix/profiles/per-user/root/channels"
+          "/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels"
         ];
       };
       script = ''

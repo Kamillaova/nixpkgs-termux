@@ -104,7 +104,7 @@ import ./make-test-python.nix ({ pkgs, ... }: rec {
       with subtest("check generated config matches expectation"):
           machine.succeed(
               # copy conf to /tmp/logrotate.conf for easy grep
-              "conf=$(systemctl cat logrotate | grep -oE '/nix/store[^ ]*logrotate.conf'); cp $conf /tmp/logrotate.conf",
+              "conf=$(systemctl cat logrotate | grep -oE '/data/data/com.termux/files/nix/store[^ ]*logrotate.conf'); cp $conf /tmp/logrotate.conf",
               "! grep weekly /tmp/logrotate.conf",
               "grep -E '^delaycompress' /tmp/logrotate.conf",
               "tail -n 1 /tmp/logrotate.conf | grep shred",
@@ -115,7 +115,7 @@ import ./make-test-python.nix ({ pkgs, ... }: rec {
           )
           # also check configFile option
           failingMachine.succeed(
-              "conf=$(systemctl cat logrotate | grep -oE '/nix/store[^ ]*logrotate.conf'); cp $conf /tmp/logrotate.conf",
+              "conf=$(systemctl cat logrotate | grep -oE '/data/data/com.termux/files/nix/store[^ ]*logrotate.conf'); cp $conf /tmp/logrotate.conf",
               "grep 'self-written config' /tmp/logrotate.conf",
           )
       with subtest("Check logrotate-checkconf service"):

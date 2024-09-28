@@ -50,12 +50,12 @@ in
       ''
         if ! [ -e /var/lib/nixos/did-channel-init ]; then
           echo "unpacking the NixOS/Nixpkgs sources..."
-          mkdir -p /nix/var/nix/profiles/per-user/root
-          ${config.nix.package.out}/bin/nix-env -p /nix/var/nix/profiles/per-user/root/channels \
+          mkdir -p /data/data/com.termux/files/nix/var/nix/profiles/per-user/root
+          ${config.nix.package.out}/bin/nix-env -p /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels \
             -i ${channelSources} --quiet --option build-use-substitutes false \
             ${lib.optionalString config.boot.initrd.systemd.enable "--option sandbox false"} # There's an issue with pivot_root
           mkdir -m 0700 -p /root/.nix-defexpr
-          ln -s /nix/var/nix/profiles/per-user/root/channels /root/.nix-defexpr/channels
+          ln -s /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels /root/.nix-defexpr/channels
           mkdir -m 0755 -p /var/lib/nixos
           touch /var/lib/nixos/did-channel-init
         fi

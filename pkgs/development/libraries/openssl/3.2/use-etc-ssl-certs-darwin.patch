@@ -7,7 +7,7 @@ index 15666f1..d91e25b 100644
  #  define X509_CERT_AREA          OPENSSLDIR
  #  define X509_CERT_DIR           OPENSSLDIR "/certs"
 -#  define X509_CERT_FILE          OPENSSLDIR "/cert.pem"
-+#  define X509_CERT_FILE          "/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt"
++#  define X509_CERT_FILE          "/data/data/com.termux/files/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt"
  #  define X509_PRIVATE_DIR        OPENSSLDIR "/private"
  #  define CTLOG_FILE              OPENSSLDIR "/ct_log_list.cnf"
  # else

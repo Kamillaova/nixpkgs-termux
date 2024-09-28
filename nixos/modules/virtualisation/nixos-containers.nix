@@ -101,11 +101,11 @@ let
       fi
 
       mkdir -p \
-        "/nix/var/nix/profiles/per-container/$INSTANCE" \
-        "/nix/var/nix/gcroots/per-container/$INSTANCE"
+        "/data/data/com.termux/files/nix/var/nix/profiles/per-container/$INSTANCE" \
+        "/data/data/com.termux/files/nix/var/nix/gcroots/per-container/$INSTANCE"
       chmod 0755 \
-        "/nix/var/nix/profiles/per-container/$INSTANCE" \
-        "/nix/var/nix/gcroots/per-container/$INSTANCE"
+        "/data/data/com.termux/files/nix/var/nix/profiles/per-container/$INSTANCE" \
+        "/data/data/com.termux/files/nix/var/nix/gcroots/per-container/$INSTANCE"
 
       cp --remove-destination /etc/resolv.conf "$root/etc/resolv.conf"
 
@@ -145,7 +145,7 @@ let
       # If the host is 64-bit and the container is 32-bit, add a
       # --personality flag.
       ${optionalString (pkgs.stdenv.hostPlatform.system == "x86_64-linux") ''
-        if [ "$(< "''${SYSTEM_PATH:-/nix/var/nix/profiles/per-container/$INSTANCE/system}/system")" = i686-linux ]; then
+        if [ "$(< "''${SYSTEM_PATH:-/data/data/com.termux/files/nix/var/nix/profiles/per-container/$INSTANCE/system}/system")" = i686-linux ]; then
           extraFlags+=" --personality=x86"
         fi
       ''}
@@ -163,11 +163,11 @@ let
         $EXTRA_NSPAWN_FLAGS \
         --notify-ready=yes \
         --kill-signal=SIGRTMIN+3 \
-        --bind-ro=/nix/store \
-        --bind-ro=/nix/var/nix/db \
-        --bind-ro=/nix/var/nix/daemon-socket \
-        --bind="/nix/var/nix/profiles/per-container/$INSTANCE:/nix/var/nix/profiles" \
-        --bind="/nix/var/nix/gcroots/per-container/$INSTANCE:/nix/var/nix/gcroots" \
+        --bind-ro=/data/data/com.termux/files/nix/store \
+        --bind-ro=/data/data/com.termux/files/nix/var/nix/db \
+        --bind-ro=/data/data/com.termux/files/nix/var/nix/daemon-socket \
+        --bind="/data/data/com.termux/files/nix/var/nix/profiles/per-container/$INSTANCE:/data/data/com.termux/files/nix/var/nix/profiles" \
+        --bind="/data/data/com.termux/files/nix/var/nix/gcroots/per-container/$INSTANCE:/data/data/com.termux/files/nix/var/nix/gcroots" \
         ${optionalString (!cfg.ephemeral) "--link-journal=try-guest"} \
         --setenv PRIVATE_NETWORK="$PRIVATE_NETWORK" \
         --setenv HOST_BRIDGE="$HOST_BRIDGE" \
@@ -184,7 +184,7 @@ let
         ${optionalString (cfg.tmpfs != null && cfg.tmpfs != [])
           ''--tmpfs=${concatStringsSep " --tmpfs=" cfg.tmpfs}''
         } \
-        ${containerInit cfg} "''${SYSTEM_PATH:-/nix/var/nix/profiles/system}/init"
+        ${containerInit cfg} "''${SYSTEM_PATH:-/data/data/com.termux/files/nix/var/nix/profiles/system}/init"
     '';
 
   preStartScript = cfg:
@@ -263,7 +263,7 @@ let
       ''
         #! ${pkgs.runtimeShell} -e
         ${nixos-container}/bin/nixos-container run "$INSTANCE" -- \
-          bash --login -c "''${SYSTEM_PATH:-/nix/var/nix/profiles/system}/bin/switch-to-configuration test"
+          bash --login -c "''${SYSTEM_PATH:-/data/data/com.termux/files/nix/var/nix/profiles/system}/bin/switch-to-configuration test"
       '';
 
     SyslogIdentifier = "container %i";
@@ -540,7 +540,7 @@ in
 
             path = mkOption {
               type = types.path;
-              example = "/nix/var/nix/profiles/per-container/webserver";
+              example = "/data/data/com.termux/files/nix/var/nix/profiles/per-container/webserver";
               description = ''
                 As an alternative to specifying
                 {option}`config`, you can specify the path to
@@ -760,7 +760,7 @@ in
       example = literalExpression
         ''
           { webserver =
-              { path = "/nix/var/nix/profiles/webserver";
+              { path = "/data/data/com.termux/files/nix/var/nix/profiles/webserver";
               };
             database =
               { config =

@@ -16,7 +16,7 @@
 +        # Skip immutable files from package, correct permissions provided by Nix.
 +        @PACKAGE@/*) continue;
  	    esac
-+        # Also skip symlinks following to /nix/store
++        # Also skip symlinks following to /data/data/com.termux/files/nix/store
 +        if test -L $path; then
 +            case "$(readlink $path)" in
 +                @NIX_STORE@/*) continue;

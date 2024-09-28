@@ -40,7 +40,7 @@ rustPlatform.buildRustPackage rec {
     # Requiring network access
     "--skip=nix::narinfo::tests::test_fetch"
     "--skip=nix::substituters::tests::test_from_flake_ref"
-    # Requiring write to `/nix/var`
+    # Requiring write to `/data/data/com.termux/files/nix/var`
     "--skip=nix::substituters::tests::test_get_substituters"
     "--skip=tests::test_main_fixtures"
   ];

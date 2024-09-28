@@ -49,12 +49,12 @@ in
 
       deployDir = mkOption {
         description = "Location of the deployment files";
-        default = "/nix/var/nix/profiles/default/server/default/deploy/";
+        default = "/data/data/com.termux/files/nix/var/nix/profiles/default/server/default/deploy/";
         type = types.str;
       };
 
       libUrl = mkOption {
-        default = "file:///nix/var/nix/profiles/default/server/default/lib";
+        default = "file:///data/data/com.termux/files/nix/var/nix/profiles/default/server/default/lib";
         description = "Location where the shared library JARs are stored";
         type = types.str;
       };

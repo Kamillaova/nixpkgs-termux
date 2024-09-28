@@ -37,7 +37,7 @@ the PostgreSQL database service:
 ```ShellSession
 $ systemctl status postgresql.service
 postgresql.service - PostgreSQL Server
-          Loaded: loaded (/nix/store/pn3q73mvh75gsrl8w7fdlfk3fq5qm5mw-unit/postgresql.service)
+          Loaded: loaded (/data/data/com.termux/files/nix/store/pn3q73mvh75gsrl8w7fdlfk3fq5qm5mw-unit/postgresql.service)
           Active: active (running) since Mon, 2013-01-07 15:55:57 CET; 9h ago
         Main PID: 2390 (postgres)
           CGroup: name=systemd:/system/postgresql.service
@@ -116,7 +116,7 @@ of `default.target.wants` in the 1st and 2nd command.
 
 Using `systemctl --user enable syncthing.service` instead of the above,
 will work, but it'll use the absolute path of `syncthing.service` for
-the symlink, and this path is in `/nix/store/.../lib/systemd/user/`.
+the symlink, and this path is in `/data/data/com.termux/files/nix/store/.../lib/systemd/user/`.
 Hence [garbage collection](#sec-nix-gc) will remove that file and you
 will wind up with a broken symlink in your systemd configuration, which
 in turn will not make the service / timer start on login.

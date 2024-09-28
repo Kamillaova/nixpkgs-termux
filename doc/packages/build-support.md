@@ -67,10 +67,10 @@ substituteAll {
 such that `$out` will result in something like the following:
 
 ```
-#! /nix/store/s30jrpgav677fpc9yvkqsib70xfmx7xi-bash-5.2p26/bin/bash
+#! /data/data/com.termux/files/nix/store/s30jrpgav677fpc9yvkqsib70xfmx7xi-bash-5.2p26/bin/bash
 
 echo @unchanged@
-/nix/store/566f5isbvw014h7knmzmxa5l6hshx43k-hello-2.12.1/bin/hello --greeting goodbye
+/data/data/com.termux/files/nix/store/566f5isbvw014h7knmzmxa5l6hshx43k-hello-2.12.1/bin/hello --greeting goodbye
 ```
 :::
 

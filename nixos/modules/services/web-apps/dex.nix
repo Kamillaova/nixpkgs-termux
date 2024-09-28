@@ -82,7 +82,7 @@ in
         RuntimeDirectory = "dex";
         AmbientCapabilities = "CAP_NET_BIND_SERVICE";
         BindReadOnlyPaths = [
-          "/nix/store"
+          "/data/data/com.termux/files/nix/store"
           "-/etc/dex"
           "-/etc/hosts"
           "-/etc/localtime"

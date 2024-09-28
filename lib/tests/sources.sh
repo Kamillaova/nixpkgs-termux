@@ -31,7 +31,7 @@ trap clean_up EXIT
 cd "$work"
 
 # Crudely unquotes a JSON string by just taking everything between the first and the second quote.
-# We're only using this for resulting /nix/store paths, which can't contain " anyways,
+# We're only using this for resulting /data/data/com.termux/files/nix/store paths, which can't contain " anyways,
 # nor can they contain any other characters that would need to be escaped specially in JSON
 # This way we don't need to add a dependency on e.g. jq
 crudeUnquoteJSON() {

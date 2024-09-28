@@ -16,9 +16,9 @@ in
       default = null;
       example = "/etc/prometheus-idrac-exporter/idrac.yml";
       description = ''
-        Path to the service's config file. This path can either be a computed path in /nix/store or a path in the local filesystem.
+        Path to the service's config file. This path can either be a computed path in /data/data/com.termux/files/nix/store or a path in the local filesystem.
 
-        The config file should NOT be stored in /nix/store as it will contain passwords and/or keys in plain text.
+        The config file should NOT be stored in /data/data/com.termux/files/nix/store as it will contain passwords and/or keys in plain text.
 
         Mutually exclusive with `configuration` option.
 

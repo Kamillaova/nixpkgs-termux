@@ -94,7 +94,7 @@ let
   # a dummy Git repository, as Julia expects. Format the results as a YAML map from
   # dependency UUID -> Nix store location:
   # {
-  #   "77ba4419-2d1f-58cd-9bb1-8ffee604a2e3":"/nix/store/...-NaNMath.jl-0877504",
+  #   "77ba4419-2d1f-58cd-9bb1-8ffee604a2e3":"/data/data/com.termux/files/nix/store/...-NaNMath.jl-0877504",
   #   ...
   # }
   # This is also the point where we apply the packageOverrides.

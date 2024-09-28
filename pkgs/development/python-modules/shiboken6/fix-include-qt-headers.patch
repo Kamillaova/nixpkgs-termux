@@ -15,8 +15,8 @@
 +
 +    bool isNixDebug = qgetenv("NIX_DEBUG").toInt() > 0;
 +    // examples:
-+    // /nix/store/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-qtsensors-6.4.2-dev/include
-+    // /nix/store/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-qtbase-6.4.2-dev/include
++    // /data/data/com.termux/files/nix/store/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-qtsensors-6.4.2-dev/include
++    // /data/data/com.termux/files/nix/store/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-qtbase-6.4.2-dev/include
 +    QRegularExpression qtHeaderRegex(uR"(/[0-9a-z]{32}-qt[a-z0-9]+-)"_s);
 +
      switch (compiler()) {

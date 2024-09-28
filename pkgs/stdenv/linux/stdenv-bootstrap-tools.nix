@@ -210,7 +210,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   passthru = {
     bootstrapFiles = {
-      # Make them their own store paths to test that busybox still works when the binary is named /nix/store/HASH-busybox
+      # Make them their own store paths to test that busybox still works when the binary is named /data/data/com.termux/files/nix/store/HASH-busybox
       busybox = runCommand "busybox" { } "cp ${finalAttrs.finalPackage}/on-server/busybox $out";
       bootstrapTools =
         runCommand "bootstrap-tools.tar.xz" { }

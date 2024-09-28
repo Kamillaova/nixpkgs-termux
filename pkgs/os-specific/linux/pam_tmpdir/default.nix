@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
     substituteInPlace pam_tmpdir.c \
       --replace /sbin/pam-tmpdir-helper $out/sbin/pam-tmpdir-helper
 
-    # chmod/chown fails on files in /nix/store
+    # chmod/chown fails on files in /data/data/com.termux/files/nix/store
     sed -i -E -e '/^\s*(chmod|chown)/d' Makefile.{am,in}
 
     # the symlinks in m4 assume FHS

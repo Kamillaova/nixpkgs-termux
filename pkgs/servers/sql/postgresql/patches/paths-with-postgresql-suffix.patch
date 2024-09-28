@@ -1,5 +1,5 @@
 Nix outputs put the `name' in each store path like
-/nix/store/...-<name>. This was confusing the Postgres make script
+/data/data/com.termux/files/nix/store/...-<name>. This was confusing the Postgres make script
 because it thought its data directory already had postgresql in its
 directory. This lead to Postgres installing all of its fils in
 $out/share. To fix this, we just look for postgres or psql in the part

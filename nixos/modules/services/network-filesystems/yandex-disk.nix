@@ -37,7 +37,7 @@ in
         default = "";
         type = lib.types.str;
         description = ''
-          Your yandex.com password. Warning: it will be world-readable in /nix/store.
+          Your yandex.com password. Warning: it will be world-readable in /data/data/com.termux/files/nix/store.
         '';
       };
 

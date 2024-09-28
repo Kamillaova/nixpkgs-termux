@@ -1,6 +1,6 @@
 #! @shell@
 
-STORE_DIR="${NIX_STORE_DIR:-/nix/store}"
+STORE_DIR="${NIX_STORE_DIR:-/data/data/com.termux/files/nix/store}"
 MASS_QUERY=0
 PRIORITY=75
 COMPRESSION=bzip2

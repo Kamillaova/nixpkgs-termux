@@ -33,7 +33,7 @@ import ./make-test-python.nix ({ lib, pkgs, ...} : {
 
       machine.succeed("tar cv --files-from /dev/null | ${sudo} docker import - scratchimg")
       machine.succeed(
-          "${sudo} docker run -d --name=sleeping -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
+          "${sudo} docker run -d --name=sleeping -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
       )
       machine.succeed("${sudo} docker ps | grep sleeping")
       machine.succeed("${sudo} docker stop sleeping")

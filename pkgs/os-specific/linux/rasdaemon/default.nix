@@ -63,7 +63,7 @@ stdenv.mkDerivation rec {
   # therefore, stripping these from the generated Makefile
   # (needed in the config flags because those set where the tools look for these)
 
-# easy way out, ends up installing /nix/store/...rasdaemon/bin in $out
+# easy way out, ends up installing /data/data/com.termux/files/nix/store/...rasdaemon/bin in $out
 
   postConfigure = ''
     substituteInPlace Makefile \

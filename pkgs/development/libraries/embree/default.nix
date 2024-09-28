@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
   };
 
   postPatch = ''
-    # Fix duplicate /nix/store/.../nix/store/.../ paths
+    # Fix duplicate /data/data/com.termux/files/nix/store/.../data/data/com.termux/files/nix/store/.../ paths
     sed -i "s|SET(EMBREE_ROOT_DIR .*)|set(EMBREE_ROOT_DIR $out)|" \
       common/cmake/embree-config.cmake
     sed -i "s|$""{EMBREE_ROOT_DIR}/||" common/cmake/embree-config.cmake

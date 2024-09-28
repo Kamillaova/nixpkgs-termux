@@ -18,7 +18,7 @@ else
 fi
 
 mountPoint=/mnt
-system=/nix/var/nix/profiles/system
+system=/data/data/com.termux/files/nix/var/nix/profiles/system
 command=("$system/sw/bin/bash" "--login")
 silent=0
 

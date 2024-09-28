@@ -99,8 +99,8 @@ python.pkgs.buildPythonApplication rec {
     mainProgram = "nxc";
     maintainers = with maintainers; [ vncsb ];
     # FIXME: failing fixupPhase:
-    # $ Rewriting #!/nix/store/<hash>-python3-3.11.7/bin/python3.11 to #!/nix/store/<hash>-python3-3.11.7
-    # $ /nix/store/<hash>-wrap-python-hook/nix-support/setup-hook: line 65: 47758 Killed: 9               sed -i "$f" -e "1 s^#!/nix/store/<hash>-python3-3.11.7^#!/nix/store/<hash>-python3-3.11.7^"
+    # $ Rewriting #!/data/data/com.termux/files/nix/store/<hash>-python3-3.11.7/bin/python3.11 to #!/data/data/com.termux/files/nix/store/<hash>-python3-3.11.7
+    # $ /data/data/com.termux/files/nix/store/<hash>-wrap-python-hook/nix-support/setup-hook: line 65: 47758 Killed: 9               sed -i "$f" -e "1 s^#!/data/data/com.termux/files/nix/store/<hash>-python3-3.11.7^#!/data/data/com.termux/files/nix/store/<hash>-python3-3.11.7^"
     broken = stdenv.hostPlatform.isDarwin;
   };
 }

@@ -30,13 +30,13 @@ import ./make-test-python.nix ({ lib, pkgs, ... }:
     machine.succeed("nix store ping --store file:///tmp/cache")
 
     # Cache should contain a .narinfo referring to "hello"
-    grepLogs = machine.succeed("grep -l 'StorePath: /nix/store/[[:alnum:]]*-hello-.*' /tmp/cache/*.narinfo")
+    grepLogs = machine.succeed("grep -l 'StorePath: /data/data/com.termux/files/nix/store/[[:alnum:]]*-hello-.*' /tmp/cache/*.narinfo")
 
     # Get the store path referenced by the .narinfo
     narInfoFile = grepLogs.strip()
     narInfoContents = machine.succeed("cat " + narInfoFile)
     import re
-    match = re.match(r"^StorePath: (/nix/store/[a-z0-9]*-hello-.*)$", narInfoContents, re.MULTILINE)
+    match = re.match(r"^StorePath: (/data/data/com.termux/files/nix/store/[a-z0-9]*-hello-.*)$", narInfoContents, re.MULTILINE)
     if not match: raise Exception("Couldn't find hello store path in cache")
     storePath = match[1]
 

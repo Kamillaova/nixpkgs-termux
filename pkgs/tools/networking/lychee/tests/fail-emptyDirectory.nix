@@ -12,7 +12,7 @@ let
       # Normally would recommend to append a subpath that hints why it's forbidden; see example in docs.
       # However, we also want to test that a package is converted to a string *before*
       # it's tested whether it's a store path. Mistake made during development caused:
-      # cannot check URI: InvalidUrlRemap("The remapping pattern must produce a valid URL, but it is not: /nix/store/4d0ix...empty-directory/foo
+      # cannot check URI: InvalidUrlRemap("The remapping pattern must produce a valid URL, but it is not: /data/data/com.termux/files/nix/store/4d0ix...empty-directory/foo
       "https://example.com" = emptyDirectory;
     };
   };

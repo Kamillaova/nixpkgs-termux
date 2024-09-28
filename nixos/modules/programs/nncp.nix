@@ -44,7 +44,7 @@ in {
         `${nncpCfgFile}`. Node keypairs go in
         `secrets`, do not specify them in
         `settings` as they will be leaked into
-        `/nix/store`!
+        `/data/data/com.termux/files/nix/store`!
       '';
       default = { };
     };

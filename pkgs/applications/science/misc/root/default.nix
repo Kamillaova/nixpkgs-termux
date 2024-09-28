@@ -175,7 +175,7 @@ stdenv.mkDerivation rec {
   ++ lib.optionals stdenv.hostPlatform.isDarwin [
     "-DOPENGL_INCLUDE_DIR=${OpenGL}/Library/Frameworks"
 
-    # fatal error: module map file '/nix/store/<hash>-Libsystem-osx-10.12.6/include/module.modulemap' not found
+    # fatal error: module map file '/data/data/com.termux/files/nix/store/<hash>-Libsystem-osx-10.12.6/include/module.modulemap' not found
     # fatal error: could not build module '_Builtin_intrinsics'
     "-Druntime_cxxmodules=OFF"
   ];

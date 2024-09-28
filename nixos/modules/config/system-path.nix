@@ -66,7 +66,7 @@ in
           automatically updated every time you rebuild the system
           configuration.  (The latter is the main difference with
           installing them in the default profile,
-          {file}`/nix/var/nix/profiles/default`.
+          {file}`/data/data/com.termux/files/nix/var/nix/profiles/default`.
         '';
       };
 

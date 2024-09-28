@@ -29,7 +29,7 @@ rustPlatform.buildRustPackage rec {
     installShellFiles
   ];
 
-  # Tests use nix(1), which tries (and fails) to set up /nix/var inside the sandbox.
+  # Tests use nix(1), which tries (and fails) to set up /data/data/com.termux/files/nix/var inside the sandbox.
   doCheck = false;
 
   postInstall = ''

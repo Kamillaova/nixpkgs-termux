@@ -6,7 +6,7 @@ let
   # but cups-pdf wants to be called as `root`, so it can change ownership of files.
   # We add a suid wrapper and a wrapper script to trick cups into calling the suid wrapper.
   # Note that a symlink to the suid wrapper alone wouldn't suffice, cups would complain
-  # > File "/nix/store/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-cups-progs/lib/cups/backend/cups-pdf" has insecure permissions (0104554/uid=0/gid=20)
+  # > File "/data/data/com.termux/files/nix/store/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-cups-progs/lib/cups/backend/cups-pdf" has insecure permissions (0104554/uid=0/gid=20)
 
   # wrapper script that redirects calls to the suid wrapper
   cups-pdf-wrapper = pkgs.writeTextFile {

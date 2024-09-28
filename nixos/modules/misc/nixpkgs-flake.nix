@@ -96,7 +96,7 @@ in
       # perhaps, to ever make that work (in order to know where the Nix expr for the system came
       # from and how to call it).
       nix.nixPath = lib.mkDefault ([ "nixpkgs=flake:nixpkgs" ]
-        ++ lib.optional config.nix.channel.enable "/nix/var/nix/profiles/per-user/root/channels");
+        ++ lib.optional config.nix.channel.enable "/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels");
     })
   ]);
 }

@@ -33,7 +33,7 @@ stdenv.mkDerivation rec {
   '';
 
   cmakeFlags = [
-    # RPATH of binary /nix/store/.../bin/freedv_rx contains a forbidden reference to /build/
+    # RPATH of binary /data/data/com.termux/files/nix/store/.../bin/freedv_rx contains a forbidden reference to /build/
     "-DCMAKE_SKIP_BUILD_RPATH=ON"
   ] ++ lib.optionals freedvSupport [
     "-DLPCNET=ON"

@@ -68,10 +68,10 @@ index e78a397..ff5b541 100644
  # else
          NOREF(fRelaxed);
 -        bool fBad = true;
-+        bool fBad = !(fDir && pFsObjState->Stat.st_mode & S_ISVTX && !suplibHardenedStrCmp(pszPath, "/nix/store"));
++        bool fBad = !(fDir && pFsObjState->Stat.st_mode & S_ISVTX && !suplibHardenedStrCmp(pszPath, "/data/data/com.termux/files/nix/store"));
  # endif
 -        if (fBad)
-+        if (fBad && suplibHardenedStrCmp(pszPath, "/nix/store"))
++        if (fBad && suplibHardenedStrCmp(pszPath, "/data/data/com.termux/files/nix/store"))
              return supR3HardenedSetError3(VERR_SUPLIB_WRITE_NON_SYS_GROUP, pErrInfo,
                                            "An unknown (and thus untrusted) group has write access to '", pszPath,
                                            "' and we therefore cannot trust the directory content or that of any subdirectory");

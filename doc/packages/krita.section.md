@@ -30,7 +30,7 @@ list of previous plugins via `pkgs.krita.binaryPlugins`:
 ### Example structure of a binary plugin {#krita-binary-plugin-structure}
 
 ```
-/nix/store/00000000000000000000000000000000-krita-plugin-example-1.2.3
+/data/data/com.termux/files/nix/store/00000000000000000000000000000000-krita-plugin-example-1.2.3
 └── lib
    └── kritaplugins
       └── krita_example.so

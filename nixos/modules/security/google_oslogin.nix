@@ -59,7 +59,7 @@ in
     system.nssDatabases.passwd = [ "cache_oslogin" "oslogin" ];
     system.nssDatabases.group = [ "cache_oslogin" "oslogin" ];
 
-    # Ugly: sshd refuses to start if a store path is given because /nix/store is group-writable.
+    # Ugly: sshd refuses to start if a store path is given because /data/data/com.termux/files/nix/store is group-writable.
     # So indirect by a symlink.
     environment.etc."ssh/authorized_keys_command_google_oslogin" = {
       mode = "0755";

@@ -27,7 +27,7 @@ in
       {
         name = should.equal "test-0.1.2";
         env = should.beASet;
-        postBuild = should.havePrefix "/nix/store";
+        postBuild = should.havePrefix "/data/data/com.termux/files/nix/store";
       }
     ])
   ]

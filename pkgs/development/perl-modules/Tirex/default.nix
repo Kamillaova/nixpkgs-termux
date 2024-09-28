@@ -50,7 +50,7 @@ buildPerlPackage rec {
     install -m 755 -d $out/usr/libexec
     make install DESTDIR=$out INSTALLOPTS=""
     mv $out/$out/lib $out/$out/share $out
-    rmdir $out/$out $out/nix/store $out/nix
+    rmdir $out/$out $out/data/data/com.termux/files/nix/store $out/nix
   '';
 
   passthru.updateScript = nix-update-script { };

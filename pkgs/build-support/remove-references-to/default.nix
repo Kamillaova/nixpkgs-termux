@@ -1,6 +1,6 @@
 # The program `remove-references-to' created by this derivation replaces all
 # references to the given Nix store paths in the specified files by a
-# non-existent path (/nix/store/eeee...).  This is useful for getting rid of
+# non-existent path (/data/data/com.termux/files/nix/store/eeee...).  This is useful for getting rid of
 # dependencies that you know are not actually needed at runtime.
 
 { lib, stdenvNoCC, signingUtils, shell ? stdenvNoCC.shell }:

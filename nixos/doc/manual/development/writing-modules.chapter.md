@@ -143,7 +143,7 @@ in {
             mkdir -m 0755 -p $(dirname ${toString cfg.output})
             exec updatedb \
               --localuser=${cfg.localuser} \
-              ${optionalString (!cfg.includeStore) "--prunepaths='/nix/store'"} \
+              ${optionalString (!cfg.includeStore) "--prunepaths='/data/data/com.termux/files/nix/store'"} \
               --output=${toString cfg.output} ${concatStringsSep " " cfg.extraFlags}
           '';
       };

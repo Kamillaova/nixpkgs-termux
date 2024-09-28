@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
   outputs = [ "out" "dev" "lib" ];
 
   cmakeFlags = [
-    # RPATH of binary /nix/store/.../bin/btorsim contains a forbidden reference to /build/
+    # RPATH of binary /data/data/com.termux/files/nix/store/.../bin/btorsim contains a forbidden reference to /build/
     "-DCMAKE_SKIP_BUILD_RPATH=ON"
   ];
 

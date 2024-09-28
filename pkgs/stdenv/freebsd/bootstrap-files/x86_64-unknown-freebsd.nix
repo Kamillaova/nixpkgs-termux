@@ -5,8 +5,8 @@
 # - nixpkgs revision: 6414ef7ca3bf18ec4f9628d09ccc1eb030276ee2
 # - hydra build: https://hydra.nixos.org/job/nixpkgs/cross-trunk/bootstrapTools.x86_64-unknown-freebsd.build/latest
 # - resolved hydra build: https://hydra.nixos.org/build/271214352
-# - instantiated derivation: /nix/store/aahbgs95ani3bd70vxb8kwrvbms0d6ii-build.drv
-# - output directory: /nix/store/ikzxl9ws9yxrl8g8z2kcjwqlq5gfjbhx-build
+# - instantiated derivation: /data/data/com.termux/files/nix/store/aahbgs95ani3bd70vxb8kwrvbms0d6ii-build.drv
+# - output directory: /data/data/com.termux/files/nix/store/ikzxl9ws9yxrl8g8z2kcjwqlq5gfjbhx-build
 # - build time: Sat, 31 Aug 2024 17:18:35 +0000
 {
   bootstrapTools = import <nix/fetchurl.nix> {

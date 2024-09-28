@@ -54,7 +54,7 @@ stdenv.mkDerivation rec {
   '';
 
   cmakeFlags = lib.optionals enablePython [
-    # RPATH of binary /nix/store/.../lib/python3.10/site-packages/galario/double/libcommon.so contains a forbidden reference to /build/
+    # RPATH of binary /data/data/com.termux/files/nix/store/.../lib/python3.10/site-packages/galario/double/libcommon.so contains a forbidden reference to /build/
     "-DCMAKE_SKIP_BUILD_RPATH=ON"
   ];
 

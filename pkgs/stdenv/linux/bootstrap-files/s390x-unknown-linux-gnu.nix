@@ -5,8 +5,8 @@
 # - nixpkgs revision: 0a7eaa55ccaa5103f44a9a4e3e0b06e5314a6401
 # - hydra build: https://hydra.nixos.org/job/nixpkgs/cross-trunk/bootstrapTools.s390x-unknown-linux-gnu.build/latest
 # - resolved hydra build: https://hydra.nixos.org/build/268609502
-# - instantiated derivation: /nix/store/x66rrb9wv612n37bj6iggr2vg313hs77-stdenv-bootstrap-tools-s390x-unknown-linux-gnu.drv
-# - output directory: /nix/store/ijkl5anf7mx1p3whdkxv4qs5crf6ic35-stdenv-bootstrap-tools-s390x-unknown-linux-gnu
+# - instantiated derivation: /data/data/com.termux/files/nix/store/x66rrb9wv612n37bj6iggr2vg313hs77-stdenv-bootstrap-tools-s390x-unknown-linux-gnu.drv
+# - output directory: /data/data/com.termux/files/nix/store/ijkl5anf7mx1p3whdkxv4qs5crf6ic35-stdenv-bootstrap-tools-s390x-unknown-linux-gnu
 # - build time: Mon, 05 Aug 2024 17:28:42 +0000
 {
   bootstrapTools = import <nix/fetchurl.nix> {

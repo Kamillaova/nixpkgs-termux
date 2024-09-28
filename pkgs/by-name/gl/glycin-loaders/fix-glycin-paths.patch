@@ -17,8 +17,8 @@ index 7d00b36..aa70dc7 100644
                  "--ro-bind",
 -                "/usr",
 -                "/usr",
-+                "/nix/store",
-+                "/nix/store",
++                "/data/data/com.termux/files/nix/store",
++                "/data/data/com.termux/files/nix/store",
                  // Make tmpfs dev available
                  "--dev",
                  "/dev",

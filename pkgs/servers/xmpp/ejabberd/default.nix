@@ -78,7 +78,7 @@ in stdenv.mkDerivation rec {
 
     dontPatchELF = true;
     dontStrip = true;
-    # avoid /nix/store references in the source
+    # avoid /data/data/com.termux/files/nix/store references in the source
     dontPatchShebangs = true;
 
     outputHashAlgo = "sha256";

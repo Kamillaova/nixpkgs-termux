@@ -589,7 +589,7 @@ in with passthru; stdenv.mkDerivation (finalAttrs: {
     cat <<'EXTERNALLY_MANAGED' > $out/lib/${libPrefix}/EXTERNALLY-MANAGED
     [externally-managed]
     Error=This command has been disabled as it tries to modify the immutable
-     `/nix/store` filesystem.
+     `/data/data/com.termux/files/nix/store` filesystem.
 
      To use Python with Nix and nixpkgs, have a look at the online documentation:
      <https://nixos.org/manual/nixpkgs/stable/#python>.

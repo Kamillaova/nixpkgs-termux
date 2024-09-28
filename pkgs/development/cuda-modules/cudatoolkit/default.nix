@@ -269,7 +269,7 @@ backendStdenv.mkDerivation rec {
       ''}
         ${
           lib.optionalString (lib.versionAtLeast version "11.8" && lib.versionOlder version "12")
-            # error: auto-patchelf could not satisfy dependency libtiff.so.5 wanted by /nix/store/.......-cudatoolkit-12.0.1/host-linux-x64/Plugins/imageformats/libqtiff.so
+            # error: auto-patchelf could not satisfy dependency libtiff.so.5 wanted by /data/data/com.termux/files/nix/store/.......-cudatoolkit-12.0.1/host-linux-x64/Plugins/imageformats/libqtiff.so
             # we only ship libtiff.so.6, so let's use qt plugins built by Nix.
             # TODO: don't copy, come up with a symlink-based "merge"
             ''

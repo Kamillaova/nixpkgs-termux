@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
   cmakeFlags = [
     "-DENABLE_TEST=1"
     "-DQUICK_TEST=1"
-    "-DCMAKE_INSTALL_PREFIX=" # ends up double-adding /nix/store/... prefix, this avoids issue
+    "-DCMAKE_INSTALL_PREFIX=" # ends up double-adding /data/data/com.termux/files/nix/store/... prefix, this avoids issue
     "-DWITH_RANGE_COULOMB:STRING=1"
     "-DWITH_FORTRAN:STRING=1"
     "-DMIN_EXPCUTOFF:STRING=20"

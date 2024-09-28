@@ -77,7 +77,7 @@ stdenv.mkDerivation rec {
     "-DWITH_CLIENT_WMS=ON"
     "-DWITH_CLIENT_WFS=ON"
 
-    # RPATH of binary /nix/store/.../bin/... contains a forbidden reference to /build/
+    # RPATH of binary /data/data/com.termux/files/nix/store/.../bin/... contains a forbidden reference to /build/
     "-DCMAKE_SKIP_BUILD_RPATH=ON"
   ] ++ lib.optional withPython "-DWITH_PYTHON=ON";
 

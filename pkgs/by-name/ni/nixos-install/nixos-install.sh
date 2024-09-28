@@ -186,16 +186,16 @@ sub="auto?trusted=1"
 # of the NixOS channel.
 if [[ -z $noChannelCopy ]]; then
     if [[ -z $channelPath ]]; then
-        channelPath="$(nix-env -p /nix/var/nix/profiles/per-user/root/channels -q nixos --no-name --out-path 2>/dev/null || echo -n "")"
+        channelPath="$(nix-env -p /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels -q nixos --no-name --out-path 2>/dev/null || echo -n "")"
     fi
     if [[ -n $channelPath ]]; then
         echo "copying channel..."
-        mkdir -p "$mountPoint"/nix/var/nix/profiles/per-user/root
+        mkdir -p "$mountPoint"/data/data/com.termux/files/nix/var/nix/profiles/per-user/root
         nix-env --store "$mountPoint" "${extraBuildFlags[@]}" --extra-substituters "$sub" \
-                -p "$mountPoint"/nix/var/nix/profiles/per-user/root/channels --set "$channelPath" --quiet \
+                -p "$mountPoint"/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels --set "$channelPath" --quiet \
                 "${verbosity[@]}"
         install -m 0700 -d "$mountPoint"/root/.nix-defexpr
-        ln -sfn /nix/var/nix/profiles/per-user/root/channels "$mountPoint"/root/.nix-defexpr/channels
+        ln -sfn /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels "$mountPoint"/root/.nix-defexpr/channels
     fi
 fi
 
@@ -230,7 +230,7 @@ fi
 # a progress bar.
 nix-env --store "$mountPoint" "${extraBuildFlags[@]}" \
         --extra-substituters "$sub" \
-        -p "$mountPoint"/nix/var/nix/profiles/system --set "$system" "${verbosity[@]}"
+        -p "$mountPoint"/data/data/com.termux/files/nix/var/nix/profiles/system --set "$system" "${verbosity[@]}"
 
 # Mark the target as a NixOS installation, otherwise switch-to-configuration will chicken out.
 mkdir -m 0755 -p "$mountPoint/etc"
@@ -263,9 +263,9 @@ fi
 # Ask the user to set a root password, but only if the passwd command
 # exists (i.e. when mutable user accounts are enabled).
 if [[ -z $noRootPasswd ]] && [ -t 0 ]; then
-    if nixos-enter --root "$mountPoint" -c 'test -e /nix/var/nix/profiles/system/sw/bin/passwd'; then
+    if nixos-enter --root "$mountPoint" -c 'test -e /data/data/com.termux/files/nix/var/nix/profiles/system/sw/bin/passwd'; then
         set +e
-        nixos-enter --root "$mountPoint" -c 'echo "setting root password..." && /nix/var/nix/profiles/system/sw/bin/passwd'
+        nixos-enter --root "$mountPoint" -c 'echo "setting root password..." && /data/data/com.termux/files/nix/var/nix/profiles/system/sw/bin/passwd'
         exit_code=$?
         set -e
 

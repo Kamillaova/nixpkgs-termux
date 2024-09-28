@@ -25,7 +25,7 @@ buildPythonPackage rec {
   #
   # To:
   # def load():
-  #     return cdll.LoadLibrary("/nix/store/.../lib/libdmtx.so")
+  #     return cdll.LoadLibrary("/data/data/com.termux/files/nix/store/.../lib/libdmtx.so")
   #     """Loads the libdmtx shared library.
   postPatch = ''
     sed -i '\#def load.*#a\    return cdll.LoadLibrary("${libdmtx}/lib/libdmtx.so")' \

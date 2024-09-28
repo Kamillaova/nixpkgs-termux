@@ -7,8 +7,8 @@ Subject: [PATCH] [not for upstream] CMakeLists: Link against webkit2gtk in
 WebView.cpp uses symbols from webkitgtk directly. Upstream setup
 links wxGTK statically so webkitgtk is already pulled in.
 
-> /nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: slic3r/liblibslic3r_gui.a(WebView.cpp.o): undefined reference to symbol 'webkit_web_view_run_javascript_finish'
-> /nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: /nix/store/8yvy428jy2nwq4dhmrcs7gj5r27a2pv6-webkitgtk-2.38.2+abi=4.0/lib/libwebkit2gtk-4.0.so.37: error adding symbols: DSO missing from command line
+> /data/data/com.termux/files/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: slic3r/liblibslic3r_gui.a(WebView.cpp.o): undefined reference to symbol 'webkit_web_view_run_javascript_finish'
+> /data/data/com.termux/files/nix/store/039g378vc3pc3dvi9dzdlrd0i4q93qwf-binutils-2.39/bin/ld: /data/data/com.termux/files/nix/store/8yvy428jy2nwq4dhmrcs7gj5r27a2pv6-webkitgtk-2.38.2+abi=4.0/lib/libwebkit2gtk-4.0.so.37: error adding symbols: DSO missing from command line
 ---
  src/CMakeLists.txt | 5 +++++
  1 file changed, 5 insertions(+)

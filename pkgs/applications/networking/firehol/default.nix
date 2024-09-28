@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
     ./firehol-sysconfdir.patch
 
     # we must quote "$UNAME_CMD", or the dash in
-    # /nix/store/...-coreutils-.../bin/uname will be interpreted as
+    # /data/data/com.termux/files/nix/store/...-coreutils-.../bin/uname will be interpreted as
     # IFS -> error. this might be considered an upstream bug but only
     # appears when there are dashes in the command path
     ./firehol-uname-command.patch

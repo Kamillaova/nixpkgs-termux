@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
       --replace "/sbin/gradm" "$out/bin/gradm" \
       --replace "/sbin/gradm_pam" "$out/bin/gradm_pam"
 
-    echo 'inherit-learn /nix/store' >>learn_config
+    echo 'inherit-learn /data/data/com.termux/files/nix/store' >>learn_config
 
     mkdir -p "$out/etc/udev/rules.d"
   '';

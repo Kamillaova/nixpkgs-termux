@@ -150,9 +150,9 @@ Auto updates for Nextcloud apps can be enabled using
     a few minutes:
 
     ```
-    Warning: file_get_contents(/run/secrets/nextcloud_db_password): Failed to open stream: No such file or directory in /nix/store/lqw657xbh6h67ccv9cgv104qhcs1i2vw-nextcloud-config.php on line 11
+    Warning: file_get_contents(/run/secrets/nextcloud_db_password): Failed to open stream: No such file or directory in /data/data/com.termux/files/nix/store/lqw657xbh6h67ccv9cgv104qhcs1i2vw-nextcloud-config.php on line 11
 
-    Warning: http_response_code(): Cannot set response code - headers already sent (output started at /nix/store/lqw657xbh6h67ccv9cgv104qhcs1i2vw-nextcloud-config.php:11) in /nix/store/ikxpaq7kjdhpr4w7cgl1n28kc2gvlhg6-nextcloud-29.0.7/lib/base.php on line 639
+    Warning: http_response_code(): Cannot set response code - headers already sent (output started at /data/data/com.termux/files/nix/store/lqw657xbh6h67ccv9cgv104qhcs1i2vw-nextcloud-config.php:11) in /data/data/com.termux/files/nix/store/ikxpaq7kjdhpr4w7cgl1n28kc2gvlhg6-nextcloud-29.0.7/lib/base.php on line 639
     Cannot decode /run/secrets/nextcloud_secrets, because: Syntax error
     ```
 

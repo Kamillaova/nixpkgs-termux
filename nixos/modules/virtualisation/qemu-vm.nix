@@ -140,7 +140,7 @@ let
         ${hostPkgs.gnutar}/bin/tar --create \
           --absolute-names \
           --verbatim-files-from \
-          --transform 'flags=rSh;s|/nix/store/||' \
+          --transform 'flags=rSh;s|/data/data/com.termux/files/nix/store/||' \
           --files-from ${hostPkgs.closureInfo { rootPaths = [ config.system.build.toplevel regInfo ]; }}/store-paths \
           | ${hostPkgs.erofs-utils}/bin/mkfs.erofs \
             --quiet \
@@ -1189,7 +1189,7 @@ in
           # Sync with systemd's tmp.mount;
           options = [ "mode=1777" "strictatime" "nosuid" "nodev" "size=${toString config.boot.tmp.tmpfsSize}" ];
         };
-        "/nix/store" = lib.mkIf (cfg.useNixStoreImage || cfg.mountHostNixStore) (if cfg.writableStore then {
+        "/data/data/com.termux/files/nix/store" = lib.mkIf (cfg.useNixStoreImage || cfg.mountHostNixStore) (if cfg.writableStore then {
           overlay = {
             lowerdir = [ "/nix/.ro-store" ];
             upperdir = "/nix/.rw-store/upper";

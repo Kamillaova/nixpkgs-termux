@@ -38,7 +38,7 @@ in
     assert "lang=''${LANG}" == logs[1]
     assert ";" == logs[2]
     assert "/bin/sh -c date" == logs[3]
-    assert "/nix/store/ij3gw72f4n5z4dz6nnzl1731p9kmjbwr-empty-file" == logs[4]
+    assert "/data/data/com.termux/files/nix/store/ij3gw72f4n5z4dz6nnzl1731p9kmjbwr-empty-file" == logs[4]
     assert "4.2" in logs[5] # toString produces extra fractional digits!
     assert "23" == logs[6]
   '';

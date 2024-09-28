@@ -159,7 +159,7 @@ in
         description = ''
           Location of the Django secret key.
 
-          This should be a path pointing to a file with secure permissions (not /nix/store).
+          This should be a path pointing to a file with secure permissions (not /data/data/com.termux/files/nix/store).
 
           Can be generated with `weblate-generate-secret-key` which is available as the `weblate` user.
         '';
@@ -192,7 +192,7 @@ in
           description = ''
             Location of a file containing the SMTP password.
 
-            This should be a path pointing to a file with secure permissions (not /nix/store).
+            This should be a path pointing to a file with secure permissions (not /data/data/com.termux/files/nix/store).
           '';
           type = lib.types.path;
         };

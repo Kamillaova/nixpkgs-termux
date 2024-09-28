@@ -89,7 +89,7 @@ in
               A path to a SSL secret key file in PEM format.
 
               Note that due to security reasons, `systemd-journal-remote` will
-              refuse files from the world-readable `/nix/store`. This file
+              refuse files from the world-readable `/data/data/com.termux/files/nix/store`. This file
               should be readable by the "" user.
 
               This option can be used with `listen = "https"`. If the path

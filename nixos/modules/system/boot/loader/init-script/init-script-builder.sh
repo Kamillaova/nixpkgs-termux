@@ -74,10 +74,10 @@ for link in $((ls -d $defaultConfig/specialisation/* ) | sort -n); do
 done
 
 for generation in $(
-    (cd /nix/var/nix/profiles && ls -d system-*-link) \
+    (cd /data/data/com.termux/files/nix/var/nix/profiles && ls -d system-*-link) \
     | sed 's/system-\([0-9]\+\)-link/\1/' \
     | sort -n -r); do
-    link=/nix/var/nix/profiles/system-$generation-link
+    link=/data/data/com.termux/files/nix/var/nix/profiles/system-$generation-link
     date=$(stat --printf="%y\n" $link | sed 's/\..*//')
     if [ -d $link/kernel ]; then
       kernelVersion=$(cd $(dirname $(readlink -f $link/kernel))/lib/modules && echo *)

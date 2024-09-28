@@ -101,7 +101,7 @@ in
           See [the documentation](https://doc.owncloud.com/ocis/next/deployment/services/services.html) for available options.
           See [notes for environment variables](https://doc.owncloud.com/ocis/next/deployment/services/env-var-note.html) for more information.
 
-          Note that all the attributes here will be copied to /nix/store/ and will be world readable. Options like *_PASSWORD or *_SECRET should be part of     [environmentFile](#opt-services.ocis.environmentFile) instead, and are only provided here for illustrative purpose.
+          Note that all the attributes here will be copied to /data/data/com.termux/files/nix/store/ and will be world readable. Options like *_PASSWORD or *_SECRET should be part of     [environmentFile](#opt-services.ocis.environmentFile) instead, and are only provided here for illustrative purpose.
 
           Configuration here will override those from [environmentFile](#opt-services.ocis.environmentFile) and will have highest precedence, at the cost of security. Do NOT put security sensitive stuff here.
         '';

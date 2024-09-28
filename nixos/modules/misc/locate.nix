@@ -165,8 +165,8 @@ in
         "/var/lock"
         "/var/run"
         "/var/spool"
-        "/nix/store"
-        "/nix/var/log/nix"
+        "/data/data/com.termux/files/nix/store"
+        "/data/data/com.termux/files/nix/var/log/nix"
       ];
       description = ''
         Which paths to exclude from indexing

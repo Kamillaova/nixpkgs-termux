@@ -95,7 +95,7 @@ def get_engine_hashes(engine_version, flutter_version):
     stderr = nix_build_to_fail(code)
 
     pattern = re.compile(
-        rf"/nix/store/.*-flutter-engine-source-{engine_version}-(.+?-.+?)-(.+?-.+?).drv':\n\s+specified: .*\n\s+got:\s+(.+?)\n")
+        rf"/data/data/com.termux/files/nix/store/.*-flutter-engine-source-{engine_version}-(.+?-.+?)-(.+?-.+?).drv':\n\s+specified: .*\n\s+got:\s+(.+?)\n")
     matches = pattern.findall(stderr)
     result_dict = {}
 
@@ -121,7 +121,7 @@ def get_artifact_hashes(flutter_compact_version):
     stderr = nix_build_to_fail(code)
 
     pattern = re.compile(
-        r"/nix/store/.*-flutter-artifacts-(.+?)-(.+?).drv':\n\s+specified: .*\n\s+got:\s+(.+?)\n")
+        r"/data/data/com.termux/files/nix/store/.*-flutter-artifacts-(.+?)-(.+?).drv':\n\s+specified: .*\n\s+got:\s+(.+?)\n")
     matches = pattern.findall(stderr)
     result_dict = {}
 

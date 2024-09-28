@@ -45,18 +45,18 @@ for bin in $(find $binaryDist -executable -type f) :; do
         #versionLessLib=$(echo $lib | sed 's,[.][.0-9]*$,,')
 
         libs="$(
-            find /nix/store/*/lib* \( -type f -or -type l \) -name $lib |
+            find /data/data/com.termux/files/nix/store/*/lib* \( -type f -or -type l \) -name $lib |
             grep -v '\(bootstrap-tools\|system-path\|user-environment\|extra-utils\)'
         )"
 
         echo "$libs" |
-        sed 's,^/nix/store/[a-z0-9]*-\([^/]*\)/.*/\([^/]*\)$,    \1 -> \2,' |
+        sed 's,^/data/data/com.termux/files/nix/store/[a-z0-9]*-\([^/]*\)/.*/\([^/]*\)$,    \1 -> \2,' |
         sort |
         uniq;
 
         names=$(
             echo "$libs" |
-            sed 's,^/nix/store/[a-z0-9]*-\([^/]*\)-[.0-9]*/.*$,\1,' |
+            sed 's,^/data/data/com.termux/files/nix/store/[a-z0-9]*-\([^/]*\)-[.0-9]*/.*$,\1,' |
             sort |
             uniq;
         )

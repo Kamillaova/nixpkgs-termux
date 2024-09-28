@@ -43,7 +43,7 @@ in
         type = types.bool;
         description = ''
           Whether to copy the necessary boot files into /boot, so
-          /nix/store is not needed by the boot loader.
+          /data/data/com.termux/files/nix/store is not needed by the boot loader.
         '';
       };
 

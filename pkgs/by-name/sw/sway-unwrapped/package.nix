@@ -32,11 +32,11 @@ stdenv.mkDerivation (finalAttrs: {
     })
 
   ] ++ lib.optionals (!finalAttrs.isNixOS) [
-    # References to /nix/store/... will get GC'ed which causes problems when
+    # References to /data/data/com.termux/files/nix/store/... will get GC'ed which causes problems when
     # copying the default configuration:
     ./sway-config-no-nix-store-references.patch
   ] ++ lib.optionals finalAttrs.isNixOS [
-    # Use /run/current-system/sw/share and /etc instead of /nix/store
+    # Use /run/current-system/sw/share and /etc instead of /data/data/com.termux/files/nix/store
     # references:
     ./sway-config-nixos-paths.patch
   ];

@@ -76,8 +76,8 @@ least specific (the system profile)"
 ;;;
 ;;; Computes the location of the C source directory from the path of
 ;;; the current file:
-;;; from: /nix/store/<hash>-emacs-<version>/share/emacs/site-lisp/site-start.el
-;;; to:   /nix/store/<hash>-emacs-<version>/share/emacs/<version>/src/
+;;; from: /data/data/com.termux/files/nix/store/<hash>-emacs-<version>/share/emacs/site-lisp/site-start.el
+;;; to:   /data/data/com.termux/files/nix/store/<hash>-emacs-<version>/share/emacs/<version>/src/
 (defvar find-function-C-source-directory)
 (let ((emacs
        (file-name-directory                      ; .../emacs/

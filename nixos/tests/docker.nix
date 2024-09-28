@@ -37,7 +37,7 @@ import ./make-test-python.nix ({ pkgs, ...} : {
     docker.wait_for_unit("sockets.target")
     docker.succeed("tar cv --files-from /dev/null | docker import - scratchimg")
     docker.succeed(
-        "docker run -d --name=sleeping -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
+        "docker run -d --name=sleeping -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
     )
     docker.succeed("docker ps | grep sleeping")
     docker.succeed("sudo -u hasprivs docker ps")

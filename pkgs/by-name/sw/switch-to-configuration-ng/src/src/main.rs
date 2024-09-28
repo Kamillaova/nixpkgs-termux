@@ -1030,9 +1030,9 @@ dry-activate: show what would be done if this configuration were activated
         .unwrap_or_default()
         != "1"
     {
-        let fd = nix::fcntl::open("/nix/store", OFlag::O_NOCTTY, Mode::S_IROTH)
-            .context("Failed to open /nix/store")?;
-        nix::unistd::syncfs(fd).context("Failed to sync /nix/store")?;
+        let fd = nix::fcntl::open("/data/data/com.termux/files/nix/store", OFlag::O_NOCTTY, Mode::S_IROTH)
+            .context("Failed to open /data/data/com.termux/files/nix/store")?;
+        nix::unistd::syncfs(fd).context("Failed to sync /data/data/com.termux/files/nix/store")?;
     }
 
     if *action == Action::Boot {

@@ -23,7 +23,7 @@ stdenv.mkDerivation (finalAttrs: {
       VIPATH = lib.getExe' vim "vim";
       DEFPATH = lib.concatStringsSep ":" [
         "/run/wrappers/bin"
-        "/nix/var/nix/profiles/default/bin"
+        "/data/data/com.termux/files/nix/var/nix/profiles/default/bin"
         "/run/current-system/sw/bin"
         "/usr/bin"
         "/bin"
@@ -45,7 +45,7 @@ stdenv.mkDerivation (finalAttrs: {
     popd
   '';
 
-  # do not set sticky bit in /nix/store
+  # do not set sticky bit in /data/data/com.termux/files/nix/store
   # further, do not strip during install since it breaks on cross-compilation
   # and we will do this ourselves as needed
   postPatch = ''

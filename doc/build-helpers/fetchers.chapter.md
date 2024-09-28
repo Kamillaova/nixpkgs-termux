@@ -20,8 +20,8 @@ The following table summarises the differences:
 
 | Fetchers | Download | Output | Cache | Re-download when |
 |-|-|-|-|-|
-| `builtins.fetch*` | evaluation time | store path | `/nix/store`, `~/.cache/nix` | `tarball-ttl` expires, cache miss in `~/.cache/nix`, output store object not in local store |
-| `pkgs.fetch*` | build time | derivation | `/nix/store`, substituters | output store object not available |
+| `builtins.fetch*` | evaluation time | store path | `/data/data/com.termux/files/nix/store`, `~/.cache/nix` | `tarball-ttl` expires, cache miss in `~/.cache/nix`, output store object not in local store |
+| `pkgs.fetch*` | build time | derivation | `/data/data/com.termux/files/nix/store`, substituters | output store object not available |
 
 :::{.tip}
 `pkgs.fetchFrom*` helpers retrieve _snapshots_ of version-controlled sources, as opposed to the entire version history, which is more efficient.
@@ -105,10 +105,10 @@ Unless you understand how the fetcher you're using calculates the hash from the 
    ```shell
    $ nix-build
    (some output removed for clarity)
-   error: hash mismatch in fixed-output derivation '/nix/store/7yynn53jpc93l76z9zdjj4xdxgynawcw-version.drv':
+   error: hash mismatch in fixed-output derivation '/data/data/com.termux/files/nix/store/7yynn53jpc93l76z9zdjj4xdxgynawcw-version.drv':
            specified: sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
                got:    sha256-BZqI7r0MNP29yGH5+yW2tjU9OOpOCEvwWKrWCv5CQ0I=
-   error: build of '/nix/store/bqdjcw5ij5ymfbm41dq230chk9hdhqff-version.drv' failed
+   error: build of '/data/data/com.termux/files/nix/store/bqdjcw5ij5ymfbm41dq230chk9hdhqff-version.drv' failed
    ```
    :::
 
@@ -419,9 +419,9 @@ After building the package, the file will be downloaded and place into the Nix s
 ```shell
 $ nix-build
 (output removed for clarity)
-/nix/store/4g9y3x851wqrvim4zcz5x2v3zivmsq8n-version
+/data/data/com.termux/files/nix/store/4g9y3x851wqrvim4zcz5x2v3zivmsq8n-version
 
-$ cat /nix/store/4g9y3x851wqrvim4zcz5x2v3zivmsq8n-version
+$ cat /data/data/com.termux/files/nix/store/4g9y3x851wqrvim4zcz5x2v3zivmsq8n-version
 23.11
 ```
 :::
@@ -454,9 +454,9 @@ curl: (22) The requested URL returned error: 404
 
 trying https://raw.githubusercontent.com/NixOS/nixpkgs/23.11/.version
 (some output removed for clarity)
-/nix/store/n9asny31z32q7sdw6a8r1gllrsfy53kl-does-not-exist
+/data/data/com.termux/files/nix/store/n9asny31z32q7sdw6a8r1gllrsfy53kl-does-not-exist
 
-$ cat /nix/store/n9asny31z32q7sdw6a8r1gllrsfy53kl-does-not-exist
+$ cat /data/data/com.termux/files/nix/store/n9asny31z32q7sdw6a8r1gllrsfy53kl-does-not-exist
 23.11
 ```
 
@@ -480,7 +480,7 @@ After building the package, the result will have the name we specified:
 ```shell
 $ nix-build
 (output removed for clarity)
-/nix/store/zczb6wl3al6jm9sm5h3pr6nqn0i5ji9z-nixpkgs-version
+/data/data/com.termux/files/nix/store/zczb6wl3al6jm9sm5h3pr6nqn0i5ji9z-nixpkgs-version
 ```
 :::
 
@@ -512,9 +512,9 @@ After building the package, the resulting file will have "Hello, world!" appende
 ```shell
 $ nix-build
 (output removed for clarity)
-/nix/store/ifi6pp7q0ag5h7c5v9h1c1c7bhd10c7f-version
+/data/data/com.termux/files/nix/store/ifi6pp7q0ag5h7c5v9h1c1c7bhd10c7f-version
 
-$ cat /nix/store/ifi6pp7q0ag5h7c5v9h1c1c7bhd10c7f-version
+$ cat /data/data/com.termux/files/nix/store/ifi6pp7q0ag5h7c5v9h1c1c7bhd10c7f-version
 23.11
 Hello, world!
 ```
@@ -618,9 +618,9 @@ After building the recipe, the derivation output will show all the files in the 
 ```shell
 $ nix-build
 (output removed for clarity)
-/nix/store/1b7h3fvmgrcddvs0m299hnqxlgli1yjw-source
+/data/data/com.termux/files/nix/store/1b7h3fvmgrcddvs0m299hnqxlgli1yjw-source
 
-$ ls /nix/store/1b7h3fvmgrcddvs0m299hnqxlgli1yjw-source
+$ ls /data/data/com.termux/files/nix/store/1b7h3fvmgrcddvs0m299hnqxlgli1yjw-source
 aclocal.m4  completions  configure.ac  m4           Makefile.in  patchelf.spec     README.md  tests
 build-aux   configure    COPYING       Makefile.am  patchelf.1   patchelf.spec.in  src        version
 ```
@@ -646,9 +646,9 @@ After building the recipe:
 ```shell
 $ nix-build
 (output removed for clarity)
-/nix/store/2hy5bxw7xgbgxkn0i4x6hjr8w3dbx16c-source
+/data/data/com.termux/files/nix/store/2hy5bxw7xgbgxkn0i4x6hjr8w3dbx16c-source
 
-$ ls /nix/store/2hy5bxw7xgbgxkn0i4x6hjr8w3dbx16c-source
+$ ls /data/data/com.termux/files/nix/store/2hy5bxw7xgbgxkn0i4x6hjr8w3dbx16c-source
 patchelf-0.18.0
 ```
 ::::
@@ -675,9 +675,9 @@ After building the recipe, the derivation output will show the decompressed file
 ```shell
 $ nix-build
 (output removed for clarity)
-/nix/store/zpn7knxfva6rfjja2gbb4p3l9w1f0d36-source
+/data/data/com.termux/files/nix/store/zpn7knxfva6rfjja2gbb4p3l9w1f0d36-source
 
-$ ls /nix/store/zpn7knxfva6rfjja2gbb4p3l9w1f0d36-source
+$ ls /data/data/com.termux/files/nix/store/zpn7knxfva6rfjja2gbb4p3l9w1f0d36-source
 FONT.DAT      PINBALL.DAT  PINBALL.EXE	PINBALL2.MID  TABLE.BMP    WMCONFIG.EXE
 MSCREATE.DIR  PINBALL.DOC  PINBALL.MID	Sounds	     WAVEMIX.INF
 ```

@@ -16,7 +16,7 @@
   };
 
   testScript = ''
-    perl_store_paths = machine.succeed("ls /nix/store | grep perl || true")
+    perl_store_paths = machine.succeed("ls /data/data/com.termux/files/nix/store | grep perl || true")
     print(perl_store_paths)
     assert len(perl_store_paths) == 0
   '';

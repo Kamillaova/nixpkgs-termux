@@ -339,7 +339,7 @@ rec {
     Example:
 
 
-    # Writes my-file to /nix/store/<store path>
+    # Writes my-file to /data/data/com.termux/files/nix/store/<store path>
     concatTextFile {
       name = "my-file";
       files = [ drv1 "${drv2}/path/to/file" ];
@@ -349,7 +349,7 @@ rec {
     See also the `concatText` helper function below.
 
 
-    # Writes executable my-file to /nix/store/<store path>/bin/my-file
+    # Writes executable my-file to /data/data/com.termux/files/nix/store/<store path>/bin/my-file
     concatTextFile {
       name = "my-file";
       files = [ drv1 "${drv2}/path/to/file" ];
@@ -390,7 +390,7 @@ rec {
     Example:
 
 
-    # Writes contents of files to /nix/store/<store path>
+    # Writes contents of files to /data/data/com.termux/files/nix/store/<store path>
     concatText "my-file" [ file1 file2 ]
 
 
@@ -404,7 +404,7 @@ rec {
     Writes a text file to nix store with and mark it as executable.
 
     Example:
-    # Writes contents of files to /nix/store/<store path>
+    # Writes contents of files to /data/data/com.termux/files/nix/store/<store path>
     concatScript "my-file" [ file1 file2 ]
 
   */
@@ -439,17 +439,17 @@ rec {
     This creates a derivation with a directory structure like the following:
 
 
-    /nix/store/sglsr5g079a5235hy29da3mq3hv8sjmm-myexample
+    /data/data/com.termux/files/nix/store/sglsr5g079a5235hy29da3mq3hv8sjmm-myexample
     |-- bin
-    |   |-- hello -> /nix/store/qy93dp4a3rqyn2mz63fbxjg228hffwyw-hello-2.10/bin/hello
-    |   `-- stack -> /nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/bin/stack
+    |   |-- hello -> /data/data/com.termux/files/nix/store/qy93dp4a3rqyn2mz63fbxjg228hffwyw-hello-2.10/bin/hello
+    |   `-- stack -> /data/data/com.termux/files/nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/bin/stack
     `-- share
         |-- bash-completion
         |   `-- completions
-        |       `-- stack -> /nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/share/bash-completion/completions/stack
+        |       `-- stack -> /data/data/com.termux/files/nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/share/bash-completion/completions/stack
         |-- fish
         |   `-- vendor_completions.d
-        |       `-- stack.fish -> /nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/share/fish/vendor_completions.d/stack.fish
+        |       `-- stack.fish -> /data/data/com.termux/files/nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/share/fish/vendor_completions.d/stack.fish
     ...
 
 
@@ -500,12 +500,12 @@ rec {
 
     entries can be a list of attribute sets like
 
-    [ { name = "name" ; path = "/nix/store/..."; } ]
+    [ { name = "name" ; path = "/data/data/com.termux/files/nix/store/..."; } ]
 
 
     or an attribute set name -> path like:
 
-    { name = "/nix/store/..."; other = "/nix/store/..."; }
+    { name = "/data/data/com.termux/files/nix/store/..."; other = "/data/data/com.termux/files/nix/store/..."; }
 
 
     Example:
@@ -516,9 +516,9 @@ rec {
 
     This creates a derivation with a directory structure like the following:
 
-    /nix/store/qc5728m4sa344mbks99r3q05mymwm4rw-myexample
-    |-- foobar -> /nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1
-    `-- hello-test -> /nix/store/qy93dp4a3rqyn2mz63fbxjg228hffwyw-hello-2.10
+    /data/data/com.termux/files/nix/store/qc5728m4sa344mbks99r3q05mymwm4rw-myexample
+    |-- foobar -> /data/data/com.termux/files/nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1
+    `-- hello-test -> /data/data/com.termux/files/nix/store/qy93dp4a3rqyn2mz63fbxjg228hffwyw-hello-2.10
 
 
     See the note on symlinkJoin for the difference between linkFarm and symlinkJoin.
@@ -565,10 +565,10 @@ rec {
     This creates a derivation with a directory structure like the following:
 
 
-    /nix/store/m3s6wkjy9c3wy830201bqsb91nk2yj8c-myexample
-    |-- gcc-wrapper-9.2.0 -> /nix/store/fqhjxf9ii4w4gqcsx59fyw2vvj91486a-gcc-wrapper-9.2.0
-    |-- ghc-8.6.5 -> /nix/store/gnf3s07bglhbbk4y6m76sbh42siym0s6-ghc-8.6.5
-    `-- hello-2.10 -> /nix/store/k0ll91c4npk4lg8lqhx00glg2m735g74-hello-2.10
+    /data/data/com.termux/files/nix/store/m3s6wkjy9c3wy830201bqsb91nk2yj8c-myexample
+    |-- gcc-wrapper-9.2.0 -> /data/data/com.termux/files/nix/store/fqhjxf9ii4w4gqcsx59fyw2vvj91486a-gcc-wrapper-9.2.0
+    |-- ghc-8.6.5 -> /data/data/com.termux/files/nix/store/gnf3s07bglhbbk4y6m76sbh42siym0s6-ghc-8.6.5
+    `-- hello-2.10 -> /data/data/com.termux/files/nix/store/k0ll91c4npk4lg8lqhx00glg2m735g74-hello-2.10
 
   */
   linkFarmFromDrvs = name: drvs:

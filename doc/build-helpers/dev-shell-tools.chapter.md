@@ -20,7 +20,7 @@ Converts Nix values to strings in the way the [`derivation` built-in function](h
 
 ```nix
 devShellTools.valueToString (builtins.toFile "foo" "bar")
-=> "/nix/store/...-foo"
+=> "/data/data/com.termux/files/nix/store/...-foo"
 ```
 
 ```nix
@@ -49,8 +49,8 @@ devShellTools.unstructuredDerivationInputEnv {
 }
 => {
   name = "foo";
-  buildInputs = "/nix/store/...-hello /nix/store/...-figlet";
-  builder = "/nix/store/...-bash";
+  buildInputs = "/data/data/com.termux/files/nix/store/...-hello /data/data/com.termux/files/nix/store/...-figlet";
+  builder = "/data/data/com.termux/files/nix/store/...-bash";
 }
 ```
 

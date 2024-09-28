@@ -72,9 +72,9 @@ let
     boot.initrd.postMountCommands = ''
       touch /mnt-root/boot-done
       hostname "${vmName}"
-      mkdir -p /nix/store
+      mkdir -p /data/data/com.termux/files/nix/store
       unshare -m ${escapeShellArg pkgs.runtimeShell} -c '
-        mount -t vboxsf nixstore /nix/store
+        mount -t vboxsf nixstore /data/data/com.termux/files/nix/store
         exec "$stage2Init"
       '
       poweroff -f
@@ -176,7 +176,7 @@ let
 
     nixstoreFlags = mkFlags [
       "--name nixstore"
-      "--hostpath /nix/store"
+      "--hostpath /data/data/com.termux/files/nix/store"
       "--readonly"
     ];
   in {

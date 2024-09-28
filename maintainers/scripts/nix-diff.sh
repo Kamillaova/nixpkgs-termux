@@ -31,9 +31,9 @@ usage: nix-diff.sh [-h | [-p profile | -s] [-q] [-l] [range]]
 -p profile: specify the Nix profile to use
             * defaults to ~/.nix-profile
 -s:         use the system profile
-            * equivalent to: -p /nix/var/nix/profiles/system
-profile:    * should be something like /nix/var/nix/profiles/default, not a
-              generation link like /nix/var/nix/profiles/default-2-link
+            * equivalent to: -p /data/data/com.termux/files/nix/var/nix/profiles/system
+profile:    * should be something like /data/data/com.termux/files/nix/var/nix/profiles/default, not a
+              generation link like /data/data/com.termux/files/nix/var/nix/profiles/default-2-link
 range:      the range of generations to diff
             * the following patterns are allowed, where A, B, and N are positive
               integers, and G is the currently active generation:
@@ -65,7 +65,7 @@ while getopts :hqlp:s opt; do
             opt_profile=$OPTARG
             ;;
         s)
-            opt_profile=/nix/var/nix/profiles/system
+            opt_profile=/data/data/com.termux/files/nix/var/nix/profiles/system
             ;;
         \?)
             echo "error: invalid option -$OPTARG" >&2

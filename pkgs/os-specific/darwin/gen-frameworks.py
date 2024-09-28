@@ -78,7 +78,7 @@ def scan_sdk(sdk):
                 sdk,
                 # This search path is normally added automatically by the
                 # compiler based on the SDK, but we have a patch in place that
-                # removes that for SDKs in /nix/store, because our xcbuild stub
+                # removes that for SDKs in /data/data/com.termux/files/nix/store, because our xcbuild stub
                 # SDK doesn't have the directory.
                 # (swift-prevent-sdk-dirs-warning.patch)
                 "-I",

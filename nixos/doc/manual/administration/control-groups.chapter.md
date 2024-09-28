@@ -21,10 +21,10 @@ $ systemd-cgls
 │     └─10851 sh -c less -R
 └─system
   ├─httpd.service
-  │ ├─2444 httpd -f /nix/store/3pyacby5cpr55a03qwbnndizpciwq161-httpd.conf -DNO_DETACH
+  │ ├─2444 httpd -f /data/data/com.termux/files/nix/store/3pyacby5cpr55a03qwbnndizpciwq161-httpd.conf -DNO_DETACH
   │ └─...
   ├─dhcpcd.service
-  │ └─2376 dhcpcd --config /nix/store/f8dif8dsi2yaa70n03xir8r653776ka6-dhcpcd.conf
+  │ └─2376 dhcpcd --config /data/data/com.termux/files/nix/store/f8dif8dsi2yaa70n03xir8r653776ka6-dhcpcd.conf
   └─ ...
 ```
 

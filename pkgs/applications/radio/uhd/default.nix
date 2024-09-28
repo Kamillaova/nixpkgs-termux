@@ -138,7 +138,7 @@ stdenv.mkDerivation (finalAttrs: {
     (cmakeBool "ENABLE_E320" enableE320)
     # TODO: Check if this still needed
     # ABI differences GCC 7.1
-    # /nix/store/wd6r25miqbk9ia53pp669gn4wrg9n9cj-gcc-7.3.0/include/c++/7.3.0/bits/vector.tcc:394:7: note: parameter passing for argument of type 'std::vector<uhd::range_t>::iterator {aka __gnu_cxx::__normal_iterator<uhd::range_t*, std::vector<uhd::range_t> >}' changed in GCC 7.1
+    # /data/data/com.termux/files/nix/store/wd6r25miqbk9ia53pp669gn4wrg9n9cj-gcc-7.3.0/include/c++/7.3.0/bits/vector.tcc:394:7: note: parameter passing for argument of type 'std::vector<uhd::range_t>::iterator {aka __gnu_cxx::__normal_iterator<uhd::range_t*, std::vector<uhd::range_t> >}' changed in GCC 7.1
   ] ++ optionals stdenv.hostPlatform.isAarch32 [
     "-DCMAKE_CXX_FLAGS=-Wno-psabi"
   ];

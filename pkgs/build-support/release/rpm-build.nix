@@ -30,7 +30,7 @@ vmTools.buildRPM (
       done
 
       echo "installing ''${rpms[*]}..."
-      rpm -Up ''${rpms[*]} --excludepath /nix/store
+      rpm -Up ''${rpms[*]} --excludepath /data/data/com.termux/files/nix/store
 
       eval "$postRPMInstall"
 

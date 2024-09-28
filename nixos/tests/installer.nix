@@ -351,7 +351,7 @@ let
       )
 
       target.succeed("""
-        pkgs=$(readlink -f /nix/var/nix/profiles/per-user/root/channels)/nixos
+        pkgs=$(readlink -f /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels)/nixos
         if ! [[ -e $pkgs/pkgs/top-level/default.nix ]]; then
           echo 1>&2 "$pkgs does not seem to be a nixpkgs source. Please fix the test so that pkgs points to a nixpkgs source.";
           exit 1;
@@ -391,7 +391,7 @@ let
             mv -v /root/.nix-channels /root/restore/
             mv -v ~/.nix-defexpr /root/restore/
             mkdir -p /root/restore/channels
-            mv -v /nix/var/nix/profiles/per-user/root/channels* /root/restore/channels/
+            mv -v /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels* /root/restore/channels/
           )
         """)
         target.succeed("nixos-rebuild switch --file /root/my-config/default.nix")
@@ -403,7 +403,7 @@ let
             exec 1>&2
             mv -v /root/restore/.nix-channels /root/
             mv -v /root/restore/.nix-defexpr ~/.nix-defexpr
-            mv -v /root/restore/channels/* /nix/var/nix/profiles/per-user/root/
+            mv -v /root/restore/channels/* /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/
             rm -vrf /root/restore
           )
         """)
@@ -454,7 +454,7 @@ let
         target.succeed("""
           # for some reason the image does not have `pkgs.path`, so
           # we use readlink to find a Nixpkgs source.
-          pkgs=$(readlink -f /nix/var/nix/profiles/per-user/root/channels)/nixos
+          pkgs=$(readlink -f /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels)/nixos
           if ! [[ -e $pkgs/pkgs/top-level/default.nix ]]; then
             echo 1>&2 "$pkgs does not seem to be a nixpkgs source. Please fix the test so that pkgs points to a nixpkgs source.";
             exit 1;
@@ -473,7 +473,7 @@ let
           grep -F '/root/.nix-defexpr/channels exists, but channels have been disabled.' activation-log
         """)
         target.succeed("""
-          grep -F '/nix/var/nix/profiles/per-user/root/channels exists, but channels have been disabled.' activation-log
+          grep -F '/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels exists, but channels have been disabled.' activation-log
         """)
         target.succeed("""
           grep -F '/root/.nix-defexpr/channels exists, but channels have been disabled.' activation-log
@@ -486,7 +486,7 @@ let
         # Perform the suggested cleanups we've just seen in the log
         # TODO after https://github.com/NixOS/nix/issues/9574: don't remove them yet
         target.succeed("""
-          rm -rf /root/.nix-defexpr/channels /nix/var/nix/profiles/per-user/root/channels /root/.nix-defexpr/channels
+          rm -rf /root/.nix-defexpr/channels /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels /root/.nix-defexpr/channels
         """)
 
 
@@ -528,7 +528,7 @@ let
             exec 1>&2
             rm -vf /root/.nix-channels
             rm -vrf ~/.nix-defexpr
-            rm -vrf /nix/var/nix/profiles/per-user/root/channels*
+            rm -vrf /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels*
           )
         """)
         target.succeed("nixos-rebuild switch --flake /root/my-config#xyz | tee activation-log >&2")

@@ -42,7 +42,7 @@ with lib;
         options = [ "mode=0755" ];
       };
 
-    # In stage 1, mount a tmpfs on top of /nix/store (the squashfs
+    # In stage 1, mount a tmpfs on top of /data/data/com.termux/files/nix/store (the squashfs
     # image) to make this a live CD.
     fileSystems."/nix/.ro-store" = mkImageMediaOverride
       { fsType = "squashfs";
@@ -57,7 +57,7 @@ with lib;
         neededForBoot = true;
       };
 
-    fileSystems."/nix/store" = mkImageMediaOverride
+    fileSystems."/data/data/com.termux/files/nix/store" = mkImageMediaOverride
       { overlay = {
           lowerdir = [ "/nix/.ro-store" ];
           upperdir = "/nix/.rw-store/store";
@@ -140,12 +140,12 @@ with lib;
       ''
         # After booting, register the contents of the Nix store
         # in the Nix database in the tmpfs.
-        ${config.nix.package}/bin/nix-store --load-db < /nix/store/nix-path-registration
+        ${config.nix.package}/bin/nix-store --load-db < /data/data/com.termux/files/nix/store/nix-path-registration
 
         # nixos-rebuild also requires a "system" profile and an
         # /etc/NIXOS tag.
         touch /etc/NIXOS
-        ${config.nix.package}/bin/nix-env -p /nix/var/nix/profiles/system --set /run/current-system
+        ${config.nix.package}/bin/nix-env -p /data/data/com.termux/files/nix/var/nix/profiles/system --set /run/current-system
       '';
 
   };

@@ -235,7 +235,7 @@ The following fields are either required, are of a different type than in the sp
 ::: {.example #ex-makeDesktopItem}
 # Usage 1 of `makeDesktopItem`
 
-Write a desktop file `/nix/store/<store path>/my-program.desktop` to the Nix store.
+Write a desktop file `/data/data/com.termux/files/nix/store/<store path>/my-program.desktop` to the Nix store.
 
 ```nix
 {makeDesktopItem}:
@@ -365,7 +365,7 @@ The resulting store path will include some variation of the name, and it will be
 ::: {.example #ex-writeTextFile}
 # Usage 1 of `writeTextFile`
 
-Write `my-file` to `/nix/store/<store path>/some/subpath/my-cool-script`, making it executable.
+Write `my-file` to `/data/data/com.termux/files/nix/store/<store path>/some/subpath/my-cool-script`, making it executable.
 Also run a check on the resulting file in a `checkPhase`, and supply values for the less-used options.
 
 ```nix
@@ -392,7 +392,7 @@ writeTextFile {
 ::: {.example #ex2-writeTextFile}
 # Usage 2 of `writeTextFile`
 
-Write the string `Contents of File` to `/nix/store/<store path>`.
+Write the string `Contents of File` to `/data/data/com.termux/files/nix/store/<store path>`.
 See also the [](#trivial-builder-writeText) helper function.
 
 ```nix
@@ -408,7 +408,7 @@ writeTextFile {
 ::: {.example #ex3-writeTextFile}
 # Usage 3 of `writeTextFile`
 
-Write an executable script `my-script` to `/nix/store/<store path>/bin/my-script`.
+Write an executable script `my-script` to `/data/data/com.termux/files/nix/store/<store path>/bin/my-script`.
 See also the [](#trivial-builder-writeScriptBin) helper function.
 
 ```nix
@@ -443,7 +443,7 @@ The store path will include the name, and it will be a file.
 ::: {.example #ex-writeText}
 # Usage of `writeText`
 
-Write the string `Contents of File` to `/nix/store/<store path>`:
+Write the string `Contents of File` to `/data/data/com.termux/files/nix/store/<store path>`:
 
 ```nix
 writeText "my-file"
@@ -483,7 +483,7 @@ The store path will be a directory.
 ::: {.example #ex-writeTextDir}
 # Usage of `writeTextDir`
 
-Write the string `Contents of File` to `/nix/store/<store path>/share/my-file`:
+Write the string `Contents of File` to `/data/data/com.termux/files/nix/store/<store path>/share/my-file`:
 
 ```nix
 writeTextDir "share/my-file"
@@ -525,7 +525,7 @@ The store path will include the name, and it will be a file.
 ::: {.example #ex-writeScript}
 # Usage of `writeScript`
 
-Write the string `Contents of File` to `/nix/store/<store path>` and make the file executable.
+Write the string `Contents of File` to `/data/data/com.termux/files/nix/store/<store path>` and make the file executable.
 
 ```nix
 writeScript "my-file"
@@ -563,7 +563,7 @@ This is for consistency with the convention of software packages placing executa
 : The contents of the file.
 
 The created file is marked as executable.
-The file's contents will be put into `/nix/store/<store path>/bin/<name>`.
+The file's contents will be put into `/data/data/com.termux/files/nix/store/<store path>/bin/<name>`.
 The store path will include the name, and it will be a directory.
 
 ::: {.example #ex-writeScriptBin}
@@ -648,7 +648,7 @@ Write a Bash script to a "bin" subdirectory of a directory in the Nix store.
 
 : The contents of the file.
 
-The file's contents will be put into `/nix/store/<store path>/bin/<name>`.
+The file's contents will be put into `/data/data/com.termux/files/nix/store/<store path>/bin/<name>`.
 The store path will include the the name, and it will be a directory.
 
 This function is a combination of [](#trivial-builder-writeShellScript) and [](#trivial-builder-writeScriptBin).
@@ -686,31 +686,31 @@ These functions concatenate `files` to the Nix store in a single file. This is u
 Here are a few examples:
 ```nix
 
-# Writes my-file to /nix/store/<store path>
+# Writes my-file to /data/data/com.termux/files/nix/store/<store path>
 concatTextFile {
   name = "my-file";
   files = [ drv1 "${drv2}/path/to/file" ];
 }
 # See also the `concatText` helper function below.
 
-# Writes executable my-file to /nix/store/<store path>/bin/my-file
+# Writes executable my-file to /data/data/com.termux/files/nix/store/<store path>/bin/my-file
 concatTextFile {
   name = "my-file";
   files = [ drv1 "${drv2}/path/to/file" ];
   executable = true;
   destination = "/bin/my-file";
 }
-# Writes contents of files to /nix/store/<store path>
+# Writes contents of files to /data/data/com.termux/files/nix/store/<store path>
 concatText "my-file" [ file1 file2 ]
 
-# Writes contents of files to /nix/store/<store path>
+# Writes contents of files to /data/data/com.termux/files/nix/store/<store path>
 concatScript "my-file" [ file1 file2 ]
 ```
 
 ## `writeShellApplication` {#trivial-builder-writeShellApplication}
 
 `writeShellApplication` is similar to `writeShellScriptBin` and `writeScriptBin` but supports runtime dependencies with `runtimeInputs`.
-Writes an executable shell script to `/nix/store/<store path>/bin/<name>` and checks its syntax with [`shellcheck`](https://github.com/koalaman/shellcheck) and the `bash`'s `-n` option.
+Writes an executable shell script to `/data/data/com.termux/files/nix/store/<store path>/bin/<name>` and checks its syntax with [`shellcheck`](https://github.com/koalaman/shellcheck) and the `bash`'s `-n` option.
 Some basic Bash options are set by default (`errexit`, `nounset`, and `pipefail`), but can be overridden with `bashOptions`.
 
 Extra arguments may be passed to `stdenv.mkDerivation` by setting `derivationArgs`; note that variables set in this manner will be set when the shell script is _built,_ not when it's run.
@@ -740,17 +740,17 @@ symlinkJoin { name = "myexample"; paths = [ pkgs.hello pkgs.stack ]; postBuild =
 ```
 This creates a derivation with a directory structure like the following:
 ```
-/nix/store/sglsr5g079a5235hy29da3mq3hv8sjmm-myexample
+/data/data/com.termux/files/nix/store/sglsr5g079a5235hy29da3mq3hv8sjmm-myexample
 |-- bin
-|   |-- hello -> /nix/store/qy93dp4a3rqyn2mz63fbxjg228hffwyw-hello-2.10/bin/hello
-|   `-- stack -> /nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/bin/stack
+|   |-- hello -> /data/data/com.termux/files/nix/store/qy93dp4a3rqyn2mz63fbxjg228hffwyw-hello-2.10/bin/hello
+|   `-- stack -> /data/data/com.termux/files/nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/bin/stack
 `-- share
     |-- bash-completion
     |   `-- completions
-    |       `-- stack -> /nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/share/bash-completion/completions/stack
+    |       `-- stack -> /data/data/com.termux/files/nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/share/bash-completion/completions/stack
     |-- fish
     |   `-- vendor_completions.d
-    |       `-- stack.fish -> /nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/share/fish/vendor_completions.d/stack.fish
+    |       `-- stack.fish -> /data/data/com.termux/files/nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/share/fish/vendor_completions.d/stack.fish
 ...
 ```
 
@@ -770,14 +770,14 @@ For example,
 writeClosure [ (writeScriptBin "hi" ''${hello}/bin/hello'') ]
 ```
 
-produces an output path `/nix/store/<hash>-runtime-deps` containing
+produces an output path `/data/data/com.termux/files/nix/store/<hash>-runtime-deps` containing
 
 ```
-/nix/store/<hash>-hello-2.10
-/nix/store/<hash>-hi
-/nix/store/<hash>-libidn2-2.3.0
-/nix/store/<hash>-libunistring-0.9.10
-/nix/store/<hash>-glibc-2.32-40
+/data/data/com.termux/files/nix/store/<hash>-hello-2.10
+/data/data/com.termux/files/nix/store/<hash>-hi
+/data/data/com.termux/files/nix/store/<hash>-libidn2-2.3.0
+/data/data/com.termux/files/nix/store/<hash>-libunistring-0.9.10
+/data/data/com.termux/files/nix/store/<hash>-glibc-2.32-40
 ```
 
 You can see that this includes `hi`, the original input path,
@@ -796,10 +796,10 @@ For example,
 writeDirectReferencesToFile (writeScriptBin "hi" ''${hello}/bin/hello'')
 ```
 
-produces an output path `/nix/store/<hash>-runtime-references` containing
+produces an output path `/data/data/com.termux/files/nix/store/<hash>-runtime-references` containing
 
 ```
-/nix/store/<hash>-hello-2.10
+/data/data/com.termux/files/nix/store/<hash>-hello-2.10
 ```
 
 but none of `hello`'s dependencies because those are not referenced directly

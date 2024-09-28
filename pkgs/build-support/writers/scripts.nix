@@ -63,13 +63,13 @@ rec {
 
     ```nix-repl
     :b makeScriptWriter { interpreter = "${pkgs.dash}/bin/dash"; } "hello" "echo hello world"
-    -> /nix/store/indvlr9ckmnv4f0ynkmasv2h4fxhand0-hello
+    -> /data/data/com.termux/files/nix/store/indvlr9ckmnv4f0ynkmasv2h4fxhand0-hello
     ```
 
     The above example creates a script named `hello` that outputs `hello world` when executed.
 
     ```sh
-    > /nix/store/indvlr9ckmnv4f0ynkmasv2h4fxhand0-hello
+    > /data/data/com.termux/files/nix/store/indvlr9ckmnv4f0ynkmasv2h4fxhand0-hello
     hello world
     ```
     :::
@@ -79,11 +79,11 @@ rec {
 
     ```nix-repl
     :b makeScriptWriter { interpreter = "${pkgs.python3}/bin/python"; } "python-hello" "print('hello world')"
-    -> /nix/store/4kvby1hqr45ffcdrvfpnpj62hanskw93-python-hello
+    -> /data/data/com.termux/files/nix/store/4kvby1hqr45ffcdrvfpnpj62hanskw93-python-hello
     ```
 
     ```sh
-    > /nix/store/4kvby1hqr45ffcdrvfpnpj62hanskw93-python-hello
+    > /data/data/com.termux/files/nix/store/4kvby1hqr45ffcdrvfpnpj62hanskw93-python-hello
     hello world
     ```
     :::
@@ -225,13 +225,13 @@ rec {
 
     ```nix-repl
     :b makeBinWriter { compileScript = "${pkgs.gcc}/bin/gcc -o $out $contentPath"; } "hello" ./main.c
-    out -> /nix/store/f6crc8mwj3lvcxqclw7n09cm8nb6kxbh-hello
+    out -> /data/data/com.termux/files/nix/store/f6crc8mwj3lvcxqclw7n09cm8nb6kxbh-hello
     ```
 
     The above example creates an executable named `hello` that outputs `Hello, World!` when executed.
 
     ```sh
-    > /nix/store/f6crc8mwj3lvcxqclw7n09cm8nb6kxbh-hello
+    > /data/data/com.termux/files/nix/store/f6crc8mwj3lvcxqclw7n09cm8nb6kxbh-hello
     Hello, World!
     ```
     :::

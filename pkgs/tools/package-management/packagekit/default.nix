@@ -69,7 +69,7 @@ stdenv.mkDerivation rec {
   mesonFlags = [
     (if enableSystemd then "-Dsystemd=true" else "-Dsystem=false")
     # often fails to build with nix updates
-    # and remounts /nix/store as rw
+    # and remounts /data/data/com.termux/files/nix/store as rw
     # https://github.com/NixOS/nixpkgs/issues/177946
     #"-Dpackaging_backend=nix"
     "-Ddbus_sys=${placeholder "out"}/share/dbus-1/system.d"

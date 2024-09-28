@@ -32,7 +32,7 @@ let
           "$binary"
 
         # Workaround on
-        # LogLinuxPlatformFile:Warning: open('/nix/store/hash-ue4demos-demo/demo/demo/Saved/Config/CleanSourceConfigs/Engine.ini', Flags=0x00080241) failed: errno=2 (No such file or directory)
+        # LogLinuxPlatformFile:Warning: open('/data/data/com.termux/files/nix/store/hash-ue4demos-demo/demo/demo/Saved/Config/CleanSourceConfigs/Engine.ini', Flags=0x00080241) failed: errno=2 (No such file or directory)
         # for Vehicle, Shooter and Strategy games.
         ls | grep ' ' && $(
           haxname=$(ls | grep ' ' | sed 's/ //g'); \

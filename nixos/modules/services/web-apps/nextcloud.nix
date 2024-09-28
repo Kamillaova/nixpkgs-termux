@@ -1066,7 +1066,7 @@ in {
           phpPackage = phpPackage;
           phpEnv = {
             NEXTCLOUD_CONFIG_DIR = "${datadir}/config";
-            PATH = "/run/wrappers/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/usr/bin:/bin";
+            PATH = "/run/wrappers/bin:/data/data/com.termux/files/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/usr/bin:/bin";
           };
           settings = mapAttrs (name: mkDefault) {
             "listen.owner" = config.services.nginx.user;

@@ -96,8 +96,8 @@ stdenv.mkDerivation rec {
     patch_docbook45 documentation/v84/drbd.conf.xml
     # The ja documentation is disabled because:
     # make[1]: Entering directory '/build/drbd-utils-9.16.0/documentation/ja/v84'
-    # /nix/store/wyx2nn2pjcn50lc95c6qgsgm606rn0x2-perl5.32.1-po4a-0.62/bin/po4a-translate -f docbook -M utf-8 -L utf-8 -keep 0 -m ../../v84/drbdsetup.xml -p drbdsetup.xml.po -l drbdsetup.xml
-    # Use of uninitialized value $args[1] in sprintf at /nix/store/wyx2nn2pjcn50lc95c6qgsgm606rn0x2-perl5.32.1-po4a-0.62/lib/perl5/site_perl/Locale/Po4a/Common.pm line 134.
+    # /data/data/com.termux/files/nix/store/wyx2nn2pjcn50lc95c6qgsgm606rn0x2-perl5.32.1-po4a-0.62/bin/po4a-translate -f docbook -M utf-8 -L utf-8 -keep 0 -m ../../v84/drbdsetup.xml -p drbdsetup.xml.po -l drbdsetup.xml
+    # Use of uninitialized value $args[1] in sprintf at /data/data/com.termux/files/nix/store/wyx2nn2pjcn50lc95c6qgsgm606rn0x2-perl5.32.1-po4a-0.62/lib/perl5/site_perl/Locale/Po4a/Common.pm line 134.
     # Invalid po file drbdsetup.xml.po:
     substituteInPlace Makefile.in \
       --replace 'DOC_DIRS    := documentation/v9 documentation/ja/v9' \

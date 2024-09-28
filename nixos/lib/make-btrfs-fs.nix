@@ -1,4 +1,4 @@
-# Builds an btrfs image containing a populated /nix/store with the closure
+# Builds an btrfs image containing a populated /data/data/com.termux/files/nix/store with the closure
 # of store paths passed in the storePaths parameter, in addition to the
 # contents of a directory that can be populated with commands. The
 # generated image is sized to only fit its contents, with the expectation
@@ -37,9 +37,9 @@ pkgs.stdenv.mkDerivation {
           ${populateImageCommands}
       )
 
-      mkdir -p ./rootImage/nix/store
+      mkdir -p ./rootImage/data/data/com.termux/files/nix/store
 
-      xargs -I % cp -a --reflink=auto % -t ./rootImage/nix/store/ < ${sdClosureInfo}/store-paths
+      xargs -I % cp -a --reflink=auto % -t ./rootImage/data/data/com.termux/files/nix/store/ < ${sdClosureInfo}/store-paths
       (
         GLOBIGNORE=".:.."
         shopt -u dotglob

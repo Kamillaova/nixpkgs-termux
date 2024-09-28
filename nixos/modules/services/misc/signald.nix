@@ -58,7 +58,7 @@ in
         RuntimeDirectoryMode = "0750";
 
         BindReadOnlyPaths = [
-          "/nix/store"
+          "/data/data/com.termux/files/nix/store"
           "-/etc/resolv.conf"
           "-/etc/nsswitch.conf"
           "-/etc/hosts"

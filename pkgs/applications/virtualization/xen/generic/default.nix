@@ -177,7 +177,7 @@ let
         # Only produce a copy command if patches exist.
         lib.strings.optionalString (lib.attrsets.hasAttrByPath [ "${source}" ] prefetchedSources)
           # The actual copy command. `src` is always an absolute path to a fetcher output
-          # inside the /nix/store, and `path` is always a path relative to the Xen root.
+          # inside the /data/data/com.termux/files/nix/store, and `path` is always a path relative to the Xen root.
           # We need to `mkdir -p` the target directory first, and `chmod +w` the contents last,
           # as the copied files will still be edited by the postPatchPhase.
           ''
@@ -554,7 +554,7 @@ stdenv.mkDerivation (finalAttrs: {
     # Create $out directories and copy build output.
     + ''
       mkdir --parents $out $out/share $boot
-      cp ${cpFlags} dist/install/nix/store/*/* $out/
+      cp ${cpFlags} dist/install/data/data/com.termux/files/nix/store/*/* $out/
       cp ${cpFlags} dist/install/etc $out
       cp ${cpFlags} dist/install/boot $boot
     ''

@@ -63,7 +63,7 @@ class BaseConverter(Converter[md.TR], Generic[md.TR]):
             else:
                 href = f"file://{loc}"
             # Print the filename and make it user-friendly by replacing the
-            # /nix/store/<hash> prefix by the default location of nixos
+            # /data/data/com.termux/files/nix/store/<hash> prefix by the default location of nixos
             # sources.
             if not loc.startswith('/'):
                 name = f"<nixpkgs/{loc}>"

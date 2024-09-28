@@ -61,21 +61,21 @@ else
 fi
 
 
-# Make /nix/store a read-only bind mount to enforce immutability of
+# Make /data/data/com.termux/files/nix/store a read-only bind mount to enforce immutability of
 # the Nix store.  Note that we can't use "chown root:nixbld" here
 # because users/groups might not exist yet.
 # Silence chown/chmod to fail gracefully on a readonly filesystem
 # like squashfs.
-chown -f 0:30000 /nix/store
-chmod -f 1775 /nix/store
+chown -f 0:30000 /data/data/com.termux/files/nix/store
+chmod -f 1775 /data/data/com.termux/files/nix/store
 if [ -n "@readOnlyNixStore@" ]; then
-    if ! [[ "$(findmnt --noheadings --output OPTIONS /nix/store)" =~ ro(,|$) ]]; then
+    if ! [[ "$(findmnt --noheadings --output OPTIONS /data/data/com.termux/files/nix/store)" =~ ro(,|$) ]]; then
         if [ -z "$container" ]; then
-            mount --bind /nix/store /nix/store
+            mount --bind /data/data/com.termux/files/nix/store /data/data/com.termux/files/nix/store
         else
-            mount --rbind /nix/store /nix/store
+            mount --rbind /data/data/com.termux/files/nix/store /data/data/com.termux/files/nix/store
         fi
-        mount -o remount,ro,bind /nix/store
+        mount -o remount,ro,bind /data/data/com.termux/files/nix/store
     fi
 fi
 

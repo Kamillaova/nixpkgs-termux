@@ -214,7 +214,7 @@ in rec {
     >
     > [foo]
     > ciao=bar
-    > hi=/nix/store/y93qql1p5ggfnaqjjqhxcw0vqw95rlz0-hello-2.10
+    > hi=/data/data/com.termux/files/nix/store/y93qql1p5ggfnaqjjqhxcw0vqw95rlz0-hello-2.10
     ```
 
     The mk* configuration attributes can generically change
@@ -288,7 +288,7 @@ in rec {
     >
     > [foo]
     > ciao=bar
-    > hi=/nix/store/y93qql1p5ggfnaqjjqhxcw0vqw95rlz0-hello-2.10
+    > hi=/data/data/com.termux/files/nix/store/y93qql1p5ggfnaqjjqhxcw0vqw95rlz0-hello-2.10
     ```
 
     The mk* configuration attributes can generically change

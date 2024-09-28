@@ -6,8 +6,8 @@ index 9f106c23..9da2d2a8 100644
  }
  
  mount {
-+	src: "/nix/store"
-+	dst: "/nix/store"
++	src: "/data/data/com.termux/files/nix/store"
++	dst: "/data/data/com.termux/files/nix/store"
 +	is_bind: true
 +}
 +

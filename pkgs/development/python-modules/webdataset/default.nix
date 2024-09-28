@@ -85,7 +85,7 @@ buildPythonPackage rec {
     ];
 
   disabledTestPaths = lib.optionals stdenv.hostPlatform.isDarwin [
-    # AttributeError: <module 'torch.distributed' from /nix/store/...
+    # AttributeError: <module 'torch.distributed' from /data/data/com.termux/files/nix/store/...
     "tests/test_wids.py"
 
     # Issue with creating a temp file in the sandbox

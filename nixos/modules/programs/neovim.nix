@@ -80,7 +80,7 @@ in
       '';
       description = ''
         Generate your init file from your list of plugins and custom commands.
-        Neovim will then be wrapped to load {command}`nvim -u /nix/store/«hash»-vimrc`
+        Neovim will then be wrapped to load {command}`nvim -u /data/data/com.termux/files/nix/store/«hash»-vimrc`
       '';
     };
 

@@ -19,7 +19,7 @@
               exit 0
             fi
 
-            p=$(readlink -f /nix/var/nix/profiles/system)
+            p=$(readlink -f /data/data/com.termux/files/nix/var/nix/profiles/system)
             if ! [[ -d $p ]]; then
               echo "Could not find system profile for prepare-kexec"
               exit 1

@@ -1,6 +1,6 @@
 # NOTE:
 # cfg.configFile contains secrets such as proxy servers' credential!
-# we dont want plaintext secrets in world-readable `/nix/store`.
+# we dont want plaintext secrets in world-readable `/data/data/com.termux/files/nix/store`.
 
 {
   lib,

@@ -453,8 +453,8 @@ in
         baseSystem = nodes.common.system.build.toplevel;
       in
       ''
-        machine.succeed("nix-env -p /nix/var/nix/profiles/system --set ${baseSystem}")
-        machine.succeed("nix-env -p /nix/var/nix/profiles/system --delete-generations 1")
+        machine.succeed("nix-env -p /data/data/com.termux/files/nix/var/nix/profiles/system --set ${baseSystem}")
+        machine.succeed("nix-env -p /data/data/com.termux/files/nix/var/nix/profiles/system --delete-generations 1")
         machine.succeed("${baseSystem}/bin/switch-to-configuration boot")
         machine.fail("test -e /boot/loader/entries/nixos-generation-1.conf")
         machine.succeed("test -e /boot/loader/entries/nixos-generation-2.conf")

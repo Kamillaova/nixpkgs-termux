@@ -60,9 +60,9 @@ in
         # Start with a clean root filesystem, and allowlist what the container
         # is permitted to access.
         TemporaryFileSystem = "/";
-        # Allowlist /nix/store (to allow the binary to find its dependencies)
+        # Allowlist /data/data/com.termux/files/nix/store (to allow the binary to find its dependencies)
         # and dbus.
-        ReadOnlyPaths = "/nix/store /run/dbus";
+        ReadOnlyPaths = "/data/data/com.termux/files/nix/store /run/dbus";
         # Let systemd manage `/var/lib/matter-server` for us inside the
         # ephemeral TemporaryFileSystem.
         StateDirectory = storageDir;

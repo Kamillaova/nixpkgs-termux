@@ -15,7 +15,7 @@ configuration was switched to.
 
 If the action is `switch` or `boot`, the bootloader is updated first so the
 configuration will be the next one to boot. Unless `NIXOS_NO_SYNC` is set to
-`1`, `/nix/store` is synced to disk.
+`1`, `/data/data/com.termux/files/nix/store` is synced to disk.
 
 If the action is `switch` or `test`, the currently running system is inspected
 and the actions to switch to the new system are calculated. This process takes

@@ -37,8 +37,8 @@
         };
 
         # bind-mount the store
-        "/nix/store" = {
-          device = "/usr/nix/store";
+        "/data/data/com.termux/files/nix/store" = {
+          device = "/usr/data/data/com.termux/files/nix/store";
           options = [ "bind" ];
         };
       };
@@ -120,11 +120,11 @@
       with subtest("Running with volatile root"):
         machine.succeed("findmnt --kernel --type tmpfs /")
 
-      with subtest("/nix/store is backed by dm-verity protected fs"):
+      with subtest("/data/data/com.termux/files/nix/store is backed by dm-verity protected fs"):
         verity_info = machine.succeed("dmsetup info --target verity usr")
         assert "ACTIVE" in verity_info,f"unexpected verity info: {verity_info}"
 
-        backing_device = machine.succeed("df --output=source /nix/store | tail -n1").strip()
+        backing_device = machine.succeed("df --output=source /data/data/com.termux/files/nix/store | tail -n1").strip()
         assert "/dev/mapper/usr" == backing_device,"unexpected backing device: {backing_device}"
     '';
 }

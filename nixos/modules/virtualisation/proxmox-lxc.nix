@@ -73,7 +73,7 @@ with lib;
         fi
 
         # nixos-rebuild also requires a "system" profile
-        ${config.nix.package.out}/bin/nix-env -p /nix/var/nix/profiles/system --set /run/current-system
+        ${config.nix.package.out}/bin/nix-env -p /data/data/com.termux/files/nix/var/nix/profiles/system --set /run/current-system
       '';
 
       boot = {

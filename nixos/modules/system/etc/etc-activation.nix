@@ -38,7 +38,7 @@
             type = "erofs";
             options = "loop";
             unitConfig.RequiresMountsFor = [
-              "/sysroot/nix/store"
+              "/sysroot/data/data/com.termux/files/nix/store"
             ];
           }
           {
@@ -62,7 +62,7 @@
             requires = lib.mkIf config.system.etc.overlay.mutable [ "rw-etc.service" ];
             after = lib.mkIf config.system.etc.overlay.mutable [ "rw-etc.service" ];
             unitConfig.RequiresMountsFor = [
-              "/sysroot/nix/store"
+              "/sysroot/data/data/com.termux/files/nix/store"
               "/run/etc-metadata"
             ];
           }

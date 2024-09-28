@@ -27,7 +27,7 @@ fast=
 rollback=
 upgrade=
 upgrade_all=
-profile=/nix/var/nix/profiles/system
+profile=/data/data/com.termux/files/nix/var/nix/profiles/system
 specialisation=
 buildHost=
 targetHost=
@@ -128,7 +128,7 @@ while [ "$#" -gt 0 ]; do
             exit 1
         fi
         if [ "$1" != system ]; then
-            profile="/nix/var/nix/profiles/system-profiles/$1"
+            profile="/data/data/com.termux/files/nix/var/nix/profiles/system-profiles/$1"
             mkdir -p -m 0755 "$(dirname "$profile")"
         fi
         shift 1
@@ -376,7 +376,7 @@ if [[ -n $upgrade && -z $_NIXOS_REBUILD_REEXEC && -z $flake ]]; then
     # contain a file called ".update-on-nixos-rebuild", update them as
     # well. Also upgrade the nixos channel.
 
-    for channelpath in /nix/var/nix/profiles/per-user/root/channels/*; do
+    for channelpath in /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels/*; do
         channel_name=$(basename "$channelpath")
 
         if [[ "$channel_name" == "nixos" ]]; then

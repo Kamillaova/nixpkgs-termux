@@ -19,7 +19,7 @@
 # this can unfortunately not be set at configure time):
 # Go to settings (ctrl-p), navigate to the WildMidi plugin and click on
 # Preferences. In the instrument configuration field, type the path to
-# /nix/store/*wildmidi*/etc/wildmidi.cfg (or your own custom cfg file).
+# /data/data/com.termux/files/nix/store/*wildmidi*/etc/wildmidi.cfg (or your own custom cfg file).
 
 # Qmmp installs working .desktop file(s) all by itself, so we don't need to
 # handle that.

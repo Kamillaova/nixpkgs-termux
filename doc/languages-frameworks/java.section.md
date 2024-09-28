@@ -55,7 +55,7 @@ another package declares the attribute
 ```
 
 then `CLASSPATH` will be set to
-`/nix/store/...-libfoo/share/java/foo.jar`.
+`/data/data/com.termux/files/nix/store/...-libfoo/share/java/foo.jar`.
 
 Private JARs should be installed in a location like
 `$out/share/package-name`.

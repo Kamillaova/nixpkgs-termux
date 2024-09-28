@@ -56,7 +56,7 @@ buildPerlModule rec {
   # Not supported by buildPerlModule
   # and the Perl code fails anyway
   # when Getopt::Long sets $gtk in Build.PL:
-  # Modification of a read-only value attempted at /nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-perl5.34.0-Getopt-Long-2.52/lib/perl5/site_perl/5.34.0/Getopt/Long.pm line 585.
+  # Modification of a read-only value attempted at /data/data/com.termux/files/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-perl5.34.0-Getopt-Long-2.52/lib/perl5/site_perl/5.34.0/Getopt/Long.pm line 585.
   #buildFlags = lib.optional withGtk3 "--gtk3";
   postPatch = lib.optionalString withGtk3 ''
     substituteInPlace Build.PL --replace 'my $gtk ' 'my $gtk = 1;#'

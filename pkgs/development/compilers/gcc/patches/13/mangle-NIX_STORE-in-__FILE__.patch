@@ -6,7 +6,7 @@ Subject: [PATCH] gcc/file-prefix-map.cc: always mangle __FILE__ into invalid
 
 Without the change `__FILE__` used in static inline functions in headers
 embed paths to header files into executable images. For local headers
-it's not a problem, but for headers in `/nix/store` this causes `-dev`
+it's not a problem, but for headers in `/data/data/com.termux/files/nix/store` this causes `-dev`
 inputs to be retained in runtime closure.
 
 Typical examples are `nix` -> `nlohmann_json` and `pipewire` ->
@@ -24,7 +24,7 @@ hash uppercase:
 
 Ideally we would like to use `-fmacro-prefix-map=` feature of `gcc` as:
 
-  -fmacro-prefix-map=/nix/store/$hash1-nlohmann-json-ver=/nix/store/$HASH1-nlohmann-json-ver
+  -fmacro-prefix-map=/data/data/com.termux/files/nix/store/$hash1-nlohmann-json-ver=/data/data/com.termux/files/nix/store/$HASH1-nlohmann-json-ver
   -fmacro-prefix-map=/nix/...
 
 In practice it quickly exhausts argument length limit due to `gcc`
@@ -35,9 +35,9 @@ is present in the environment.
 
 Tested as:
 
-    $ printf "# 0 \"/nix/store/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-pppppp-vvvvvvv\" \nconst char * f(void) { return __FILE__; }" | NIX_STORE=/nix/store ./gcc/xgcc -Bgcc -x c - -S -o -
+    $ printf "# 0 \"/data/data/com.termux/files/nix/store/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-pppppp-vvvvvvv\" \nconst char * f(void) { return __FILE__; }" | NIX_STORE=/data/data/com.termux/files/nix/store ./gcc/xgcc -Bgcc -x c - -S -o -
     ...
-    .string "/nix/store/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-pppppp-vvvvvvv"
+    .string "/data/data/com.termux/files/nix/store/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-pppppp-vvvvvvv"
     ...
 
 Mangled successfully.

@@ -18,9 +18,9 @@
 
       boot.initrd.postDeviceCommands = lib.mkIf (!config.boot.initrd.systemd.enable) ''
           # Hacky!!! fuse hard-codes the path to mount
-          mkdir -p /nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-${pkgs.util-linux.name}-bin/bin
-          ln -s $(which mount) /nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-${pkgs.util-linux.name}-bin/bin
-          ln -s $(which umount) /nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-${pkgs.util-linux.name}-bin/bin
+          mkdir -p /data/data/com.termux/files/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-${pkgs.util-linux.name}-bin/bin
+          ln -s $(which mount) /data/data/com.termux/files/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-${pkgs.util-linux.name}-bin/bin
+          ln -s $(which umount) /data/data/com.termux/files/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-${pkgs.util-linux.name}-bin/bin
         '';
 
       boot.initrd.systemd.extraBin = {

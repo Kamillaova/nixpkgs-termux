@@ -203,7 +203,7 @@ in {
     ):
         docker.succeed(
             "docker load --input='${examples.bashLayeredWithUser}'",
-            "docker run -u somebody --rm ${examples.bashLayeredWithUser.imageName} ${pkgs.bash}/bin/bash -c 'test 755 == $(stat --format=%a /nix) && test 755 == $(stat --format=%a /nix/store)'",
+            "docker run -u somebody --rm ${examples.bashLayeredWithUser.imageName} ${pkgs.bash}/bin/bash -c 'test 755 == $(stat --format=%a /nix) && test 755 == $(stat --format=%a /data/data/com.termux/files/nix/store)'",
             "docker rmi ${examples.bashLayeredWithUser.imageName}",
         )
 
@@ -404,10 +404,10 @@ in {
         docker.succeed("docker run --rm no-store-paths ls / >/dev/console")
 
         # If busybox isn't self-referential, we need this line
-        #   docker.fail("docker run --rm no-store-paths ls /nix/store >/dev/console")
+        #   docker.fail("docker run --rm no-store-paths ls /data/data/com.termux/files/nix/store >/dev/console")
         # However, it currently is self-referential, so we check that it is the
         # only store path.
-        docker.succeed("diff <(docker run --rm no-store-paths ls /nix/store) <(basename ${pkgs.pkgsStatic.busybox}) >/dev/console")
+        docker.succeed("diff <(docker run --rm no-store-paths ls /data/data/com.termux/files/nix/store) <(basename ${pkgs.pkgsStatic.busybox}) >/dev/console")
 
     with subtest("Ensure buildLayeredImage does not change store path contents."):
         docker.succeed(
@@ -428,7 +428,7 @@ in {
             == "${if pkgs.stdenv.hostPlatform.system == "aarch64-linux" then "amd64" else "arm64"}"
         )
 
-    with subtest("buildLayeredImage doesn't dereference /nix/store symlink layers"):
+    with subtest("buildLayeredImage doesn't dereference /data/data/com.termux/files/nix/store symlink layers"):
         docker.succeed(
             "docker load --input='${examples.layeredStoreSymlink}'",
             "docker run --rm ${examples.layeredStoreSymlink.imageName} bash -c 'test -L ${examples.layeredStoreSymlink.passthru.symlink}'",

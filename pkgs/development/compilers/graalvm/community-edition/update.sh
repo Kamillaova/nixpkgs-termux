@@ -104,7 +104,7 @@ echo_file "  \"hashes\" = {"
 for nix_platform in "${!platforms[@]}"; do
   product_platform="${platforms[$nix_platform]}"
   args=("${url//@platform@/$product_platform}")
-  # Get current hashes to skip derivations already in /nix/store to reuse cache when the version is the same
+  # Get current hashes to skip derivations already in /data/data/com.termux/files/nix/store to reuse cache when the version is the same
   # e.g.: when adding a new product and running this script with FORCE=1
   if [[ "$current_version" == "$new_version" ]] && \
       previous_hash="$(nix-instantiate --eval "$hashes_nix" -A "hashes.$nix_platform.sha256" --json | jq -r)"; then

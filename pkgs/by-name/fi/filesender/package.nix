@@ -16,7 +16,7 @@ stdenv.mkDerivation (finalAttrs: {
   };
 
   patches = [
-    # /nix/store is read-only, but filesender searches config and logs inside of installation directory.
+    # /data/data/com.termux/files/nix/store is read-only, but filesender searches config and logs inside of installation directory.
     # This patch changes search directories to FILESENDER_CONFIG_DIR and FILESENDER_LOG_DIR environment variables.
     ./separate_mutable_paths.patch
   ];

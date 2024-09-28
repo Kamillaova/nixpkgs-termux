@@ -48,7 +48,7 @@ let
     # perl5.32.0-public-inbox> t/eml.t ...................... 1/? Cannot parse parameter '=?ISO-8859-1?Q?=20charset=3D=1BOF?=' at t/eml.t line 270.
     # perl5.32.0-public-inbox> #   Failed test 'got wide character by assuming utf-8'
     # perl5.32.0-public-inbox> #   at t/eml.t line 272.
-    # perl5.32.0-public-inbox> Wide character in print at /nix/store/38vxlxrvg3yji3jms44qn94lxdysbj5j-perl-5.32.0/lib/perl5/5.32.0/Test2/Formatter/TAP.pm line 125.
+    # perl5.32.0-public-inbox> Wide character in print at /data/data/com.termux/files/nix/store/38vxlxrvg3yji3jms44qn94lxdysbj5j-perl-5.32.0/lib/perl5/5.32.0/Test2/Formatter/TAP.pm line 125.
     "eml"
     # Failed test 'Makefile OK'
     # at t/hl_mod.t line 19.

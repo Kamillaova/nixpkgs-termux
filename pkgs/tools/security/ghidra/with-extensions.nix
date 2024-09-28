@@ -18,7 +18,7 @@ let
       pkgs.ghidra.withExtensions (p: with p; [
         ghostrings
       ]);
-      => /nix/store/3yn0rbnz5mbrxf0x70jbjq73wgkszr5c-ghidra-with-extensions-10.2.2
+      => /data/data/com.termux/files/nix/store/3yn0rbnz5mbrxf0x70jbjq73wgkszr5c-ghidra-with-extensions-10.2.2
   */
   withExtensions =
     f:

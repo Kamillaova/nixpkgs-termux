@@ -34,7 +34,7 @@ import ./make-test-python.nix ({ pkgs, ... }: {
     # Test the Docker runtime
     gvisor.succeed("tar cv --files-from /dev/null | docker import - scratchimg")
     gvisor.succeed(
-        "docker run -d --name=sleeping --runtime=runsc -v /nix/store:/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
+        "docker run -d --name=sleeping --runtime=runsc -v /data/data/com.termux/files/nix/store:/data/data/com.termux/files/nix/store -v /run/current-system/sw/bin:/bin scratchimg /bin/sleep 10"
     )
     gvisor.succeed("docker ps | grep sleeping")
     gvisor.succeed("docker stop sleeping")

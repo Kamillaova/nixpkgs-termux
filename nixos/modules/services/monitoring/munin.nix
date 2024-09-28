@@ -100,7 +100,7 @@ let
   # hardcode paths like /sbin/mount rather than trusting $PATH, so we have to
   # look for and update those throughout the script. At the same time, if the
   # plugin comes from a package that is already nixified, we don't want to
-  # rewrite paths like /nix/store/foo/sbin/mount.
+  # rewrite paths like /data/data/com.termux/files/nix/store/foo/sbin/mount.
   # For now we make the simplifying assumption that no file will contain lines
   # which mix store paths and FHS paths, and thus run our substitution only on
   # lines which do not contain store paths.

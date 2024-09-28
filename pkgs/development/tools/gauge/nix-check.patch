@@ -36,7 +36,7 @@ index 60c61550..d7573c2d 100644
 +	if err != nil {
 +		return err
 +	}
-+	if strings.HasPrefix(installDir, "/nix/store") {
++	if strings.HasPrefix(installDir, "/data/data/com.termux/files/nix/store") {
 +
 +		// check if we're installing in the sandbox
 +		if os.Getenv("NIX_GAUGE_IN_SANDBOX") == "true" {

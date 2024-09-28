@@ -40,7 +40,7 @@ def add_closure_to_definition(
 ) -> None:
     """Add CopyFiles= instructions to a definition for all paths in the closure.
 
-    If strip_nix_store_prefix is True, `/nix/store` is stripped from the target path.
+    If strip_nix_store_prefix is True, `/data/data/com.termux/files/nix/store` is stripped from the target path.
     """
     if not closure:
         return
@@ -52,7 +52,7 @@ def add_closure_to_definition(
                 continue
 
             source = Path(line.strip())
-            target = str(source.relative_to("/nix/store/"))
+            target = str(source.relative_to("/data/data/com.termux/files/nix/store/"))
             target = f":/{target}" if strip_nix_store_prefix else ""
 
             copy_files_lines.append(f"CopyFiles={source}{target}\n")

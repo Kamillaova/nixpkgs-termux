@@ -46,7 +46,7 @@ stdenv.mkDerivation rec {
   # configure is not smart enough to look for SDL2 headers under
   # .../SDL2, but thankfully $SDL2_PATH is almost exactly what we want
   preConfigure = ''
-    export CPPFLAGS="$(echo $SDL2_PATH | sed 's#/nix/store/#-I/nix/store/#g')"
+    export CPPFLAGS="$(echo $SDL2_PATH | sed 's#/data/data/com.termux/files/nix/store/#-I/data/data/com.termux/files/nix/store/#g')"
   '';
   configureFlags = [ "--enable-shared" ]
     ++ lib.optionals sdl2Client [

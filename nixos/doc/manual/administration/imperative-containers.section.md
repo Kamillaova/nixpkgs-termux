@@ -13,7 +13,7 @@ You create a container with identifier `foo` as follows:
 This creates the container's root directory in `/var/lib/nixos-containers/foo`
 and a small configuration file in `/etc/nixos-containers/foo.conf`. It also
 builds the container's initial system configuration and stores it in
-`/nix/var/nix/profiles/per-container/foo/system`. You can modify the
+`/data/data/com.termux/files/nix/var/nix/profiles/per-container/foo/system`. You can modify the
 initial configuration of the container on the command line. For
 instance, to create a container that has `sshd` running, with the given
 public key for `root`:

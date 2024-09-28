@@ -28,7 +28,7 @@ in
             Whether the `nix-channel` command and state files are made available on the machine.
 
             The following files are initialized when enabled:
-              - `/nix/var/nix/profiles/per-user/root/channels`
+              - `/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels`
               - `/root/.nix-channels`
               - `$HOME/.nix-defexpr/channels` (on login)
 
@@ -44,17 +44,17 @@ in
         default =
           if cfg.channel.enable
           then [
-            "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+            "nixpkgs=/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels/nixos"
             "nixos-config=/etc/nixos/configuration.nix"
-            "/nix/var/nix/profiles/per-user/root/channels"
+            "/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels"
           ]
           else [ ];
         defaultText = ''
           if nix.channel.enable
           then [
-            "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
+            "nixpkgs=/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels/nixos"
             "nixos-config=/etc/nixos/configuration.nix"
-            "/nix/var/nix/profiles/per-user/root/channels"
+            "/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels"
           ]
           else [];
         '';

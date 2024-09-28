@@ -8,9 +8,9 @@ $ nix-env -iA nixos.thunderbird
 ```
 
 If you invoke this as root, the package is installed in the Nix profile
-`/nix/var/nix/profiles/default` and visible to all users of the system;
+`/data/data/com.termux/files/nix/var/nix/profiles/default` and visible to all users of the system;
 otherwise, the package ends up in
-`/nix/var/nix/profiles/per-user/username/profile` and is not visible to
+`/data/data/com.termux/files/nix/var/nix/profiles/per-user/username/profile` and is not visible to
 other users. The `-A` flag specifies the package by its attribute name;
 without it, the package is installed by matching against its package
 name (e.g. `thunderbird`). The latter is slower because it requires

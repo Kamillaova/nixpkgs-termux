@@ -5,8 +5,8 @@
 # - nixpkgs revision: 125cefd4cf8f857e5ff1aceaef9230ba578a033d
 # - hydra build: https://hydra.nixos.org/job/nixpkgs/trunk/stdenvBootstrapTools.x86_64-unknown-linux-musl.build/latest
 # - resolved hydra build: https://hydra.nixos.org/build/247890807
-# - instantiated derivation: /nix/store/gqri9n85rsf2983r6m8lkz0h69k4n7xi-stdenv-bootstrap-tools.drv
-# - output directory: /nix/store/b0x0qcbf1gsp50jzw52sbbgdp3jlwcjf-stdenv-bootstrap-tools
+# - instantiated derivation: /data/data/com.termux/files/nix/store/gqri9n85rsf2983r6m8lkz0h69k4n7xi-stdenv-bootstrap-tools.drv
+# - output directory: /data/data/com.termux/files/nix/store/b0x0qcbf1gsp50jzw52sbbgdp3jlwcjf-stdenv-bootstrap-tools
 # - build time: Fri, 26 Jan 2024 22:09:22 +0000
 {
   bootstrapTools = import <nix/fetchurl.nix> {

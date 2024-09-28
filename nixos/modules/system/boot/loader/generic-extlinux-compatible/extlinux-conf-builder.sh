@@ -41,10 +41,10 @@ mkdir -p $target/nixos
 mkdir -p $target/extlinux
 
 # Convert a path to a file in the Nix store such as
-# /nix/store/<hash>-<name>/file to <hash>-<name>-<file>.
+# /data/data/com.termux/files/nix/store/<hash>-<name>/file to <hash>-<name>-<file>.
 cleanName() {
     local path="$1"
-    echo "$path" | sed 's|^/nix/store/||' | sed 's|/|-|g'
+    echo "$path" | sed 's|^/data/data/com.termux/files/nix/store/||' | sed 's|/|-|g'
 }
 
 # Copy a file from the Nix store to $target/nixos.
@@ -136,16 +136,16 @@ if [ "$numGenerations" -gt 0 ]; then
     # Add up to $numGenerations generations of the system profile to the menu,
     # in reverse (most recent to least recent) order.
     for generation in $(
-            (cd /nix/var/nix/profiles && ls -d system-*-link) \
+            (cd /data/data/com.termux/files/nix/var/nix/profiles && ls -d system-*-link) \
             | sed 's/system-\([0-9]\+\)-link/\1/' \
             | sort -n -r \
             | head -n $numGenerations); do
-        link=/nix/var/nix/profiles/system-$generation-link
+        link=/data/data/com.termux/files/nix/var/nix/profiles/system-$generation-link
         addEntry $link "${generation}-default"
         for specialisation in $(
-            ls /nix/var/nix/profiles/system-$generation-link/specialisation \
+            ls /data/data/com.termux/files/nix/var/nix/profiles/system-$generation-link/specialisation \
             | sort -n -r); do
-            link=/nix/var/nix/profiles/system-$generation-link/specialisation/$specialisation
+            link=/data/data/com.termux/files/nix/var/nix/profiles/system-$generation-link/specialisation/$specialisation
             addEntry $link "${generation}-${specialisation}"
         done
     done >> $tmpFile

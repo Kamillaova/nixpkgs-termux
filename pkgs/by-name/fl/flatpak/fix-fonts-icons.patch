@@ -13,9 +13,9 @@ index 94ad013..5c9f55e 100644
 +    {
 +      g_autofree gchar *path = g_malloc(PATH_MAX);
 +      realpath(source_path, path);
-+      if (g_str_has_prefix(path, "/nix/store/"))
++      if (g_str_has_prefix(path, "/data/data/com.termux/files/nix/store/"))
 +        {
-+          *strchr(path + strlen("/nix/store/"), '/') = 0;
++          *strchr(path + strlen("/data/data/com.termux/files/nix/store/"), '/') = 0;
 +          g_hash_table_add(closure, g_steal_pointer (&path));
 +        }
 +    }

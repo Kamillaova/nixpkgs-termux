@@ -19,7 +19,7 @@ in
       example = literalExpression ''
         [
           # Remove nix store path from process name
-          { name = "{{.Matches.Wrapped}} {{ .Matches.Args }}"; cmdline = [ "^/nix/store[^ ]*/(?P<Wrapped>[^ /]*) (?P<Args>.*)" ]; }
+          { name = "{{.Matches.Wrapped}} {{ .Matches.Args }}"; cmdline = [ "^/data/data/com.termux/files/nix/store[^ ]*/(?P<Wrapped>[^ /]*) (?P<Args>.*)" ]; }
         ]
       '';
       description = ''

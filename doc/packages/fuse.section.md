@@ -14,9 +14,9 @@ If a package fails to run on macOS with an error message similar to the
 following, it's a likely sign that you need to have macFUSE installed.
 
     dyld: Library not loaded: /usr/local/lib/libfuse.2.dylib
-    Referenced from: /nix/store/w8bi72bssv0bnxhwfw3xr1mvn7myf37x-sshfs-fuse-2.10/bin/sshfs
+    Referenced from: /data/data/com.termux/files/nix/store/w8bi72bssv0bnxhwfw3xr1mvn7myf37x-sshfs-fuse-2.10/bin/sshfs
     Reason: image not found
-    [1]    92299 abort      /nix/store/w8bi72bssv0bnxhwfw3xr1mvn7myf37x-sshfs-fuse-2.10/bin/sshfs
+    [1]    92299 abort      /data/data/com.termux/files/nix/store/w8bi72bssv0bnxhwfw3xr1mvn7myf37x-sshfs-fuse-2.10/bin/sshfs
 
 Package maintainers may often encounter the following error when building FUSE
 packages on macOS:

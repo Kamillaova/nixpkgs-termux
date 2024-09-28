@@ -303,7 +303,7 @@ in {
     trace: - src (all files in directory)
     trace: - tests
     trace:   - run.sh (regular)
-    "/nix/store/...-source"
+    "/data/data/com.termux/files/nix/store/...-source"
     ```
 
     :::
@@ -379,7 +379,7 @@ in {
       root = ./.;
       fileset = ./src;
     }
-    => "/nix/store/...-source"
+    => "/data/data/com.termux/files/nix/store/...-source"
 
     # Import the current directory into the store
     # but only include ./Makefile and all files under ./src
@@ -389,7 +389,7 @@ in {
         ./Makefile
         ./src;
     }
-    => "/nix/store/...-source"
+    => "/data/data/com.termux/files/nix/store/...-source"
 
     # Trying to include a file outside the root will fail
     toSource {
@@ -411,11 +411,11 @@ in {
         ../LICENSE
       ];
     }
-    => "/nix/store/...-source"
+    => "/data/data/com.termux/files/nix/store/...-source"
 
     # The root has to be a local filesystem path
     toSource {
-      root = "/nix/store/...-source";
+      root = "/data/data/com.termux/files/nix/store/...-source";
       fileset = ./.;
     }
     => <error>

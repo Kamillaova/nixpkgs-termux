@@ -4,7 +4,7 @@ Date: Thu, 1 Aug 2024 15:57:55 -0400
 Subject: [PATCH] Makes calamares search
  /run/current-system/sw/share/calamares/ for extra configuration files as by
  default it only searches /usr/share/calamares/ and
- /nix/store/<hash>-calamares-<version>/share/calamares/ but
+ /data/data/com.termux/files/nix/store/<hash>-calamares-<version>/share/calamares/ but
  calamares-nixos-extensions is not in either of these locations
 
 ---

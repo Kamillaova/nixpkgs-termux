@@ -47,7 +47,7 @@ $ dotnet --info
  OS Version:  23.05
  OS Platform: Linux
  RID:         linux-x64
- Base Path:   /nix/store/n2pm44xq20hz7ybsasgmd7p3yh31gnh4-dotnet-sdk-7.0.202/sdk/7.0.202/
+ Base Path:   /data/data/com.termux/files/nix/store/n2pm44xq20hz7ybsasgmd7p3yh31gnh4-dotnet-sdk-7.0.202/sdk/7.0.202/
 
 Host:
   Version:      7.0.4
@@ -55,14 +55,14 @@ Host:
   Commit:       0a396acafe
 
 .NET SDKs installed:
-  6.0.407 [/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/sdk]
-  7.0.202 [/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/sdk]
+  6.0.407 [/data/data/com.termux/files/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/sdk]
+  7.0.202 [/data/data/com.termux/files/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/sdk]
 
 .NET runtimes installed:
-  Microsoft.AspNetCore.App 6.0.15 [/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/shared/Microsoft.AspNetCore.App]
-  Microsoft.AspNetCore.App 7.0.4 [/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/shared/Microsoft.AspNetCore.App]
-  Microsoft.NETCore.App 6.0.15 [/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/shared/Microsoft.NETCore.App]
-  Microsoft.NETCore.App 7.0.4 [/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/shared/Microsoft.NETCore.App]
+  Microsoft.AspNetCore.App 6.0.15 [/data/data/com.termux/files/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/shared/Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 7.0.4 [/data/data/com.termux/files/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/shared/Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 6.0.15 [/data/data/com.termux/files/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/shared/Microsoft.NETCore.App]
+  Microsoft.NETCore.App 7.0.4 [/data/data/com.termux/files/nix/store/3b19303vwrhv0xxz1hg355c7f2hgxxgd-dotnet-core-combined/shared/Microsoft.NETCore.App]
 
 Other architectures found:
   None
@@ -195,7 +195,7 @@ This helper has the same arguments as `buildDotnetModule`, with a few difference
 
 * `pname` and `version` are required, and will be used to find the NuGet package of the tool
 * `nugetName` can be used to override the NuGet package name that will be downloaded, if it's different from `pname`
-* `nugetHash` is the hash of the fetched NuGet package. `nugetSha256` is also supported, but not recommended. Set this to `lib.fakeHash` for the first build, and it will error out, giving you the proper hash. Also remember to update it during version updates (it will not error out if you just change the version while having a fetched package in `/nix/store`)
+* `nugetHash` is the hash of the fetched NuGet package. `nugetSha256` is also supported, but not recommended. Set this to `lib.fakeHash` for the first build, and it will error out, giving you the proper hash. Also remember to update it during version updates (it will not error out if you just change the version while having a fetched package in `/data/data/com.termux/files/nix/store`)
 * `dotnet-runtime` is set to `dotnet-sdk` by default. When changing this, remember that .NET tools fetched from NuGet require an SDK.
 
 Here is an example of packaging `pbm`, an unfree binary without source available:

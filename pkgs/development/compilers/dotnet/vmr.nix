@@ -395,7 +395,7 @@ stdenv.mkDerivation rec {
     # CLR_CC/CXX need to be set to stop the build system from using clang-11,
     # which is unwrapped
     # dotnet needs to be in PATH to fix:
-    # src/sdk/eng/restore-toolset.sh: line 114: /nix/store/[...]-dotnet-sdk-9.0.100-preview.2.24157.14//.version: Read-only file system
+    # src/sdk/eng/restore-toolset.sh: line 114: /data/data/com.termux/files/nix/store/[...]-dotnet-sdk-9.0.100-preview.2.24157.14//.version: Read-only file system
     version= \
     CLR_CC=$(command -v clang) \
     CLR_CXX=$(command -v clang++) \

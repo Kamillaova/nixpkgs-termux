@@ -281,8 +281,8 @@ in
     ) cfg.settings);
 
     systemd.tmpfiles.rules = [
-      "d  /nix/var                           0755 root root - -"
-      "L+ /nix/var/nix/gcroots/booted-system 0755 root root - /run/booted-system"
+      "d  /data/data/com.termux/files/nix/var                           0755 root root - -"
+      "L+ /data/data/com.termux/files/nix/var/nix/gcroots/booted-system 0755 root root - /run/booted-system"
       "d  /run/lock                          0755 root root - -"
       "d  /var/db                            0755 root root - -"
       "L  /var/lock                          -    -    -    - ../run/lock"
@@ -290,8 +290,8 @@ in
       "R! /etc/group.lock                    -    -    -    - -"
       "R! /etc/passwd.lock                   -    -    -    - -"
       "R! /etc/shadow.lock                   -    -    -    - -"
-      "R! /nix/var/nix/gcroots/tmp           -    -    -    - -"
-      "R! /nix/var/nix/temproots             -    -    -    - -"
+      "R! /data/data/com.termux/files/nix/var/nix/gcroots/tmp           -    -    -    - -"
+      "R! /data/data/com.termux/files/nix/var/nix/temproots             -    -    -    - -"
     ];
 
     boot.initrd.systemd = {

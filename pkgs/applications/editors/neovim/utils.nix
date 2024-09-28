@@ -252,7 +252,7 @@ let
     Generates a packpath folder as expected by vim
        Example:
        packDir ( {myVimPackage = { start = [ vimPlugins.vim-fugitive ]; opt = []; }; })
-       => "/nix/store/xxxxx-pack-dir"
+       => "/data/data/com.termux/files/nix/store/xxxxx-pack-dir"
   */
   packDir = packages:
   let

@@ -212,7 +212,7 @@ in {
       in if cfg.allowReboot then ''
         ${nixos-rebuild} boot ${toString (cfg.flags ++ upgradeFlag)}
         booted="$(${readlink} /run/booted-system/{initrd,kernel,kernel-modules})"
-        built="$(${readlink} /nix/var/nix/profiles/system/{initrd,kernel,kernel-modules})"
+        built="$(${readlink} /data/data/com.termux/files/nix/var/nix/profiles/system/{initrd,kernel,kernel-modules})"
 
         ${lib.optionalString (cfg.rebootWindow != null) ''
           current_time="$(${date} +%H:%M)"

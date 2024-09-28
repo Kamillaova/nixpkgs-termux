@@ -60,7 +60,7 @@ stdenv.mkDerivation rec {
     (lib.cmakeBool "enable_compile_warnings" false)
     (lib.cmakeBool "enable_compile_optimizations" optimize)
     (lib.cmakeBool "enable_lto" optimize)
-    # RPATH of binary /nix/store/.../bin/... contains a forbidden reference to /build/
+    # RPATH of binary /data/data/com.termux/files/nix/store/.../bin/... contains a forbidden reference to /build/
     (lib.cmakeBool "CMAKE_SKIP_BUILD_RPATH" optimize)
   ];
 

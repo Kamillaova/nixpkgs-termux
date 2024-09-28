@@ -139,7 +139,7 @@ in
     #    overrides or parameters) will all reference a single store
     #    path:
     #
-    #      /nix/store/xxx...xxx-gcc-libgcc/lib/libgcc_s.so.1
+    #      /data/data/com.termux/files/nix/store/xxx...xxx-gcc-libgcc/lib/libgcc_s.so.1
     #
     #    This many-to-one referrer relationship will be visible in the store's
     #    dependency graph, and will be available to `nix-store -q` queries.

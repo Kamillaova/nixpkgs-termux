@@ -76,7 +76,7 @@ in {
         EnvironmentFile =
           lib.optional (cfg.environmentFile != null) cfg.environmentFile;
         BindReadOnlyPaths = [
-          "/nix/store"
+          "/data/data/com.termux/files/nix/store"
 
           # For SSL certificates, and the resolv.conf
           "/etc"

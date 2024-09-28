@@ -70,9 +70,9 @@ def copy_if_not_exists(source: str, dest: str) -> None:
 
 def generation_dir(profile: str | None, generation: int) -> str:
     if profile:
-        return "/nix/var/nix/profiles/system-profiles/%s-%d-link" % (profile, generation)
+        return "/data/data/com.termux/files/nix/var/nix/profiles/system-profiles/%s-%d-link" % (profile, generation)
     else:
-        return "/nix/var/nix/profiles/system-%d-link" % (generation)
+        return "/data/data/com.termux/files/nix/var/nix/profiles/system-%d-link" % (generation)
 
 def system_dir(profile: str | None, generation: int, specialisation: str | None) -> str:
     d = generation_dir(profile, generation)
@@ -215,7 +215,7 @@ def get_generations(profile: str | None = None) -> list[SystemIdentifier]:
             f"{NIX}/bin/nix-env",
             "--list-generations",
             "-p",
-            "/nix/var/nix/profiles/%s"
+            "/data/data/com.termux/files/nix/var/nix/profiles/%s"
             % ("system-profiles/" + profile if profile else "system"),
         ],
         stdout=subprocess.PIPE,
@@ -267,9 +267,9 @@ def cleanup_esp() -> None:
 
 
 def get_profiles() -> list[str]:
-    if os.path.isdir("/nix/var/nix/profiles/system-profiles/"):
+    if os.path.isdir("/data/data/com.termux/files/nix/var/nix/profiles/system-profiles/"):
         return [x
-            for x in os.listdir("/nix/var/nix/profiles/system-profiles/")
+            for x in os.listdir("/data/data/com.termux/files/nix/var/nix/profiles/system-profiles/")
             if not x.endswith("-link")]
     else:
         return []

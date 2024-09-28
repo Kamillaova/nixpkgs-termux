@@ -19,7 +19,7 @@ with pkgs.lib;
       };
 
       virtualisation.fileSystems."/test-bind-file/bind" = {
-        depends = [ "/nix/store" ];
+        depends = [ "/data/data/com.termux/files/nix/store" ];
         device = builtins.toFile "empty" "";
         neededForBoot = true;
         options = [ "bind" ];

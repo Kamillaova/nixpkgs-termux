@@ -285,7 +285,7 @@ let
     JAXLIB_RELEASE = "1";
 
     preConfigure =
-      # Dummy ldconfig to work around "Can't open cache file /nix/store/<hash>-glibc-2.38-44/etc/ld.so.cache" error
+      # Dummy ldconfig to work around "Can't open cache file /data/data/com.termux/files/nix/store/<hash>-glibc-2.38-44/etc/ld.so.cache" error
       ''
         mkdir dummy-ldconfig
         echo "#!${effectiveStdenv.shell}" > dummy-ldconfig/ldconfig

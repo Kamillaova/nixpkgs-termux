@@ -48,7 +48,7 @@ buildPythonPackage {
   ];
 
   # test fail because of some wrong path references
-  # things like No such file or directory: '/nix/store/8r9x7xv9nfwmd36ca28a39xaharcjdzj-python3.10-pyspark-3.4.0/lib/python3.10/site-packages/pyspark/./bin/spark-submit'
+  # things like No such file or directory: '/data/data/com.termux/files/nix/store/8r9x7xv9nfwmd36ca28a39xaharcjdzj-python3.10-pyspark-3.4.0/lib/python3.10/site-packages/pyspark/./bin/spark-submit'
   doCheck = false;
 
   nativeCheckInputs = [

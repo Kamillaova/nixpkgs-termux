@@ -288,7 +288,7 @@ in
       };
 
       storePath = mkOption {
-        default = "/nix/store";
+        default = "/data/data/com.termux/files/nix/store";
         type = types.str;
         description = ''
           Path to the Nix store when looking for kernels at boot.

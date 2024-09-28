@@ -20,7 +20,7 @@ provided gcloud to be used.
 In its current state, token renewal would just start to break with the
 following error message:
 
-Unable to connect to the server: error executing access token command "/nix/store/…/gcloud config config-helper --format=json": err=fork/exec /nix/store/…/gcloud: no such file or directory output= stderr=
+Unable to connect to the server: error executing access token command "/data/data/com.termux/files/nix/store/…/gcloud config config-helper --format=json": err=fork/exec /data/data/com.termux/files/nix/store/…/gcloud: no such file or directory output= stderr=
 
 Avoid this by storing just `gcloud` inside `cmd-path`, which causes
 kubectl to lookup the gcloud command from $PATH, which is more likely to

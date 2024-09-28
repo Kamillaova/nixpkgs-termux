@@ -60,7 +60,7 @@ See [](#ex-portableService-hello) to understand how to use the output of `portab
 `contents` (List of Attribute Set; _optional_)
 
 : A list of additional derivations to be included as-is in the image.
-  These derivations will be included directly in a `/nix/store` directory inside the image.
+  These derivations will be included directly in a `/data/data/com.termux/files/nix/store` directory inside the image.
 
   _Default value:_ `[]`.
 
@@ -114,15 +114,15 @@ After building the package, the generated image can be loaded into a system thro
 ```shell
 $ nix-build
 (some output removed for clarity)
-/nix/store/8c20z1vh7z8w8dwagl8w87b45dn5k6iq-hello-img-2.12.1
+/data/data/com.termux/files/nix/store/8c20z1vh7z8w8dwagl8w87b45dn5k6iq-hello-img-2.12.1
 
-$ portablectl attach /nix/store/8c20z1vh7z8w8dwagl8w87b45dn5k6iq-hello-img-2.12.1/hello_2.12.1.raw
+$ portablectl attach /data/data/com.termux/files/nix/store/8c20z1vh7z8w8dwagl8w87b45dn5k6iq-hello-img-2.12.1/hello_2.12.1.raw
 Created directory /etc/systemd/system.attached.
 Created directory /etc/systemd/system.attached/hello.service.d.
 Written /etc/systemd/system.attached/hello.service.d/20-portable.conf.
 Created symlink /etc/systemd/system.attached/hello.service.d/10-profile.conf → /usr/lib/systemd/portable/profile/default/service.conf.
 Copied /etc/systemd/system.attached/hello.service.
-Created symlink /etc/portables/hello_2.12.1.raw → /nix/store/8c20z1vh7z8w8dwagl8w87b45dn5k6iq-hello-img-2.12.1/hello_2.12.1.raw.
+Created symlink /etc/portables/hello_2.12.1.raw → /data/data/com.termux/files/nix/store/8c20z1vh7z8w8dwagl8w87b45dn5k6iq-hello-img-2.12.1/hello_2.12.1.raw.
 
 $ systemctl start hello
 $ journalctl -u hello

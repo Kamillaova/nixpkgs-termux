@@ -112,7 +112,7 @@ stdenv.mkDerivation rec {
 
     # Miscellaneous
     # almost cross-compiles, however fails with
-    # ** (process:9234): WARNING **: Failed to load shared library '/nix/store/...-networkmanager-aarch64-unknown-linux-gnu-1.38.2/lib/libnm.so.0' referenced by the typelib: /nix/store/...-networkmanager-aarch64-unknown-linux-gnu-1.38.2/lib/libnm.so.0: cannot open shared object file: No such file or directory
+    # ** (process:9234): WARNING **: Failed to load shared library '/data/data/com.termux/files/nix/store/...-networkmanager-aarch64-unknown-linux-gnu-1.38.2/lib/libnm.so.0' referenced by the typelib: /data/data/com.termux/files/nix/store/...-networkmanager-aarch64-unknown-linux-gnu-1.38.2/lib/libnm.so.0: cannot open shared object file: No such file or directory
     "-Ddocs=${lib.boolToString (stdenv.buildPlatform == stdenv.hostPlatform)}"
     # We don't use firewalld in NixOS
     "-Dfirewalld_zone=false"

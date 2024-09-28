@@ -17,15 +17,15 @@ stdenv.mkDerivation rec {
 
   patches = [
     # replaces references to “path/to/fxlputil” via $0 that are broken by our wrapProgram
-    # with /nix/store/fxlinuxprintutil/bin/fxlputil
+    # with /data/data/com.termux/files/nix/store/fxlinuxprintutil/bin/fxlputil
     ./fxlputil.patch
 
     # replaces the code that looks for Tcl packages in the working directory and /usr/lib
-    # or /usr/lib64 with /nix/store/fxlinuxprintutil/lib
+    # or /usr/lib64 with /data/data/com.termux/files/nix/store/fxlinuxprintutil/lib
     ./fxlputil.tcl.patch
 
     # replaces the code that looks for X11’s locale.alias in /usr/share/X11/locale or
-    # /usr/lib/X11/locale with /nix/store/libX11/share/X11/locale
+    # /usr/lib/X11/locale with /data/data/com.termux/files/nix/store/libX11/share/X11/locale
     (substituteAll {
       src = ./fxlocalechk.tcl.patch;
       inherit (xorg) libX11;

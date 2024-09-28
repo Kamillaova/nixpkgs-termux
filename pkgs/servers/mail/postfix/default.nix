@@ -61,7 +61,7 @@ in stdenv.mkDerivation rec {
     sed -e '/^PATH=/d' -i postfix-install
     sed -e "s|@PACKAGE@|$out|" -i conf/post-install
 
-    # post-install need skip permissions check/set on all symlinks following to /nix/store
+    # post-install need skip permissions check/set on all symlinks following to /data/data/com.termux/files/nix/store
     sed -e "s|@NIX_STORE@|$NIX_STORE|" -i conf/post-install
   '';
 

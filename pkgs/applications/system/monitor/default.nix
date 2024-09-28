@@ -68,8 +68,8 @@ stdenv.mkDerivation rec {
   ];
 
   # Force link against Xext, otherwise build fails with:
-  # ld: /nix/store/...-libXNVCtrl-495.46/lib/libXNVCtrl.a(NVCtrl.o): undefined reference to symbol 'XextAddDisplay'
-  # ld: /nix/store/...-libXext-1.3.4/lib/libXext.so.6: error adding symbols: DSO missing from command line
+  # ld: /data/data/com.termux/files/nix/store/...-libXNVCtrl-495.46/lib/libXNVCtrl.a(NVCtrl.o): undefined reference to symbol 'XextAddDisplay'
+  # ld: /data/data/com.termux/files/nix/store/...-libXext-1.3.4/lib/libXext.so.6: error adding symbols: DSO missing from command line
   # https://github.com/stsdc/monitor/issues/292
   NIX_LDFLAGS = "-lXext";
 

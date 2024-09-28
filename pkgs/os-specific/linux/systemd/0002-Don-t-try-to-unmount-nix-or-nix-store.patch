@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Raito Bezarius <masterancpp@gmail.com>
 Date: Mon, 19 Jun 2023 02:11:35 +0200
-Subject: [PATCH] Don't try to unmount /nix or /nix/store
+Subject: [PATCH] Don't try to unmount /nix or /data/data/com.termux/files/nix/store
 
 They'll still be remounted read-only.
 
@@ -22,7 +22,7 @@ index eac5bb8d3b..d8187bfa99 100644
          if (PATH_IN_SET(mount,
                          "/",
 +                        "/nix",
-+                        "/nix/store",
++                        "/data/data/com.termux/files/nix/store",
                          "/usr",
                          "/etc"))
                  return true;
@@ -38,7 +38,7 @@ index ca6d36e054..0a9227c9a8 100644
 -                path_startswith(path, "/run/initramfs");
 +        return PATH_IN_SET(path, "/", "/usr")
 +                || path_equal(path, "/nix")
-+                || path_equal(path, "/nix/store")
++                || path_equal(path, "/data/data/com.termux/files/nix/store")
 +                || path_startswith(path, "/run/initramfs");
  }
  

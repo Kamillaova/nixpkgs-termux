@@ -108,7 +108,7 @@ stdenv.mkDerivation rec {
 
   postFixup = lib.optionalString (withWindowSystem' == "all") ''
     # The `bin/imv` script assumes imv-wayland or imv-x11 in PATH,
-    # so we have to fix those to the binaries we installed into the /nix/store
+    # so we have to fix those to the binaries we installed into the /data/data/com.termux/files/nix/store
 
     substituteInPlace "$out/bin/imv" \
       --replace "imv-wayland" "$out/bin/imv-wayland" \

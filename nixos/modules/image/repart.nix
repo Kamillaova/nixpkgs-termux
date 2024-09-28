@@ -20,9 +20,9 @@ let
         type = lib.types.bool;
         default = false;
         description = ''
-          Whether to strip `/nix/store/` from the store paths. This is useful
+          Whether to strip `/data/data/com.termux/files/nix/store/` from the store paths. This is useful
           when you want to build a partition that only contains store paths and
-          is mounted under `/nix/store`.
+          is mounted under `/data/data/com.termux/files/nix/store`.
         '';
       };
 

@@ -212,7 +212,7 @@ let
 
     # Let killall expect "containerd-shim" in the Nix store
     to_replace="/data/\[\^/\]\*/bin/containerd-shim"
-    replacement="/nix/store/.*k3s-containerd.*/bin/containerd-shim"
+    replacement="/data/data/com.termux/files/nix/store/.*k3s-containerd.*/bin/containerd-shim"
     changes=$(sed -i "s|$to_replace|$replacement| w /dev/stdout" install.sh)
     if [ -z "$changes" ]; then
       echo "failed to replace \"$to_replace\" in k3s installer script (install.sh)"

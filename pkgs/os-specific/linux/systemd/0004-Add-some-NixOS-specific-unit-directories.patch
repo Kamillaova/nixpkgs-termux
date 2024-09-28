@@ -3,7 +3,7 @@ From: Raito Bezarius <masterancpp@gmail.com>
 Date: Mon, 19 Jun 2023 02:13:42 +0200
 Subject: [PATCH] Add some NixOS-specific unit directories
 
-Look in `/nix/var/nix/profiles/default/lib/systemd/{system,user}` for
+Look in `/data/data/com.termux/files/nix/var/nix/profiles/default/lib/systemd/{system,user}` for
 units provided by packages installed into the default profile via
 `nix-env -iA nixos.$package`.
 
@@ -35,7 +35,7 @@ index 540256b73b..a115ec09a3 100644
                                          persistent_config,
                                          SYSTEM_CONFIG_UNIT_DIR,
                                          "/etc/systemd/system",
-+                                        "/nix/var/nix/profiles/default/lib/systemd/system",
++                                        "/data/data/com.termux/files/nix/var/nix/profiles/default/lib/systemd/system",
                                          STRV_IFNOTNULL(persistent_attached),
                                          runtime_config,
                                          "/run/systemd/system",
@@ -53,7 +53,7 @@ index 540256b73b..a115ec09a3 100644
                                          persistent_config,
                                          USER_CONFIG_UNIT_DIR,
                                          "/etc/systemd/user",
-+                                        "/nix/var/nix/profiles/default/lib/systemd/user",
++                                        "/data/data/com.termux/files/nix/var/nix/profiles/default/lib/systemd/user",
                                          runtime_config,
                                          "/run/systemd/user",
                                          STRV_IFNOTNULL(generator),
@@ -105,11 +105,11 @@ index f3b85b0190..8ae544b495 100644
  systemduserconfdir=${systemd_user_conf_dir}
  
 -systemd_system_unit_path=${systemd_system_conf_dir}:/etc/systemd/system:/run/systemd/system:/usr/local/lib/systemd/system:${systemd_system_unit_dir}:/usr/lib/systemd/system:/lib/systemd/system
-+systemd_system_unit_path=${systemd_system_conf_dir}:/etc/systemd/system:/nix/var/nix/profiles/default/lib/systemd/system:/run/systemd/system:${systemdsystemunitdir}
++systemd_system_unit_path=${systemd_system_conf_dir}:/etc/systemd/system:/data/data/com.termux/files/nix/var/nix/profiles/default/lib/systemd/system:/run/systemd/system:${systemdsystemunitdir}
  systemdsystemunitpath=${systemd_system_unit_path}
  
 -systemd_user_unit_path=${systemd_user_conf_dir}:/etc/systemd/user:/run/systemd/user:/usr/local/lib/systemd/user:/usr/local/share/systemd/user:${systemd_user_unit_dir}:/usr/lib/systemd/user:/usr/share/systemd/user
-+systemd_user_unit_path=${systemd_user_conf_dir}:/etc/systemd/user:/nix/var/nix/profiles/default/lib/systemd/user:/run/systemd/user:${systemduserunitdir}
++systemd_user_unit_path=${systemd_user_conf_dir}:/etc/systemd/user:/data/data/com.termux/files/nix/var/nix/profiles/default/lib/systemd/user:/run/systemd/user:${systemduserunitdir}
  systemduserunitpath=${systemd_user_unit_path}
  
  systemd_system_generator_dir=${prefix}/lib/systemd/system-generators

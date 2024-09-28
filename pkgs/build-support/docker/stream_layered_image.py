@@ -82,7 +82,7 @@ def archive_paths_to(obj, paths, mtime, uid, gid, uname, gname):
         # To be consistent with the docker utilities, we need to have
         # these directories first when building layer tarballs.
         tar.addfile(apply_filters(nix_root(dir("/nix"))))
-        tar.addfile(apply_filters(nix_root(dir("/nix/store"))))
+        tar.addfile(apply_filters(nix_root(dir("/data/data/com.termux/files/nix/store"))))
 
         for path in paths:
             path = pathlib.Path(path)

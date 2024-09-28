@@ -64,7 +64,7 @@ stdenv.mkDerivation rec {
     popd
 
     # 1. replace DESTDIR=$(DEPS_DIR) with empty strings to prevent copying
-    #    things into deps/src/nix/store
+    #    things into deps/src/data/data/com.termux/files/nix/store
     # 2. similarly, remove any paths prefixed with DEPS_DIR
     # 3. prevent building static libraries because we don't build static
     #    libtirpc (for now)

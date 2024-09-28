@@ -930,7 +930,7 @@ let
           lib.versionAtLeast metadata.release_version "14" && lib.versionOlder metadata.release_version "18"
         ) (metadata.getVersionFile "compiler-rt/gnu-install-dirs.patch")
         ++ [
-          # ld-wrapper dislikes `-rpath-link //nix/store`, so we normalize away the
+          # ld-wrapper dislikes `-rpath-link //data/data/com.termux/files/nix/store`, so we normalize away the
           # extra `/`.
           (metadata.getVersionFile "compiler-rt/normalize-var.patch")
         ]

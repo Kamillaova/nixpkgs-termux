@@ -109,7 +109,7 @@ let
         {
           meta = {
             # can't just "inherit (gepetto-viewer) meta;" because:
-            # error: derivation '/nix/store/…-gepetto-gui.drv' does not have wanted outputs 'bin'
+            # error: derivation '/data/data/com.termux/files/nix/store/…-gepetto-gui.drv' does not have wanted outputs 'bin'
             inherit (gepetto-viewer.meta)
               description
               homepage

@@ -5,8 +5,8 @@ if [[ -e "/root/.nix-defexpr/channels" ]]; then
     warn '/root/.nix-defexpr/channels exists, but channels have been disabled.'
     explainChannelWarning=1
 fi
-if [[ -e "/nix/var/nix/profiles/per-user/root/channels" ]]; then
-    warn "/nix/var/nix/profiles/per-user/root/channels exists, but channels have been disabled."
+if [[ -e "/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels" ]]; then
+    warn "/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels exists, but channels have been disabled."
     explainChannelWarning=1
 fi
 while IFS=: read -r _ _ _ _ _ home _ ; do

@@ -21,7 +21,7 @@ let
   version = "1.1.4";
   torch = python3.pkgs.torch.override { inherit cudaSupport; };
   # Using a normal stdenv with cuda torch gives
-  # ld: /nix/store/k1l7y96gv0nc685cg7i3g43i4icmddzk-python3.11-torch-2.2.1-lib/lib/libc10.so: undefined reference to `std::ios_base_library_init()@GLIBCXX_3.4.32'
+  # ld: /data/data/com.termux/files/nix/store/k1l7y96gv0nc685cg7i3g43i4icmddzk-python3.11-torch-2.2.1-lib/lib/libc10.so: undefined reference to `std::ios_base_library_init()@GLIBCXX_3.4.32'
   stdenv' = if cudaSupport then cudaPackages.backendStdenv else stdenv;
 in
 stdenv'.mkDerivation {

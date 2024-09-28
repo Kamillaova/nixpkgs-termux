@@ -9864,7 +9864,7 @@ let
     name = "netlify-cli";
     packageName = "netlify-cli";
     version = "12.2.4";
-    src = ../../../../../../../../nix/store/fbwf1yrji8xanx72mybln17l8cnlwva4-source;
+    src = ../../../../../../../../data/data/com.termux/files/nix/store/fbwf1yrji8xanx72mybln17l8cnlwva4-source;
     dependencies = [
       sources."@babel/code-frame-7.18.6"
       sources."@babel/helper-validator-identifier-7.18.6"

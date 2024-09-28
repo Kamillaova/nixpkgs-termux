@@ -17,7 +17,7 @@ On Fri, Oct 29, 2010 at 6:56 AM,  <roconnor@theorem.ca> wrote:
 > Modification: The interpreter location /lib/ld-linux.so.2 in
 > lib/Dwarf_Fortress is replaced with the location of ld-linux.so.2 under the
 > NixOS distribution (which is currently
-> /nix/store/l8x3fdy1r6zf441vnqa87lzsvxrjbdz9-glibc-2.11.1/lib/ld-linux.so.2
+> /data/data/com.termux/files/nix/store/l8x3fdy1r6zf441vnqa87lzsvxrjbdz9-glibc-2.11.1/lib/ld-linux.so.2
 > but might change at a later date to something similar).
 >
 > I don't need you to recompile Dwarf Fortress.  I can patch the binary itself

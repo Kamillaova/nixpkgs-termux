@@ -167,20 +167,20 @@ with pkgs;
 (buildMaven ./project-info.json).repo
 ```
 
-The benefit over the _double invocation_ as we will see below, is that the _/nix/store_ entry is a _linkFarm_ of every package, so that changes to your dependency set doesn't involve downloading everything from scratch.
+The benefit over the _double invocation_ as we will see below, is that the _/data/data/com.termux/files/nix/store_ entry is a _linkFarm_ of every package, so that changes to your dependency set doesn't involve downloading everything from scratch.
 
 ```bash
 ❯ tree $(nix-build --no-out-link build-maven-repository.nix) | head
-/nix/store/g87va52nkc8jzbmi1aqdcf2f109r4dvn-maven-repository
+/data/data/com.termux/files/nix/store/g87va52nkc8jzbmi1aqdcf2f109r4dvn-maven-repository
 ├── antlr
 │   └── antlr
 │       └── 2.7.2
-│           ├── antlr-2.7.2.jar -> /nix/store/d027c8f2cnmj5yrynpbq2s6wmc9cb559-antlr-2.7.2.jar
-│           └── antlr-2.7.2.pom -> /nix/store/mv42fc5gizl8h5g5vpywz1nfiynmzgp2-antlr-2.7.2.pom
+│           ├── antlr-2.7.2.jar -> /data/data/com.termux/files/nix/store/d027c8f2cnmj5yrynpbq2s6wmc9cb559-antlr-2.7.2.jar
+│           └── antlr-2.7.2.pom -> /data/data/com.termux/files/nix/store/mv42fc5gizl8h5g5vpywz1nfiynmzgp2-antlr-2.7.2.pom
 ├── avalon-framework
 │   └── avalon-framework
 │       └── 4.1.3
-│           ├── avalon-framework-4.1.3.jar -> /nix/store/iv5fp3955w3nq28ff9xfz86wvxbiw6n9-avalon-framework-4.1.3.jar
+│           ├── avalon-framework-4.1.3.jar -> /data/data/com.termux/files/nix/store/iv5fp3955w3nq28ff9xfz86wvxbiw6n9-avalon-framework-4.1.3.jar
 ```
 
 #### Double Invocation {#double-invocation}
@@ -226,7 +226,7 @@ stdenv.mkDerivation {
 }
 ```
 
-The build will fail, and tell you the expected `outputHash` to place. When you've set the hash, the build will return with a `/nix/store` entry whose contents are the full Maven repository.
+The build will fail, and tell you the expected `outputHash` to place. When you've set the hash, the build will return with a `/data/data/com.termux/files/nix/store` entry whose contents are the full Maven repository.
 
 ::: {.warning}
 Some additional files are deleted that would cause the output hash to change potentially on subsequent runs.
@@ -234,7 +234,7 @@ Some additional files are deleted that would cause the output hash to change pot
 
 ```bash
 ❯ tree $(nix-build --no-out-link double-invocation-repository.nix) | head
-/nix/store/8kicxzp98j68xyi9gl6jda67hp3c54fq-maven-repository
+/data/data/com.termux/files/nix/store/8kicxzp98j68xyi9gl6jda67hp3c54fq-maven-repository
 ├── backport-util-concurrent
 │   └── backport-util-concurrent
 │       └── 3.1
@@ -280,7 +280,7 @@ We place the library in `$out/share/java` since JDK package has a _stdenv setup 
 
 ```bash
 ❯ tree $(nix-build --no-out-link build-jar.nix)
-/nix/store/7jw3xdfagkc2vw8wrsdv68qpsnrxgvky-maven-demo-1.0
+/data/data/com.termux/files/nix/store/7jw3xdfagkc2vw8wrsdv68qpsnrxgvky-maven-demo-1.0
 └── share
     └── java
         └── maven-demo-1.0.jar
@@ -426,10 +426,10 @@ This will give you an executable shell-script that launches your JAR with all th
 
 ```bash
 ❯ tree $(nix-build --no-out-link runnable-jar.nix)
-/nix/store/8d4c3ibw8ynsn01ibhyqmc1zhzz75s26-maven-demo-1.0
+/data/data/com.termux/files/nix/store/8d4c3ibw8ynsn01ibhyqmc1zhzz75s26-maven-demo-1.0
 ├── bin
 │   └── maven-demo
-├── repository -> /nix/store/g87va52nkc8jzbmi1aqdcf2f109r4dvn-maven-repository
+├── repository -> /data/data/com.termux/files/nix/store/g87va52nkc8jzbmi1aqdcf2f109r4dvn-maven-repository
 └── share
     └── java
         └── maven-demo-1.0.jar

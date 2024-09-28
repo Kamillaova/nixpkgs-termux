@@ -8,7 +8,7 @@ with open(os.environ["NIX_ATTRS_JSON_FILE"], "r") as f:
 
 os.chdir(os.environ["out"])
 
-nixPrefix = os.environ["NIX_STORE"] # Usually /nix/store
+nixPrefix = os.environ["NIX_STORE"] # Usually /data/data/com.termux/files/nix/store
 
 with open("nix-cache-info", "w") as f:
   f.write("StoreDir: " + nixPrefix + "\n")

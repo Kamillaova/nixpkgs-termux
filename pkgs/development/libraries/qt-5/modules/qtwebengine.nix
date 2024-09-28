@@ -159,7 +159,7 @@ qtModule ({
       --replace 'QMAKE_CLANG_DIR = "/usr"' 'QMAKE_CLANG_DIR = "${stdenv.cc}"'
 
     # Following is required to prevent a build error:
-    # ninja: error: '/nix/store/z8z04p0ph48w22rqzx7ql67gy8cyvidi-SDKs/MacOSX10.12.sdk/usr/include/mach/exc.defs', needed by 'gen/third_party/crashpad/crashpad/util/mach/excUser.c', missing and no known rule to make it
+    # ninja: error: '/data/data/com.termux/files/nix/store/z8z04p0ph48w22rqzx7ql67gy8cyvidi-SDKs/MacOSX10.12.sdk/usr/include/mach/exc.defs', needed by 'gen/third_party/crashpad/crashpad/util/mach/excUser.c', missing and no known rule to make it
     substituteInPlace src/3rdparty/chromium/third_party/crashpad/crashpad/util/BUILD.gn \
       --replace '$sysroot/usr' "${xnu}"
 
@@ -169,7 +169,7 @@ qtModule ({
     substituteInPlace src/3rdparty/chromium/third_party/crashpad/crashpad/util/mach/mach_message.cc \
       --replace "audit_token_to_pid(audit_trailer->msgh_audit)" "audit_trailer->msgh_audit.val[5]"
 
-    # ld: warning: directory not found for option '-L/nix/store/...-xcodebuild-0.1.2-pre/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/lib'
+    # ld: warning: directory not found for option '-L/data/data/com.termux/files/nix/store/...-xcodebuild-0.1.2-pre/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/lib'
     # ld: fatal warning(s) induced error (-fatal_warnings)
     substituteInPlace src/3rdparty/chromium/build/config/compiler/BUILD.gn \
       --replace "-Wl,-fatal_warnings" ""

@@ -42,13 +42,13 @@ An example of how to build an image:
 ## Nix Store Partition {#sec-image-repart-store-partition}
 
 You can define a partition that only contains the Nix store and then mount it
-under `/nix/store`. Because the `/nix/store` part of the paths is already
+under `/data/data/com.termux/files/nix/store`. Because the `/data/data/com.termux/files/nix/store` part of the paths is already
 determined by the mount point, you have to set `stripNixStorePrefix = true;` so
 that the prefix is stripped from the paths before copying them into the image.
 
 ```nix
 {
-  fileSystems."/nix/store".device = "/dev/disk/by-partlabel/nix-store";
+  fileSystems."/data/data/com.termux/files/nix/store".device = "/dev/disk/by-partlabel/nix-store";
 
   image.repart.partitions = {
     "store" = {

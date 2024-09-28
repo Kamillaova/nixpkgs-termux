@@ -148,7 +148,7 @@ stdenv.mkDerivation rec {
     "-DOPTION_INSTALL_PDF_DOCUMENTATION=OFF"
     "-DOPTION_INCLUDE_DRIVER_DOCUMENTATION=${onOff withDocs}"
 
-    # RPATH of binary /nix/store/.../bin/... contains a forbidden reference to /build/
+    # RPATH of binary /data/data/com.termux/files/nix/store/.../bin/... contains a forbidden reference to /build/
     "-DCMAKE_SKIP_BUILD_RPATH=ON"
   ];
 

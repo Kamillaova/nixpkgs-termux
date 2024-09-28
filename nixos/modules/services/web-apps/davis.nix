@@ -317,7 +317,7 @@ in
           APP_ENV = "prod";
           APP_CACHE_DIR = "${cfg.dataDir}/var/cache";
           # note: we do not need the log dir (we log to stdout/journald), by davis/symfony will try to create it, and the default value is one in the nix-store
-          #       so we set it to a path under dataDir to avoid something like: Unable to create the "logs" directory (/nix/store/5cfskz0ybbx37s1161gjn5klwb5si1zg-davis-4.4.1/var/log).
+          #       so we set it to a path under dataDir to avoid something like: Unable to create the "logs" directory (/data/data/com.termux/files/nix/store/5cfskz0ybbx37s1161gjn5klwb5si1zg-davis-4.4.1/var/log).
           APP_LOG_DIR = "${cfg.dataDir}/var/log";
           LOG_FILE_PATH = "/dev/stdout";
           DATABASE_DRIVER = db.driver;

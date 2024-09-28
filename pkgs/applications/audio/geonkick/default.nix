@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
   buildInputs = [ libsndfile rapidjson libjack2 lv2 libX11 cairo openssl ];
 
   # Without this, the lv2 ends up in
-  # /nix/store/$HASH/nix/store/$HASH/lib/lv2
+  # /data/data/com.termux/files/nix/store/$HASH/data/data/com.termux/files/nix/store/$HASH/lib/lv2
   cmakeFlags = [
     "-DCMAKE_INSTALL_LIBDIR=lib"
   ];

@@ -109,7 +109,7 @@ stdenv.mkDerivation (finalAttrs: {
     # https://github.com/NixOS/nixpkgs/issues/53441
     ./unset-env-vars.patch
 
-    # Use flatpak from PATH to avoid references to `/nix/store` in `/desktop` files.
+    # Use flatpak from PATH to avoid references to `/data/data/com.termux/files/nix/store` in `/desktop` files.
     # Applications containing `DBusActivatable` entries should be able to find the flatpak binary.
     # https://github.com/NixOS/nixpkgs/issues/138956
     ./binary-path.patch

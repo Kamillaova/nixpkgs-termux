@@ -341,7 +341,7 @@ in
           optional (cfg.settings.watch-dir-enabled && cfg.settings.trash-original-torrent-files)
             cfg.settings.watch-dir;
         BindReadOnlyPaths = [
-          # No confinement done of /nix/store here like in systemd-confinement.nix,
+          # No confinement done of /data/data/com.termux/files/nix/store here like in systemd-confinement.nix,
           # an AppArmor profile is provided to get a confinement based upon paths and rights.
           builtins.storeDir
           "/etc"

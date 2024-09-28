@@ -248,11 +248,11 @@ in
       # - The guest will attempt to lock the same path and fail because
       #   the lockfile on the host is visible on the guest
       #
-      # Snapshotting the host's /nix/store as an image isolates the guest VM's
-      # /nix/store from the host's /nix/store, preventing this problem.
+      # Snapshotting the host's /data/data/com.termux/files/nix/store as an image isolates the guest VM's
+      # /data/data/com.termux/files/nix/store from the host's /data/data/com.termux/files/nix/store, preventing this problem.
       useNixStoreImage = true;
 
-      # Obviously the /nix/store needs to be writable on the guest in order for it
+      # Obviously the /data/data/com.termux/files/nix/store needs to be writable on the guest in order for it
       # to perform builds.
       writableStore = true;
 

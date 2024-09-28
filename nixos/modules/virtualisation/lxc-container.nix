@@ -28,7 +28,7 @@
         fi
 
         # nixos-rebuild also requires a "system" profile
-        ${config.nix.package.out}/bin/nix-env -p /nix/var/nix/profiles/system --set /run/current-system
+        ${config.nix.package.out}/bin/nix-env -p /data/data/com.termux/files/nix/var/nix/profiles/system --set /run/current-system
       '';
 
     system.build.tarball = pkgs.callPackage ../../lib/make-system-tarball.nix {

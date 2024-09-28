@@ -7,7 +7,7 @@ index a879c8d..3d7863b 100644
          prefix.cdUp();
      }
 -    if (trustedPrefixes.find(prefix.path()) == trustedPrefixes.end()) { // TODO: C++20: replace with contains
-+    if (!prefix.path().startsWith(QStringLiteral("/nix/store")) && !prefix.path().startsWith(QStringLiteral("/run/current-system/sw"))) { // TODO: C++20: replace with contains
++    if (!prefix.path().startsWith(QStringLiteral("/data/data/com.termux/files/nix/store")) && !prefix.path().startsWith(QStringLiteral("/run/current-system/sw"))) { // TODO: C++20: replace with contains
          qInfo() << prefix.path() << "prefix is not one of the trusted command prefixes";
          reply[QStringLiteral("success")] = false;
          return reply;

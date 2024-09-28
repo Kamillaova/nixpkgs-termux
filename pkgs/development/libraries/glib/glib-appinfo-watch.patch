@@ -23,7 +23,7 @@ index 87db7a97a..2e1689ed7 100644
    gchar *parent;
  
 +  /* If DIR is a profile, watch the specified directory--e.g.,
-+   * /nix/var/nix/profiles/per-user/$USER/ for the user profile.  Do not watch
++   * /data/data/com.termux/files/nix/var/nix/profiles/per-user/$USER/ for the user profile.  Do not watch
 +   * ~/.nix-profile or /run/current-system/sw because GFileMonitor does
 +   * not pass IN_DONT_FOLLOW and thus cannot notice any change.
 +   * /etc/profiles/per-user is monitored directly for the same reason. */
@@ -52,15 +52,15 @@ index 87db7a97a..2e1689ed7 100644
          g_ptr_array_add (desktop_file_dirs, desktop_file_dir_new (dirs[i]));
  
 +      {
-+        /* Monitor the system and user profile under /nix/var/nix/profiles and
++        /* Monitor the system and user profile under /data/data/com.termux/files/nix/var/nix/profiles and
 +         * treat modifications to them as if they were modifications to their
 +         * /share sub-directory.  */
 +        const gchar *user;
 +        DesktopFileDir *system_profile_dir, *user_profile_dir, *user_env_dir;
 +
 +        system_profile_dir =
-+          desktop_file_dir_new ("/nix/var/nix/profiles/system/sw/share");
-+        system_profile_dir->nix_profile_watch_dir = g_strdup ("/nix/var/nix/profiles");
++          desktop_file_dir_new ("/data/data/com.termux/files/nix/var/nix/profiles/system/sw/share");
++        system_profile_dir->nix_profile_watch_dir = g_strdup ("/data/data/com.termux/files/nix/var/nix/profiles");
 +        g_ptr_array_add (desktop_file_dirs, desktop_file_dir_ref (system_profile_dir));
 +
 +        user = g_get_user_name ();
@@ -68,7 +68,7 @@ index 87db7a97a..2e1689ed7 100644
 +          {
 +            gchar *profile_dir, *user_data_dir, *env_dir, *env_data_dir;
 +
-+            profile_dir = g_build_filename ("/nix/var/nix/profiles/per-user", user, NULL);
++            profile_dir = g_build_filename ("/data/data/com.termux/files/nix/var/nix/profiles/per-user", user, NULL);
 +            user_data_dir = g_build_filename (profile_dir, "profile", "share", NULL);
 +            user_profile_dir = desktop_file_dir_new (user_data_dir);
 +            user_profile_dir->nix_profile_watch_dir = profile_dir;

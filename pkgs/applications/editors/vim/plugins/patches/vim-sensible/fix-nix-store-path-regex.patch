@@ -7,7 +7,7 @@ index c9387ae..a226760 100644
      redir END
    endif
 -  return out !~# " \\(\\~[\\/]\\|Lua\\)[^\n]*$"
-+  return out !~# "/nix/store/.*" && out !~# " \\(\\~[\\/][^\n]*\\|Lua\\)$"
++  return out !~# "/data/data/com.termux/files/nix/store/.*" && out !~# " \\(\\~[\\/][^\n]*\\|Lua\\)$"
  endfunction
  
  if s:MaySet('backspace')

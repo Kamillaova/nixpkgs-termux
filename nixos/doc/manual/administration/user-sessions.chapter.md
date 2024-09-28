@@ -28,7 +28,7 @@ c3 - root (0)
          Service: login; type tty; class user
            State: online
           CGroup: name=systemd:/user/root/c3
-                  ├─ 2536 /nix/store/10mn4xip9n7y9bxqwnsx7xwx2v2g34xn-shadow-4.1.5.1/bin/login --
+                  ├─ 2536 /data/data/com.termux/files/nix/store/10mn4xip9n7y9bxqwnsx7xwx2v2g34xn-shadow-4.1.5.1/bin/login --
                   ├─10339 -bash
                   └─10355 w3m nixos.org
 ```

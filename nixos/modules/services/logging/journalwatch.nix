@@ -32,7 +32,7 @@ let
   '') filterBlocks);
 
   # can't use joinSymlinks directly, because when we point $XDG_CONFIG_HOME
-  # to the /nix/store path, we still need the subdirectory "journalwatch" inside that
+  # to the /data/data/com.termux/files/nix/store path, we still need the subdirectory "journalwatch" inside that
   # to match journalwatch's expectations
   journalwatchConfigDir = pkgs.runCommand "journalwatch-config"
     { preferLocalBuild = true; allowSubstitutes = false; }
@@ -227,7 +227,7 @@ in {
 
       environment = {
         # journalwatch stores the last processed timpestamp here
-        # the share subdirectory is historic now that config home lives in /nix/store,
+        # the share subdirectory is historic now that config home lives in /data/data/com.termux/files/nix/store,
         # but moving this in a backwards-compatible way is much more work than what's justified
         # for cleaning that up.
         XDG_DATA_HOME = "${dataDir}/share";

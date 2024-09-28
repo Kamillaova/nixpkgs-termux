@@ -8,7 +8,7 @@ in
   # enabled by default in case you have an initrd on a local disk:
   #
   #     boot.initrd.postMountCommands = ''
-  #       ln -sfn /nix/var/nix/profiles/system/init /mnt-root/init
+  #       ln -sfn /data/data/com.termux/files/nix/var/nix/profiles/system/init /mnt-root/init
   #       stage2Init=/init
   #     '';
   #

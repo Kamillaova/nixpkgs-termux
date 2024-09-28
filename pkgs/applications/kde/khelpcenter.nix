@@ -14,7 +14,7 @@ mkDerivation {
 
   preFixup = ''
     qtWrapperArgs+=(
-      --prefix MANPATH : /nix/var/nix/profiles/system/sw/share/man
+      --prefix MANPATH : /data/data/com.termux/files/nix/var/nix/profiles/system/sw/share/man
     )
   '';
 

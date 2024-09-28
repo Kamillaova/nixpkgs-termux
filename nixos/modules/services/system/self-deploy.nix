@@ -162,7 +162,7 @@ in
         }} ${lib.escapeShellArg "${repositoryDirectory}${cfg.nixFile}"}
 
         ${lib.optionalString (cfg.switchCommand != "test")
-          "nix-env --profile /nix/var/nix/profiles/system --set ${outPath}"}
+          "nix-env --profile /data/data/com.termux/files/nix/var/nix/profiles/system --set ${outPath}"}
 
         ${outPath}/bin/switch-to-configuration ${cfg.switchCommand}
 

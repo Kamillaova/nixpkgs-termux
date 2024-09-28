@@ -31,7 +31,7 @@ let
     storeContents = [
       {
         object = containerSystem;
-        symlink = "/nix/var/nix/profiles/system";
+        symlink = "/data/data/com.termux/files/nix/var/nix/profiles/system";
       }
     ];
 
@@ -72,7 +72,7 @@ in
         Parameters = "${containerSystem}/init";
       };
       filesConfig = {
-        BindReadOnly = "/nix/store";
+        BindReadOnly = "/data/data/com.termux/files/nix/store";
       };
     };
 
@@ -116,7 +116,7 @@ in
     machine.succeed("mkdir -p ${containerRoot}");
 
     # start container with shared nix store by using same arguments as for systemd-nspawn@.service
-    machine.succeed("systemd-run systemd-nspawn --machine=${containerName} --network-veth -U --bind-ro=/nix/store ${containerSystem}/init")
+    machine.succeed("systemd-run systemd-nspawn --machine=${containerName} --network-veth -U --bind-ro=/data/data/com.termux/files/nix/store ${containerSystem}/init")
     machine.wait_until_succeeds("systemctl -M ${containerName} is-active default.target");
 
     # Test machinectl stop

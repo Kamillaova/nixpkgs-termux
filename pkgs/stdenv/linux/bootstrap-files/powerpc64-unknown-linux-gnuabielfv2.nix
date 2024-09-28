@@ -5,8 +5,8 @@
 # - nixpkgs revision: 57cf2e0b24fb52344cc718913eaed78f389b1319
 # - hydra build: https://hydra.nixos.org/job/nixpkgs/cross-trunk/bootstrapTools.powerpc64-unknown-linux-gnuabielfv2.build/latest
 # - resolved hydra build: https://hydra.nixos.org/build/252872323
-# - instantiated derivation: /nix/store/yaa735jz1r1n863gzv3c8szl77lsgg8d-stdenv-bootstrap-tools-powerpc64-unknown-linux-gnuabielfv2.drv
-# - output directory: /nix/store/8frm8kk8gzpv31r289ai5jgkwfikmpm4-stdenv-bootstrap-tools-powerpc64-unknown-linux-gnuabielfv2
+# - instantiated derivation: /data/data/com.termux/files/nix/store/yaa735jz1r1n863gzv3c8szl77lsgg8d-stdenv-bootstrap-tools-powerpc64-unknown-linux-gnuabielfv2.drv
+# - output directory: /data/data/com.termux/files/nix/store/8frm8kk8gzpv31r289ai5jgkwfikmpm4-stdenv-bootstrap-tools-powerpc64-unknown-linux-gnuabielfv2
 # - build time: Sat, 09 Mar 2024 11:26:00 +0000
 {
   bootstrapTools = import <nix/fetchurl.nix> {

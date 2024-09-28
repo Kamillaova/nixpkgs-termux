@@ -4,7 +4,7 @@ Fix build with texinfo 6.7. Otherwise
 
 fails with
 
-    utf8 "\xC1" does not map to Unicode at /nix/store/...-texinfo-6.7/share/texinfo/Texinfo/ParserNonXS.pm line 1796, <FH> line 38.
+    utf8 "\xC1" does not map to Unicode at /data/data/com.termux/files/nix/store/...-texinfo-6.7/share/texinfo/Texinfo/ParserNonXS.pm line 1796, <FH> line 38.
 
 --- a/topdocs/AUTHORS.texi
 +++ b/topdocs/AUTHORS.texi

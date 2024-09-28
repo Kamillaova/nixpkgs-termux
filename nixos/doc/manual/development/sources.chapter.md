@@ -2,7 +2,7 @@
 
 By default, NixOS's `nixos-rebuild` command uses the NixOS and Nixpkgs
 sources provided by the `nixos` channel (kept in
-`/nix/var/nix/profiles/per-user/root/channels/nixos`). To modify NixOS,
+`/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels/nixos`). To modify NixOS,
 however, you should check out the latest sources from Git. This is as
 follows:
 

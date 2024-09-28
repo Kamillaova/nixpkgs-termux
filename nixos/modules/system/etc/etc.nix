@@ -98,7 +98,7 @@ in
       default = {};
       example = lib.literalExpression ''
         { example-configuration-file =
-            { source = "/nix/store/.../etc/dir/file.conf.example";
+            { source = "/data/data/com.termux/files/nix/store/.../etc/dir/file.conf.example";
               mode = "0440";
             };
           "default/useradd".text = "GROUP=100 ...";

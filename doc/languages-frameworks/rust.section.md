@@ -291,7 +291,7 @@ where they are known to differ. But there are ways to customize the argument:
    will result in:
 
    ```shell
-   --target /nix/store/asdfasdfsadf-thumb-crazy.json # contains {"foo":"","bar":""}
+   --target /data/data/com.termux/files/nix/store/asdfasdfsadf-thumb-crazy.json # contains {"foo":"","bar":""}
    ```
 
 Note that currently custom targets aren't compiled with `std`, so `cargo test`

@@ -74,7 +74,7 @@ index 6345ff58..fd50fab3 100755
 +PATH="$PATH:@socat@/bin:/usr/sbin:/sbin"
  
  # Add bash and dependencies
-+mkdir -p ${DIR}/nix/store
++mkdir -p ${DIR}/data/data/com.termux/files/nix/store
  mkdir -p ${DIR}/usr/bin
  mkdir -p ${DIR}/usr/lib
  ln -s ../lib ${DIR}/usr/lib64
@@ -147,10 +147,10 @@ index 6345ff58..fd50fab3 100755
 +# We do not copy C.UTF8 locale because it is in locale archive and
 +# that is already copied with glibc.
 +
-+mv "${DIR}/nix/store" "${DIR}/usr/store" # files outside /usr are not permitted, we will have to replace /nix/store with /usr/store
++mv "${DIR}/data/data/com.termux/files/nix/store" "${DIR}/usr/store" # files outside /usr are not permitted, we will have to replace /data/data/com.termux/files/nix/store with /usr/store
 +chmod -R u+w "${DIR}" # nix store has read-only directories which would cause problems during clean-up, files need to be writable for sed
-+find "${DIR}" -type f -print0 | xargs -0 sed -i 's~/nix/store/~/usr/store/~g' # replace hardcoded paths
-+find "${DIR}" -type l | xargs -I '{}' sh -c 'tg="$(readlink "$1")"; newtg="${tg#/nix/store/}"; if [ "$tg" != "$newtg" ]; then ln -fs "/usr/store/$newtg" "$1"; fi' -- '{}' # replace symlink targets
++find "${DIR}" -type f -print0 | xargs -0 sed -i 's~/data/data/com.termux/files/nix/store/~/usr/store/~g' # replace hardcoded paths
++find "${DIR}" -type l | xargs -I '{}' sh -c 'tg="$(readlink "$1")"; newtg="${tg#/data/data/com.termux/files/nix/store/}"; if [ "$tg" != "$newtg" ]; then ln -fs "/usr/store/$newtg" "$1"; fi' -- '{}' # replace symlink targets
  
  if [ x$COLLECTION_ID != x ]; then
      collection_args=--collection-id=${COLLECTION_ID}

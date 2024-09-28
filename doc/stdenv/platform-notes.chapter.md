@@ -31,7 +31,7 @@ Some common issues when packaging software for Darwin:
   This can usually be solved by running the tests after the `installPhase` or alternatively by using `DYLD_LIBRARY_PATH`. More information about this variable can be found in the *dyld(1)* manpage.
 
   ```
-  dyld: Library not loaded: /nix/store/7hnmbscpayxzxrixrgxvvlifzlxdsdir-jq-1.5-lib/lib/libjq.1.dylib
+  dyld: Library not loaded: /data/data/com.termux/files/nix/store/7hnmbscpayxzxrixrgxvvlifzlxdsdir-jq-1.5-lib/lib/libjq.1.dylib
   Referenced from: /private/tmp/nix-build-jq-1.5.drv-0/jq-1.5/tests/../jq
   Reason: image not found
   ./tests/jqtest: line 5: 75779 Abort trap: 6

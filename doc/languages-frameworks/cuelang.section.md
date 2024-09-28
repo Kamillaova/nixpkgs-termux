@@ -80,12 +80,12 @@ $ ./result example.json
 $ ./result-2 example.json
 field1: conflicting values "unused" and "abc":
     ./example.json:1:13
-    ../../../../../../nix/store/v64dzx3vr3glpk0cq4hzmh450lrwh6sg-schema.cue:5:11
+    ../../../../../../data/data/com.termux/files/nix/store/v64dzx3vr3glpk0cq4hzmh450lrwh6sg-schema.cue:5:11
 $ sed -i 's/"abc"/3/' example.json
 $ ./result example.json
 field1: conflicting values 3 and string (mismatched types int and string):
     ./example.json:1:13
-    ../../../../../../nix/store/v64dzx3vr3glpk0cq4hzmh450lrwh6sg-schema.cue:5:11
+    ../../../../../../data/data/com.termux/files/nix/store/v64dzx3vr3glpk0cq4hzmh450lrwh6sg-schema.cue:5:11
 ```
 
 **Known limitations**

@@ -41,11 +41,11 @@ stdenv.mkDerivation {
   ];
 
   postInstall =
-    # Much like Xen, XTF installs its files to dist/nix/store/*/*,
+    # Much like Xen, XTF installs its files to dist/data/data/com.termux/files/nix/store/*/*,
     # so we need to copy them to the right place.
     ''
       mkdir -p ''${!outputBin}/share
-      cp -prvd dist/nix/store/*/* ''${!outputBin}
+      cp -prvd dist/data/data/com.termux/files/nix/store/*/* ''${!outputBin}
     ''
     # The documentation and development headers aren't in the dist/
     # folder, so we copy those too.

@@ -82,7 +82,7 @@ Finally, if the depending package is a compiler or other machine-code-producing 
 
 Putting this all together, that means that we have dependency types of the form "X→ E", which means that the dependency executes on X and emits code for E; each of X and E can be `build`, `host`, or `target`, and E can be `*` to indicate that the dependency is not a compiler-like package.
 
-Dependency types describe the relationships that a package has with each of its transitive dependencies.  You could think of attaching one or more dependency types to each of the formal parameters at the top of a package's `.nix` file, as well as to all of *their* formal parameters, and so on.   Triples like `(foo, bar, baz)`, on the other hand, are a property of an instantiated derivation -- you could would attach a triple `(mips-linux, mips-linux, sparc-solaris)` to a `.drv` file in `/nix/store`.
+Dependency types describe the relationships that a package has with each of its transitive dependencies.  You could think of attaching one or more dependency types to each of the formal parameters at the top of a package's `.nix` file, as well as to all of *their* formal parameters, and so on.   Triples like `(foo, bar, baz)`, on the other hand, are a property of an instantiated derivation -- you could would attach a triple `(mips-linux, mips-linux, sparc-solaris)` to a `.drv` file in `/data/data/com.termux/files/nix/store`.
 
 Only nine dependency types matter in practice:
 

@@ -6,11 +6,11 @@
 # Which used nixpkgs revision 97d9c84e1df4397b43ecb39359f1bd003cd44585
 # to instantiate:
 #
-#   /nix/store/hakn8s85s9011v61r6svp5qy8x1y64fv-stdenv-bootstrap-tools-mips64el-unknown-linux-gnuabin32.drv
+#   /data/data/com.termux/files/nix/store/hakn8s85s9011v61r6svp5qy8x1y64fv-stdenv-bootstrap-tools-mips64el-unknown-linux-gnuabin32.drv
 #
 # and then built:
 #
-#   /nix/store/rjgybpnf3yiqyhvl2n2lx31jf800fii2-stdenv-bootstrap-tools-mips64el-unknown-linux-gnuabin32
+#   /data/data/com.termux/files/nix/store/rjgybpnf3yiqyhvl2n2lx31jf800fii2-stdenv-bootstrap-tools-mips64el-unknown-linux-gnuabin32
 #
 {
   busybox = import <nix/fetchurl.nix> {

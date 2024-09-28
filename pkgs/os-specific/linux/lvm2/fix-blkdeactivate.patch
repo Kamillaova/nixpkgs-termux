@@ -45,7 +45,7 @@ index 7c517b87b..e51a33778 100644
  # (list is an associative array!)
  #
  declare -A SKIP_UMOUNT_LIST=(["/"]=1 \
-+                             ["/nix"]=1 ["/nix/store"]=1 \
++                             ["/nix"]=1 ["/data/data/com.termux/files/nix/store"]=1 \
                               ["/lib"]=1 ["/lib64"]=1 \
                               ["/bin"]=1 ["/sbin"]=1 \
                               ["/var"]=1 ["/var/log"]=1 \

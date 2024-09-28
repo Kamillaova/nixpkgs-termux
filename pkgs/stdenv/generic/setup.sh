@@ -29,7 +29,7 @@ if [ -f .attrs.sh ] || [[ -n "${NIX_ATTRS_JSON_FILE:-}" ]]; then
     echo "structuredAttrs is enabled"
 
     for outputName in "${!outputs[@]}"; do
-        # ex: out=/nix/store/...
+        # ex: out=/data/data/com.termux/files/nix/store/...
         export "$outputName=${outputs[$outputName]}"
     done
 

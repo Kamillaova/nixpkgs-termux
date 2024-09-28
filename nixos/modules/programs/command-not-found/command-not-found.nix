@@ -31,7 +31,7 @@ in
     };
 
     dbPath = lib.mkOption {
-      default = "/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite" ;
+      default = "/data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite" ;
       description = ''
         Absolute path to programs.sqlite.
 

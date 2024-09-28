@@ -47,7 +47,7 @@ index 97a91aee2..2d07d71e6 100644
 +        && real[NIX_STORE_LEN + 1] != '\0')
 +    {
 +        // extract the hash from a path formatted like
-+        // /nix/store/hashhere1234-pname-1.0.0
++        // /data/data/com.termux/files/nix/store/hashhere1234-pname-1.0.0
 +        // +1 to skip the leading /
 +        ptr1 = real + NIX_STORE_LEN + 1;
 +

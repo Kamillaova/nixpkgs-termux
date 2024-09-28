@@ -22,7 +22,7 @@ use JSON;
 use Net::Amazon::S3;
 use Nix::Store;
 
-isValidPath("/nix/store/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-foo"); # FIXME: forces Nix::Store initialisation
+isValidPath("/data/data/com.termux/files/nix/store/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-foo"); # FIXME: forces Nix::Store initialisation
 
 sub usage {
     die "Syntax: $0 [--dry-run] [--exclude REGEXP] [--expr EXPR | --file FILES...]\n";

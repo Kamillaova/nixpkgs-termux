@@ -512,7 +512,7 @@ in {
         copyCustomComponents = ''
           mkdir -p "${cfg.configDir}/custom_components"
 
-          # remove components symlinked in from below the /nix/store
+          # remove components symlinked in from below the /data/data/com.termux/files/nix/store
           readarray -d "" components < <(find "${cfg.configDir}/custom_components" -maxdepth 1 -type l -print0)
           for component in "''${components[@]}"; do
             if [[ "$(readlink "$component")" =~ ^${escapeShellArg builtins.storeDir} ]]; then

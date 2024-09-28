@@ -533,7 +533,7 @@ match):
 $ cd ~/src/random
 $ nix-shell -A haskellPackages.random.env '<nixpkgs>'
 [nix-shell:~/src/random]$ ghc-pkg list
-/nix/store/a8hhl54xlzfizrhcf03c1l3f6l9l8qwv-ghc-9.2.4-with-packages/lib/ghc-9.2.4/package.conf.d
+/data/data/com.termux/files/nix/store/a8hhl54xlzfizrhcf03c1l3f6l9l8qwv-ghc-9.2.4-with-packages/lib/ghc-9.2.4/package.conf.d
     Cabal-3.6.3.0
     array-0.5.4.0
     base-4.16.3.0
@@ -874,8 +874,8 @@ for this to work.
   Importing the `Paths_*` module may cause builds to fail with this message:
 
   ```
-  error: output '/nix/store/64k8iw0ryz76qpijsnl9v87fb26v28z8-my-haskell-package-1.0.0.0' is not allowed to refer to the following paths:
-           /nix/store/5q5s4a07gaz50h04zpfbda8xjs8wrnhg-ghc-9.6.3
+  error: output '/data/data/com.termux/files/nix/store/64k8iw0ryz76qpijsnl9v87fb26v28z8-my-haskell-package-1.0.0.0' is not allowed to refer to the following paths:
+           /data/data/com.termux/files/nix/store/5q5s4a07gaz50h04zpfbda8xjs8wrnhg-ghc-9.6.3
   ```
 
   If that happens, first disable the check for GHC references and rebuild the
@@ -893,9 +893,9 @@ for this to work.
 
   ```
   $ nix-build ...
-  $ strings result/bin/my-haskell-binary | grep /nix/store/
+  $ strings result/bin/my-haskell-binary | grep /data/data/com.termux/files/nix/store/
   ...
-  /nix/store/n7ciwdlg8yyxdhbrgd6yc2d8ypnwpmgq-hs-opentelemetry-sdk-0.0.3.6/bin
+  /data/data/com.termux/files/nix/store/n7ciwdlg8yyxdhbrgd6yc2d8ypnwpmgq-hs-opentelemetry-sdk-0.0.3.6/bin
   ...
   ```
 

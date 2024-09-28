@@ -674,7 +674,7 @@ in
           }
         )'';
         description = ''
-          Images for builds.sr.ht. Each package should be distro.release.arch and point to a /nix/store/package/root.img.qcow2.
+          Images for builds.sr.ht. Each package should be distro.release.arch and point to a /data/data/com.termux/files/nix/store/package/root.img.qcow2.
         '';
       };
     };

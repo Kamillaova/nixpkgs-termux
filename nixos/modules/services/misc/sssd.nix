@@ -149,7 +149,7 @@ in {
     })
 
     (mkIf cfg.sshAuthorizedKeysIntegration {
-    # Ugly: sshd refuses to start if a store path is given because /nix/store is group-writable.
+    # Ugly: sshd refuses to start if a store path is given because /data/data/com.termux/files/nix/store is group-writable.
     # So indirect by a symlink.
     environment.etc."ssh/authorized_keys_command" = {
       mode = "0755";

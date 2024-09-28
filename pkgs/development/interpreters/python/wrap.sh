@@ -49,7 +49,7 @@ wrapPythonProgramsIn() {
     # Find all regular files in the output directory that are executable.
     if [ -d "$dir" ]; then
         find "$dir" -type f -perm -0100 -print0 | while read -d "" f; do
-            # Rewrite "#! .../env python" to "#! /nix/store/.../python".
+            # Rewrite "#! .../env python" to "#! /data/data/com.termux/files/nix/store/.../python".
             # Strip suffix, like "3" or "2.7m" -- we don't have any choice on which
             # Python to use besides one with this hook anyway.
             if head -n1 "$f" | grep -q '#!.*/env.*\(python\|pypy\)'; then

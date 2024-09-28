@@ -109,10 +109,10 @@ in
         We add additional variables to this list inside the packages `local_settings.py.`
         - `STATIC_ROOT` to set a state directory for dynamically generated static files.
         - `SECRET_KEY_FILE` to read `SECRET_KEY` from a file at runtime and keep it out of
-          /nix/store.
+          /data/data/com.termux/files/nix/store.
         - `_FILE` variants for several values that hold sensitive information in
           [Healthchecks configuration](https://healthchecks.io/docs/self_hosted_configuration/) so
-          that they also can be read from a file and kept out of /nix/store. To see which values
+          that they also can be read from a file and kept out of /data/data/com.termux/files/nix/store. To see which values
           have support for a `_FILE` variant, run:
           - `nix-instantiate --eval --expr '(import <nixpkgs> {}).healthchecks.secrets'`
           - or `nix eval 'nixpkgs#healthchecks.secrets'` if the flake support has been enabled.

@@ -13,7 +13,7 @@ The absolute minimal configuration for the sync server looks like this:
   services.firefox-syncserver = {
     enable = true;
     secrets = builtins.toFile "sync-secrets" ''
-      SYNC_MASTER_SECRET=this-secret-is-actually-leaked-to-/nix/store
+      SYNC_MASTER_SECRET=this-secret-is-actually-leaked-to-/data/data/com.termux/files/nix/store
     '';
     singleNode = {
       enable = true;

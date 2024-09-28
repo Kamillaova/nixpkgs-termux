@@ -99,7 +99,7 @@ The output should show the extension like this:
     "experimental": false,
     "extensionType": "whl",
     "name": "azure-devops",
-    "path": "/nix/store/azbgnpg5nh5rb8wfvp0r9bmcx83mqrj5-azure-cli-extensions/azure-devops",
+    "path": "/data/data/com.termux/files/nix/store/azbgnpg5nh5rb8wfvp0r9bmcx83mqrj5-azure-cli-extensions/azure-devops",
     "preview": false,
     "version": "1.0.0"
   }

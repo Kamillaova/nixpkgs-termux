@@ -14,7 +14,7 @@ _linkDLLs() {
 # Try to links every known dependency of exe/dll in the folder of the 1str input
 # into said folder, so they are found on invocation.
 # (DLLs are first searched in the directory of the running exe file.)
-# The links are relative, so relocating whole /nix/store won't break them.
+# The links are relative, so relocating whole /data/data/com.termux/files/nix/store won't break them.
 linkDLLsInfolder() {
     (
         local folder

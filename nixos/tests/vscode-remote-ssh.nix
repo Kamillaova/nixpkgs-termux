@@ -125,8 +125,8 @@ in {
       server.fail("~/.vscode-server/bin/${rev}/node -v")
 
     with subtest("connects when server can patch Node"):
-      server.succeed("mkdir -p /nix/var/nix/profiles/per-user/root/channels")
-      server.succeed("ln -s ${pkgs.path} /nix/var/nix/profiles/per-user/root/channels/nixos")
+      server.succeed("mkdir -p /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels")
+      server.succeed("ln -s ${pkgs.path} /data/data/com.termux/files/nix/var/nix/profiles/per-user/root/channels/nixos")
       connect_with_remote_ssh(screenshot="build_node_with_nix", should_succeed=True)
   '';
 })
