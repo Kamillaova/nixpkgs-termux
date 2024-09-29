@@ -44,15 +44,6 @@ diff -Narupa a/elf/rtld.c b/elf/rtld.c
  
      /* Function pointers.  */
      ._dl_debug_printf = _dl_debug_printf,
-@@ -1859,7 +1859,7 @@ dl_main (const ElfW(Phdr) *phdr,
-      open().  So we do this first.  If it succeeds we do almost twice
-      the work but this does not matter, since it is not for production
-      use.  */
--  static const char preload_file[] = "/etc/ld.so.preload";
-+  static const char preload_file[] = "/data/data/com.termux/files/usr/etc/ld.so.preload";
-   if (__glibc_unlikely (__access (preload_file, R_OK) == 0))
-     {
-       /* Read the contents of the file.  */
 diff -Narupa a/elf/sprof.c b/elf/sprof.c
 --- a/elf/sprof.c
 +++ b/elf/sprof.c
@@ -1711,12 +1702,6 @@ diff -Narupa a/sysdeps/pthread/sem_open.c b/sysdeps/pthread/sem_open.c
  	    {
  	      /* Undo the mapping.  */
  	      __munmap (result, sizeof (sem_t));
-diff -Narupa a/sysdeps/unix/confstr.h b/sysdeps/unix/confstr.h
---- a/sysdeps/unix/confstr.h
-+++ b/sysdeps/unix/confstr.h
-@@ -1 +1 @@
--#define	CS_PATH	"/bin:/usr/bin"
-+#define	CS_PATH	"/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin:/system/bin"
 diff -Narupa a/sysdeps/unix/sysv/linux/aarch64/arch-syscall.h b/sysdeps/unix/sysv/linux/aarch64/arch-syscall.h
 --- a/sysdeps/unix/sysv/linux/aarch64/arch-syscall.h
 +++ b/sysdeps/unix/sysv/linux/aarch64/arch-syscall.h
